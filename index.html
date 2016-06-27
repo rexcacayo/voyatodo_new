@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html>
+    <head>
+	<meta charset="utf-8">
+        
+	<!-- Responsive Metatag -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- Titulo de la pagina, Descripcion de la Pagina-->
+	<meta property="og:title" content="TITULO AQUÍ" />
+	<meta property="og:description" content="DESCRIPCIÓN DEL CONTENIDO AQUÍ" />
+	<meta property="og:image" content="RUTA DE LA IMAGEN QUE SE VA A MOSTRAR AQUÍ" />
+	<meta name="author" content="Voy A Todo INC">
+
+	<link rel="shortcut icon" href="tema/favicon.jpg" type="image/x-icon">
+
+	<!-- Bootstrap CSS  -->
+	<link rel="stylesheet" href="tema/asset/css/bootstrap.min.css" type="text/css" media="screen">
+
+	<!-- Font Awesome CSS -->
+	<link rel="stylesheet" href="tema/css/font-awesome.css" type="text/css" media="screen">
+
+	<!-- Slicknav -->
+	<link rel="stylesheet" type="text/css" href="tema/css/slicknav.css" media="screen">
+
+	<!-- Margo CSS Styles  -->
+	<link rel="stylesheet" type="text/css" href="tema/css/style.css" media="screen">
+
+	<!-- Responsive CSS Styles  -->
+	<link rel="stylesheet" type="text/css" href="tema/css/responsive.css" media="screen">
+
+	<!-- Css3 Transitions Styles  -->
+	<link rel="stylesheet" type="text/css" href="tema/css/animate.css" media="screen">
+
+	<link rel="stylesheet" href="tema/css/star-rating.min.css" media="all" rel="stylesheet" type="text/css"/>
+	
+	<!-- Color CSS Styles  -->
+	<link rel="stylesheet" type="text/css" href="tema/css/colors/red.css" title="red" media="screen" />
+	<link rel="stylesheet" type="text/css" href="tema/css/colors/jade.css" title="jade" media="screen" />
+	<link rel="stylesheet" type="text/css" href="tema/css/colors/green.css" title="green" media="screen" />
+	<link rel="stylesheet" type="text/css" href="tema/css/colors/blue.css" title="blue" media="screen" />
+	<link rel="stylesheet" type="text/css" href="tema/css/colors/beige.css" title="beige" media="screen" />
+	<link rel="stylesheet" type="text/css" href="tema/css/colors/cyan.css" title="cyan" media="screen" />
+	<link rel="stylesheet" type="text/css" href="tema/css/colors/orange.css" title="orange" media="screen" />
+	<link rel="stylesheet" type="text/css" href="tema/css/colors/peach.css" title="peach" media="screen" />
+	<link rel="stylesheet" type="text/css" href="tema/css/colors/pink.css" title="pink" media="screen" />
+	<link rel="stylesheet" type="text/css" href="tema/css/colors/purple.css" title="purple" media="screen" />
+	<link rel="stylesheet" type="text/css" href="tema/css/colors/sky-blue.css" title="sky-blue" media="screen" />
+	<link rel="stylesheet" type="text/css" href="tema/css/colors/yellow.css" title="yellow" media="screen" />
+	<link rel="stylesheet" type="text/css" href="tema/css/sweetalert.css">
+
+	<!--  JS  -->
+	<script type="text/javascript" src="tema/js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="tema/js/jquery.migrate.js"></script>
+	<script type="text/javascript" src="tema/js/modernizrr.js"></script>
+	<script type="text/javascript" src="tema/asset/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="tema/js/jquery.fitvids.js"></script>
+	<script type="text/javascript" src="tema/js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="tema/js/nivo-lightbox.min.js"></script>
+	<script type="text/javascript" src="tema/js/jquery.isotope.min.js"></script>
+	<script type="text/javascript" src="tema/js/jquery.appear.js"></script>
+	<script type="text/javascript" src="tema/js/count-to.js"></script>
+	<script type="text/javascript" src="tema/js/jquery.textillate.js"></script>
+	<script type="text/javascript" src="tema/js/jquery.lettering.js"></script>
+	<script type="text/javascript" src="tema/js/jquery.easypiechart.min.js"></script>
+	<script type="text/javascript" src="tema/js/jquery.nicescroll.min.js"></script>
+	<script type="text/javascript" src="tema/js/jquery.parallax.js"></script>
+	<script type="text/javascript" src="tema/js/mediaelement-and-player.js"></script>
+	<script type="text/javascript" src="tema/js/jquery.slicknav.js"></script>
+	<script type="text/javascript" src="tema/js/sweetalert.min.js"></script>
+	
+        
+
+	<title>Voy A Todo | Home</title>
+    </head>
+    
+    
+    
+    <body ng-app="appVoyatodo" class="login-bg body-category">
+        <div ng-view></div>
+       
+        
+        <!--angular libs-->
+        <script src="components/angular/angular.min.js"></script>
+        <script src="components/angular-resource/angular-resource.min.js"></script>
+        <script src="components/angular-route/angular-route.min.js"></script>
+        <script src="scripts/router.js"></script>
+        <script src="scripts/controllers/inicio.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/conversaciones.js"></script>
+       	<script src="components/angular-cookies/angular-cookies.min.js"></script>
+        <script src="components/sweetalert/SweetAlert.js"></script>
+        <script src="scripts/controllers/inicio.js"></script>
+        
+        <!-- CONTROLES DE EVENTO -->
+        <script src="scripts/controllers/evento/evento.js"></script>
+        <script src="scripts/controllers/evento/listado_evento.js"></script>
+        <script src="scripts/controllers/evento/categoria/categoria.js"></script>
+        
+        
+        <!-- CONTROLES DE TIENDA -->
+        <script src="scripts/controllers/tienda/tienda.js"></script>
+        
+        <!-- CONTROLES DE PRODUCTO -->
+        <script src="scripts/controllers/producto/producto.js"></script>
+        
+        <!-- CONTROLES DE PATROCINADOR -->
+        <script src="scripts/controllers/patrocinador/patrocinador.js"></script>
+        <script src="scripts/controllers/patrocinador/perfil.js"></script>
+        <script src="scripts/controllers/patrocinador/evento.js"></script>
+        
+        <!-- CONTROLES DE PROVEEDOR -->
+        <script src="scripts/controllers/proveedor/proveedor.js"></script>
+        <script src="scripts/controllers/proveedor/mis_productos/mis_productos.js"></script>
+        <script src="scripts/controllers/proveedor/perfil/perfil.js"></script>
+        <script src="scripts/controllers/proveedor/producto/producto.js"></script>
+        
+        <!-- CONTROLES DE CONTACTOS -->
+        <script src="scripts/controllers/contact/contact.js"></script>
+        
+        <!-- CONTROLES DE ADMINISTRADOR -->
+        <script src="scripts/controllers/administrador/administrador.js"></script>
+        <script src="scripts/controllers/administrador/conversaciones/conversaciones.js"></script>
+        <script src="scripts/controllers/administrador/evento/evento.js"></script>
+        <script src="scripts/controllers/administrador/parametros/parametros.js"></script>
+        <script src="scripts/controllers/administrador/solicitudes/solicitudes.js"></script>
+        <script src="scripts/controllers/administrador/usuarios/usuarios.js"></script>
+     
+        
+        <!-- CONTROLES DE COMPRADOR -->
+        <script src="scripts/controllers/comprador/contact/contact.js"></script>
+        <script src="scripts/controllers/comprador/evento/evento.js"></script>
+        <script src="scripts/controllers/comprador/favoritos/favoritos.js"></script>
+        <script src="scripts/controllers/comprador/mis_eventos/mis_eventos.js"></script>
+        <script src="scripts/controllers/comprador/mis_tickets/mis_tickets.js"></script>
+        <script src="scripts/controllers/comprador/perfil/perfil.js"></script>
+        <script src="scripts/controllers/comprador/tienda/tienda.js"></script>
+        <script src="scripts/controllers/comprador/producto/producto.js"></script>
+        
+        
+        
+        
+        
+        
+       	<!--  JS  -->
+	<script type="text/javascript" src="tema/js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="tema/js/jquery.migrate.js"></script>
+	<script type="text/javascript" src="tema/js/modernizrr.js"></script>
+	<script type="text/javascript" src="tema/asset/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="tema/js/jquery.fitvids.js"></script>
+	<script type="text/javascript" src="tema/js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="tema/js/nivo-lightbox.min.js"></script>
+	<script type="text/javascript" src="tema/js/jquery.isotope.min.js"></script>
+	<script type="text/javascript" src="tema/js/jquery.appear.js"></script>
+	<script type="text/javascript" src="tema/js/count-to.js"></script>
+	<script type="text/javascript" src="tema/js/jquery.textillate.js"></script>
+	<script type="text/javascript" src="tema/js/jquery.lettering.js"></script>
+	<script type="text/javascript" src="tema/js/jquery.easypiechart.min.js"></script>
+	<script type="text/javascript" src="tema/js/jquery.nicescroll.min.js"></script>
+	<script type="text/javascript" src="tema/js/jquery.parallax.js"></script>
+	<script type="text/javascript" src="tema/js/mediaelement-and-player.js"></script>
+	<script type="text/javascript" src="tema/js/jquery.slicknav.js"></script>
+	<script type="text/javascript" src="tema/js/sweetalert.min.js"></script>
+	
+        <script type="text/javascript">            
+	  WebFontConfig = {
+	    google: { families: [ 'Montserrat:400,700:latin' ] }
+	  };
+	  (function() {
+	    var wf = document.createElement('script');
+	    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+	      '://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js';
+	    wf.type = 'text/javascript';
+	    wf.async = 'true';
+	    var s = document.getElementsByTagName('script')[0];
+	    s.parentNode.insertBefore(wf, s);
+	  })(); 
+        </script>
+        
+    </body>
+</html>
