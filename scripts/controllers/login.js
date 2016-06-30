@@ -17,7 +17,7 @@ angular.module('appVoyatodo')
                     user: $scope.data.user_email,
                     pass: $scope.data.user_pass
                 };
-                console.log(datas);
+                
                
                 
                 $http.post("backend/modules/login/login.php", datas)
