@@ -22,14 +22,15 @@
             <li><a href="#/conversaciones">conversaciones</a> </li>
             <li><a href="#">alertas</a> </li>
             <li>
-              <a href="#"> 
-                Patrocinador Dos              </a>
+              <a href="#">{{data.user_email}}</a>
               <ul class="ul-menu">
                 <li><a href="#/perfil"> Mi Perfil </a> </li>
-                <li><a href="#/inicio"> Cerrar sesi&oacute;n </a> </li>              
+                <li><a href="" ng-click="logout()"> Cerrar sesi&oacute;n </a> </li>              
               </ul>
             </li>
-                            <li><div class="fa-circle-menu"></div></li>
+            <li>
+                <div class="fa-circle-menu"></div>
+            </li>
                  
           </ul>
           <!-- End Navigation List --> 

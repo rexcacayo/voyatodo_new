@@ -1,20 +1,16 @@
-<!doctype html>
-
-<header class="clearfix"> 
-    
-    <!-- Start  Logo & Naviagtion  -->
+<header class="clearfix" ng-controller="EventoCrtl"> 
     <div class="navbar navbar-default navbar-top">
       <div class="container-fluid">
         <div class="navbar-header"> 
           <!-- Stat Toggle Nav Link For Mobiles -->
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <i class="fa fa-bars"></i> </button>
           <!-- End Toggle Nav Link For Mobiles --> 
-          <a class="navbar-brand" href="#inicio"> <img alt="" src="tema/images/logo.png"> </a> </div>
+          <a class="navbar-brand" href="#/inicio"> <img alt="" src="tema/images/logo.png"> </a> </div>
         <div class="navbar-collapse collapse"> 
           <!-- Stat Search -->
           <div class="search-side"> <a class="show-search"><i class="fa fa-search"></i></a>
             <div class="search-form">
-              <form autocomplete="off" role="search" method="get" class="searchform" action="#">
+              <form autocomplete="off" role="search" method="post" class="searchform" action="#">
                 <input type="text" value="" name="s" id="s" placeholder="Search the site...">
               </form>
             </div>
@@ -22,32 +18,26 @@
           <!-- End Search --> 
           <!-- Start Navigation List -->
           <ul class="nav navbar-nav navbar-right">
-            <li> <a class="active" href="#/inicio">Inicio</a></li>
-            <li><a href="#/tienda">Tienda</a> </li>
-            <li><a href="#/patrocinador">Patrocinador</a> </li>
-            <li><a href="#/proveedor">Proveedor</a> </li>
-            <li><a href="#/contact">Contacto</a></li>
-            <li><a href="#/login">Inicia Sesi&oacute;n</a> </li>
+            <li><a href="#/inicio">INICIO</a> </li>
+            <li><a href="#/tienda">TIENDA</a> </li>
+            <li><a href="#/patrocinador">PATROCINADOR</a> </li>
+            <li><a href="#/proveedor">PROVEEDOR</a> </li>
+            <li><a href="#/comprador_contact">CONTACTO</a> </li>
+            <li>
+              <a href="#"> 
+                {{usuario_email}}      </a>
+              <ul class="ul-menu">
+                <li><a href="#/prefil/{{usuario_email}}"> Mi Perfil </a> </li>
+                <li><a href="#" ng-click="logout()">Cerrar sesi&oacute;n </a> </li>              
+              </ul>
+            </li>
+                            <li><div class="fa-circle-menu"></div></li>
+                 
           </ul>
           <!-- End Navigation List --> 
         </div>
       </div>
-      
-      <!-- Mobile Menu Start -->
-      <ul class="wpb-mobile-menu">
-        <li> <a class="active" href="#/inicio">Inicio</a>
-        </li>
-        <li><a href="#/tienda">Tienda</a> </li>
-        <li><a href="#/patrocinador">Patrocinador</a> </li>
-        <li><a href="#/proveedor">Proveedor</a> </li>
-        <li><a href="#/contact/">Contacto</a></li>
-        <li><a href="#/login">Inicia Sesion</a> </li>
-      </ul>
-      <!-- Mobile Menu End --> 
-      
     </div>
-    <!-- End Header Logo & Naviagtion --> 
-    
   </header>	  
   <section id="inner01">
     <div id="main-slide" class="carousel00 slide slide_galery" data-ride="carousel">
@@ -56,7 +46,7 @@
           <div class="col-md-12 text-center">
             <h2 class="animated3" style="margin-top: 0px !important"> Esta es la lista de Eventos! </h2>
             <h3 class="animated3"> <span>PRUEBALA TAMBI&Eacute;N EN TU SMARTPHONE</span> </h3>
-            <p class="animated4"><a href="#/login/" class="eventos public" >CREAR NUEVO EVENTO</a></p>
+            <p class="animated4"><a href="#/comprador_evento" class="eventos public" >CREAR NUEVO EVENTO</a></p>
           </div>
         </div>
       </div>
@@ -158,4 +148,4 @@
     </div>
   </footer>	
 	<!-- Full Body Container -->
-	
+<script type="text/javascript" src="tema/js/script_sponsor.js"></script>	
