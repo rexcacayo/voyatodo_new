@@ -41,6 +41,11 @@ angular.module('appVoyatodo')
                     SweetAlert.swal("Usuario Tienda");
                    
                   }
+                  if(datas.result[0].rol == 4){
+                    location.href='#/';
+                    SweetAlert.swal("Usuario Admistrador");
+                   
+                  }
                   
                  }
                  if(datas.result[0].login==="fail"){
