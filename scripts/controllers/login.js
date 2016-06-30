@@ -2,45 +2,46 @@
 
 angular.module('appVoyatodo')
         .controller('LoginCrtl',function($scope, $http, SweetAlert, $cookies, $cookieStore){
-        
+            
             $scope.login = function(){
-//                alert("siii");
-//                $.each(
-//                    $scope,
-//                    function($index,$valor)
-//                    {
-//                        alert($index+"--->"+$valor);
-//                    }
-//            );
+                
+              if($scope.data.user_email === undefined){
+                 SweetAlert.swal("Debe llenar el campo E_MAIL");
+                 return;
+              }
+              if($scope.data.user_pass === undefined){
+                 SweetAlert.swal("Debe llenar el campo contraseña");
+                 return;
+              }
                 var datas = {
                     user: $scope.data.user_email,
                     pass: $scope.data.user_pass
                 };
-//                alert($scope.data.user_email);
-//                
-//                
-//                $.post(
-//                        "backend/modules/login/login.php",
-//                        datas,
-//                        function(data)
-//                        {
-//                            alert("sddd");
-//                            
-//                        },
-//                        "json"                            
-//                );
-                
-                
+                console.log(datas);
+               
                 
                 $http.post("backend/modules/login/login.php", datas)
                  .success(function(datas) {
                    
                  if(datas.result[0].login==="success"){
-                  console.log(datas)   ;
+                  console.log(datas);
                   $cookieStore.put('userName', datas.result[0].username);
                   $cookieStore.put('userRol', datas.result[0].rol);
                   $cookieStore.put('userEmail', datas.result[0].email);
-                  location.href='#/evento';
+                  if(datas.result[0].rol == 3){
+                    location.href='#/evento';
+                  }
+                  if(datas.result[0].rol == 1){
+                    location.href='#/';
+                    SweetAlert.swal("Usuario Patrocinador");
+                   
+                  }
+                  if(datas.result[0].rol == 2){
+                    location.href='#/';
+                    SweetAlert.swal("Usuario Tienda");
+                   
+                  }
+                  
                  }
                  if(datas.result[0].login==="fail"){
                     SweetAlert.swal("Error de auntentificación verifique sus datos");
@@ -57,9 +58,36 @@ angular.module('appVoyatodo')
 
 .controller('LoginRegistroCrtl', function($scope,$http,SweetAlert)
     {
+        $scope.apellidovisibility = true;
+        $scope.contrasenavisibility = true;
+        $scope.ccontrasenavisibility = true;
         
+        $scope.btmregistrovisibility = true;
+        $scope.telf1visibility = false;
+        $scope.telf2visibility = false;
+        $scope.btmsolicitarvisibility = false;
+        
+        
+        $scope.visibility=function(){
+            $scope.apellidovisibility=false;
+            $scope.contrasenavisibility=false;
+            $scope.ccontrasenavisibility=false;
+            $scope.btmregistrovisibility = false;
+            $scope.telf1visibility = true;
+            $scope.telf2visibility = true;
+            $scope.btmsolicitarvisibility = true;
+        };
+        $scope.visibilityP=function(){
+            $scope.apellidovisibility=true;
+            $scope.contrasenavisibility=true;
+            $scope.ccontrasenavisibility=true;
+            $scope.btmregistrovisibility = true;
+            $scope.telf1visibility = false;
+            $scope.telf2visibility = false;
+            $scope.btmsolicitarvisibility = true;
+        };    
         $scope.create=function(){
-        console.log($scope.data.user_type);
+        
         if($scope.data.user_type=== undefined){
             SweetAlert.swal("Debe seleccionar el tipo de registro");
             return;
@@ -72,39 +100,70 @@ angular.module('appVoyatodo')
             SweetAlert.swal("Debe llenar el campo Nombre");
             return;
         }
-        if($scope.data.user_email=== undefined){
-            SweetAlert.swal("Debe llenar el campo Email");
-            return;
-        }
-        if($scope.data.user_type=== 1){
+        
+        if($scope.data.user_type == 1){
            if($scope.data.user_lastname=== undefined){
                 SweetAlert.swal("Debe llenar el campo de Apellido");
                 return;
             } 
         }
-         if($scope.data.user_type=== 1){
+        
+       
+        if($scope.data.user_email=== undefined){
+            SweetAlert.swal("Debe llenar el campo Email");
+            return;
+        }
+        
+        
+         if($scope.data.user_type== 1){
            if($scope.data.user_pass=== undefined){
                 SweetAlert.swal("Debe llenar el campo de Contraseña");
                 return;
             } 
         }
-        if($scope.data.user_type=== 1){
-           if($scope.data.user_confpass=== undefined){
+        
+        
+        if($scope.data.user_type == 1){
+           if($scope.data.user_confpass === undefined){
                 SweetAlert.swal("Debe llenar el campo de Confirmación Contraseña");
                 return;
             } 
         }
-         if($scope.data.user_type=== 1){
-           if($scope.data.user_pass=== $scope.data.user_confpass){
+        
+        
+         if($scope.data.user_type== 1){
+           if($scope.data.user_pass != $scope.data.user_confpass){
                 SweetAlert.swal("Las contraseñas deben coincidir contraseña");
                 return;
             } 
         }
-        if($scope.data.user_type=== 2){
+        
+        
+        
+        
+        if($scope.data.user_type == 2){
            if($scope.data.user_telf1=== undefined){
                 SweetAlert.swal("Debe llenar el campo de Telefono");
                 return;
             } 
+        }
+        if($scope.data.user_type == 2){
+           if($scope.data.user_telf2=== undefined){
+                $scope.data.user_telf2=0;
+                return;
+            } 
+        }
+        
+        
+        if($scope.data.user_type == 2){
+            $scope.data.user_pass = "N/A";
+            $scope.data.user_lastname="empresa"
+            
+        }
+        
+        if($scope.data.user_type == 1){
+            $scope.data.user_telf1=0;
+            $scope.data.user_telf2=0;
         }
         
             
@@ -115,12 +174,11 @@ angular.module('appVoyatodo')
             email: $scope.data.user_email,
             password: $scope.data.user_pass,
             type: $scope.data.user_type,
-            rol:1,
+            rol:$scope.data.user_rol,
             telefono1:$scope.data.user_telf1,
             telefono2:$scope.data.user_telf2
         };
         
-       
          $http.post("backend/modules/login/registro.php", datas)
                  .success(function(datas) {
                     

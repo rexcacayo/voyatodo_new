@@ -66,7 +66,7 @@
                     
                     <div class="col-md-6">
                         <div class="checkbox" style="z-index: 9;">
-                            <input type="radio" name="user_type" id="inputs" ng-model="data.user_type" value="1" class="inputradio type_user" checked="checked" > 
+                            <input type="radio" name="user_type" id="inputs" ng-model="data.user_type" ng-change="visibilityP()" value="1" class="inputradio type_user" checked="checked" > 
                                 <span class="inputfalso"> 
                                     <label class="lbl_radio">
                                         PERSONA
@@ -76,7 +76,7 @@
                     </div>
                     <div class="col-md-6">
                         <label class="checkbox" style="z-index: 9;">
-                            <input class="inputradio type_user" name="user_type" type="radio" value="2" ng-model="data.user_type" checked>
+                            <input class="inputradio type_user" name="user_type" type="radio" value="2" ng-change="visibility()" ng-model="data.user_type">
                                 <span class="inputfalso"></span>
                                     <span class="lbl_radio">
                                         EMPRESA
@@ -86,7 +86,7 @@
                     
                     <div class="col-md-6">
                         <div class="checkbox" style="z-index: 9;">
-                            <input type="radio" name="user_rol" ng-model="data.user_rol" value="1" class="inputradio type_user">
+                            <input type="radio" name="user_rol" ng-model="data.user_rol" value="1" class="inputradio">
                                 <span class="inputfalso">
                                     <label class="lbl_radio">
                                         COMPRADOR
@@ -97,7 +97,7 @@
 
                     <div class="col-md-6">
                         <label class="checkbox" style="z-index: 9;">
-                            <input class="inputradio type_user" name="user_rol" ng-model="data.user_rol" type="radio" value="5">
+                            <input class="inputradio " name="user_rol" ng-model="data.user_rol" type="radio" value="2">
                                 <span class="inputfalso">
                                 </span>
                                     <span class="lbl_radio">
@@ -111,7 +111,7 @@
 
                 <div class="col-md-6">
                     <label class="checkbox" style="z-index: 9;">
-                        <input class="inputradio type_user" name="user_rol" ng-model="data.user_rol" type="radio" value="3">
+                        <input class="inputradio" name="user_rol" ng-model="data.user_rol" type="radio" value="3">
                             <span class="inputfalso">
                             </span>
                             <span class="lbl_radio">
@@ -132,6 +132,7 @@
 <div class="help-block"></div>
 </div>                </div>
               </div>
+              <div ng-show="apellidovisibility">
               <div class="opt_people">
                 <div class="form-group">
                   <div class="controls">
@@ -145,6 +146,7 @@
                   </div>
                 </div>
               </div>
+              </div>
               <div class="form-group">
                 <div class="controls">
                   <label>E-MAIL</label>    
@@ -155,7 +157,9 @@
 <div class="help-block"></div>
 </div>                </div>
               </div>
+              
               <div class="opt_people">
+                <div ng-show="contrasenavisibility">
                 <div class="form-group">
                   <div class="controls">
                     <label>CONTRASE&Ntilde;A</label>
@@ -167,21 +171,8 @@
 </div>                    <div id="error2" style="color:#A94452;"></div>
                   </div>
                 </div>
-                <div class="form-group">
-                  <div class="controls">
-                    <label> CONFIRMAR CONTRASE&Ntilde;A</label>
-                    <div class="form-group field-formuserregister-password_repeat">
-
-<input type="password" id="inputs" class="email password_repeat" name="user_confpass" ng-model="data.user_confpass" placeholder="•••••••••••••••••••••">
-
-<div class="help-block"></div>
-</div>                    <div id="error3" style="color:#A94452;"></div>
                   </div>
-                </div>
-                <button type="submit"  id="submit" class="btn-system01" ng-click="create()">CREAR CUENTA</button>
-                <div id="success" style="color:#A94452;"></div>
-              </div>
-              <div class="opt_company hidden">
+                  <div ng-show="telf1visibility">
                 <div class="form-group">
                   <div class="controls">
                     <label>TEL&Eacute;FONO 1</label>
@@ -193,6 +184,25 @@
 </div>                    <div id="error4" style="color:#A94452;"></div>
                   </div>
                 </div>
+                    </div>
+                  <div ng-show="ccontrasenavisibility">
+                <div class="form-group">
+                  <div class="controls">
+                    <label> CONFIRMAR CONTRASE&Ntilde;A</label>
+                    <div class="form-group field-formuserregister-password_repeat">
+
+<input type="password" id="inputs" class="email password_repeat" name="user_confpass" ng-model="data.user_confpass" placeholder="•••••••••••••••••••••">
+
+<div class="help-block"></div>
+</div>                    <div id="error3" style="color:#A94452;"></div>
+                  </div>
+                </div>
+                      
+                  </div>
+                  <div ng-show="btmregistrovisibility">
+                  <button type="submit"  id="submit" class="btn-system01" ng-click="create()">CREAR CUENTA</button>
+                  </div>
+                   <div ng-show="telf2visibility">  
                 <div class="form-group">
                   <div class="controls">
                     <label>TEL&Eacute;FONO 2</label>
@@ -204,9 +214,23 @@
 </div>                    <div id="error5" style="color:#A94452;"></div>
                   </div>
                 </div>
+                  
+                
+                  
+                <div ng-show="btmsolicitarvisibility">
                 <button type="submit"  id="submit" class="btn-system01" ng-click="create()">SOLICITAR CUENTA</button>
+                  </div>     
+                <div id="success" style="color:#A94452;"></div>
+              </div>
+              
+              
+              <div class="opt_company hidden">
+               
+                </div>  
+                 
                 <div id="success_1" style="color:#A94452;"></div>
               </div>
+              
               </form>              </div>
               <p>
                 <span style="color:#FFFFFF"> 
@@ -233,69 +257,12 @@
 </div>
 
 
-<script type="text/javascript">
-  $(document).ready(function() {  
-      $(".btn-system01").click(function(){
-        if($(".user_type").val() == 1 && $(".last_name").val() != '' && $(".password").val() != ''
-          && $(".password_repeat").val() != ''){
-          $("#success").html('');
-          $("#success_1").html('');
-          var dimension = $(".password").val().length;
-          if(dimension > 5 && dimension < 17){
-            $("#error2").html('');
-            $("#error3").html('');
-            if($(".password").val() == $(".password_repeat").val()){
-              $("#error3").html('');
-              var dim_last = $(".last_name").val().length;
-              if( dim_last > 3 && dim_last < 100)
-                $("#User_Form").submit();
-              else
-                $("#error1").html('Mínimo 3 y máximo 100 caracteres.');
-            }
-            else
-              $("#error3").html('Las contraseñas no coinciden.');
-          }
-          else{
-            $("#error2").html('Mínimo 6 y máximo 16 caracteres.');
-            $("#error3").html('Mínimo 6 y máximo 16 caracteres.');
-          }
-        }
-        else
-          if($(".user_type").val() == 2 && $(".user_phone1").val() != ''){
-            $("#success").html('');
-            $("#success_1").html('');
-            var dimension1 = $(".user_phone1").val().length;
-            var dimension2 = $(".user_phone2").val().length;
-            if(dimension1 > 7 && dimension1 < 45 || dimension2 > 7 && dimension2 < 45){
-              $("#error4").html('');
-              $("#error5").html('');
-              if($(".user_phone1").val() == $(".user_phone2").val())
-                $("#error5").html('Los télefonos son iguales.');
-              else{
-                if(!isNaN(parseFloat($(".user_phone1").val())) && isFinite($(".user_phone1").val())){
-                  if(!isNaN(parseFloat($(".user_phone2").val())) || isFinite($(".user_phone2").val()))
-                    $("#User_Form").submit();  
-                  else
-                    $("#error5").html('Sólo se aceptan números.');
-                }
-                else
-                  $("#error4").html('Sólo se aceptan números.');
-              }
-            }
-            else{
-              $("#error4").html('Mínimo 5 y máximo 45 caracteres.');
-            }
-        }
-        else{
-          $("#success").html('Completa todos los datos.');
-        }
-    });
-  });
+
 </script>	<footer>
     <div class="container">
       <div class="row footer-widgets">
         <div class="col-md-3 col-xs-12">
-          <div class="footer-logo"> <img alt="" src="#/tema/images/logo.png" /> </div>
+          <div class="footer-logo"> <img alt="" src="tema/images/logo.png" /> </div>
         </div>
         <div class="col-md-2 col-xs-12">
           <div class="footer-widget footer-widget01">
@@ -348,5 +315,5 @@
     function LoginRegistroCrtl($scope){
         $scope.data.user_type=1;
         $scope.data.user_rol=1;
-    }
+    };
 </script>	

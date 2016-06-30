@@ -1,15 +1,37 @@
 <?php
 
-echo 'llego';
+include_once '../../app_config.php';
+require(APPROOT . "models/user.php");
+// get posted data
+$data = json_decode(file_get_contents("php://input"));
+//print_r($data);
 
-echo "<pre>";
-print_r($_REQUEST);
-echo "</pre>";
-exit;
-
-if($_POST):
-echo json_encode($_POST);
+$result = "";
+if ($data):
+    $objUser = User::find('first', array('conditions' => array('email' => $data->user, 'password' => md5($data->pass))));
+    if ($objUser):
+        if ($objUser->activate == 1):
+            $result .= '{';
+            $result .= '"login":"success",';
+            $result .= '"username":"' . $objUser->username . '",';
+            $result .= '"rol":"' . $objUser->rol . '",';
+            $result .= '"email":"' . $objUser->email . '"';
+            $result .= '}';
+        else:
+            $result .= '{';
+            $result .= '"login":"no_active"';
+            $result .= '}';
+        endif;
+    else:
+        $result .= '{';
+        $result .= '"login":"fail"';
+        $result .= '}';
+    endif;
 else:
-echo '403';
+    $result .= '{';
+    $result .= '"login":"no_data"';
+    $result .= '}';
 endif;
-?>
+
+// json format output 
+echo '{"result":[' . $result . ']}';

@@ -35,11 +35,11 @@
       <ul class="wpb-mobile-menu">
         <li> <a class="active" href="../">Inicio</a>
         </li>
-        <li><a href="../tienda">Tienda</a> </li>
-        <li><a href="../patrocinador">Patrocinador</a> </li>
-        <li><a href="../proveedor">Proveedor</a> </li>
-        <li><a href="#">Contacto</a></li>
-        <li><a href="../login">Inicia Sesion</a> </li>
+        <li><a href="#/tienda">Tienda</a> </li>
+        <li><a href="#/patrocinador">Patrocinador</a> </li>
+        <li><a href="#/proveedor">Proveedor</a> </li>
+        <li><a href="#/contacto">Contacto</a></li>
+        <li><a href="#/login">Inicia Sesion</a> </li>
       </ul>
       <!-- Mobile Menu End --> 
       
@@ -88,7 +88,7 @@
                   <p class="text-list"> Ingresa con tu red social favorita </p>
                   <div class="social-auth-links text-center text-social">
                       
-                      <button >Sign in with Google</button>
+                      
                     <div id="w0" class="auth-clients"><ul class="auth-clients clear"><li class="auth-client"><a class="auth-link google" href="../auth?authclient=google"><i class="margin fa fa-google"></i><span class="auth-title">Google</span></a></li><li class="auth-client"><a class="auth-link facebook" href="../auth?authclient=facebook"><i class="margin fa fa-facebook"></i><span class="auth-title">Facebook</span></a></li></ul></div> 
                  </div>
                   <p class="title-n">&iquest;ERES NUEVO?</p>
@@ -111,13 +111,7 @@
   </section>
   <div class="clearfix"></div>
 </div> 
-<script type="text/javascript">
-  $(document).ready(function() {  
-      $(".btn-system01").click(function(){
-      $("#contact-form").submit();
-    });
-  });
-</script>	<footer>
+<footer>
     <div class="container">
       <div class="row footer-widgets">
         <div class="col-md-3 col-xs-12">

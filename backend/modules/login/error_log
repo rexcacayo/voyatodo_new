@@ -1,0 +1,84 @@
+[24-Jun-2016 19:30:04 America/Chicago] PHP Warning:  require_once(/home/voyatodo/public_html/backend/class/externals/cake/inflector.php): failed to open stream: No such file or directory in /home/voyatodo/public_html/site/backend/app_config.php on line 19
+[24-Jun-2016 19:30:04 America/Chicago] PHP Fatal error:  require_once(): Failed opening required '/home/voyatodo/public_html/backend/class/externals/cake/inflector.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/voyatodo/public_html/site/backend/app_config.php on line 19
+[24-Jun-2016 19:31:04 America/Chicago] PHP Warning:  require_once(/home/voyatodo/public_html/backend/site/class/externals/cake/inflector.php): failed to open stream: No such file or directory in /home/voyatodo/public_html/site/backend/app_config.php on line 19
+[24-Jun-2016 19:31:04 America/Chicago] PHP Fatal error:  require_once(): Failed opening required '/home/voyatodo/public_html/backend/site/class/externals/cake/inflector.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/voyatodo/public_html/site/backend/app_config.php on line 19
+[24-Jun-2016 19:31:58 America/Chicago] PHP Fatal error:  Class 'User' not found in /home/voyatodo/public_html/site/backend/modules/login/registro.php on line 29
+[24-Jun-2016 19:33:30 America/Chicago] PHP Fatal error:  Class 'User' not found in /home/voyatodo/public_html/site/backend/modules/login/registro.php on line 29
+[24-Jun-2016 19:35:29 America/Chicago] PHP Fatal error:  Class 'User' not found in /home/voyatodo/public_html/site/backend/modules/login/registro.php on line 29
+[24-Jun-2016 20:31:41 America/Chicago] PHP Warning:  file_get_contents(../../mail/register_mail.html): failed to open stream: No such file or directory in /home/voyatodo/public_html/site/backend/modules/login/registro.php on line 69
+[24-Jun-2016 22:44:40 America/Chicago] PHP Fatal error:  Uncaught exception 'ActiveRecord\DatabaseException' with message '23000, 1452, Cannot add or update a child row: a foreign key constraint fails (`voyatodo_dev`.`vt_tuser`, CONSTRAINT `fk_VT_Tuser_VT_Trol1` FOREIGN KEY (`rol`) REFERENCES `vt_trol` (`pkrol`) ON DELETE NO ACTION ON UPDATE NO ACTION)' in /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Connection.php:276
+Stack trace:
+#0 /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Table.php(317): ActiveRecord\Connection->query('INSERT INTO `vt...', Array)
+#1 /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Model.php(803): ActiveRecord\Table->insert(Array)
+#2 /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Model.php(758): ActiveRecord\Model->insert(true)
+#3 /home/voyatodo/public_html/site/backend/modules/login/registro.php(46): ActiveRecord\Model->save()
+#4 {main}
+  thrown in /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Connection.php on line 276
+[24-Jun-2016 22:46:47 America/Chicago] PHP Fatal error:  Uncaught exception 'ActiveRecord\DatabaseException' with message '23000, 1452, Cannot add or update a child row: a foreign key constraint fails (`voyatodo_dev`.`vt_tuser`, CONSTRAINT `fk_VT_Tuser_VT_Trol1` FOREIGN KEY (`rol`) REFERENCES `vt_trol` (`pkrol`) ON DELETE NO ACTION ON UPDATE NO ACTION)' in /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Connection.php:276
+Stack trace:
+#0 /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Table.php(317): ActiveRecord\Connection->query('INSERT INTO `vt...', Array)
+#1 /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Model.php(803): ActiveRecord\Table->insert(Array)
+#2 /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Model.php(758): ActiveRecord\Model->insert(true)
+#3 /home/voyatodo/public_html/site/backend/modules/login/registro.php(46): ActiveRecord\Model->save()
+#4 {main}
+  thrown in /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Connection.php on line 276
+[24-Jun-2016 22:47:06 America/Chicago] PHP Fatal error:  Uncaught exception 'ActiveRecord\DatabaseException' with message '23000, 1452, Cannot add or update a child row: a foreign key constraint fails (`voyatodo_dev`.`vt_tuser`, CONSTRAINT `fk_VT_Tuser_VT_Trol1` FOREIGN KEY (`rol`) REFERENCES `vt_trol` (`pkrol`) ON DELETE NO ACTION ON UPDATE NO ACTION)' in /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Connection.php:276
+Stack trace:
+#0 /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Table.php(317): ActiveRecord\Connection->query('INSERT INTO `vt...', Array)
+#1 /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Model.php(803): ActiveRecord\Table->insert(Array)
+#2 /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Model.php(758): ActiveRecord\Model->insert(true)
+#3 /home/voyatodo/public_html/site/backend/modules/login/registro.php(46): ActiveRecord\Model->save()
+#4 {main}
+  thrown in /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Connection.php on line 276
+[24-Jun-2016 22:48:15 America/Chicago] PHP Fatal error:  Uncaught exception 'ActiveRecord\DatabaseException' with message '23000, 1452, Cannot add or update a child row: a foreign key constraint fails (`voyatodo_dev`.`vt_tuser`, CONSTRAINT `fk_VT_Tuser_VT_Trol1` FOREIGN KEY (`rol`) REFERENCES `vt_trol` (`pkrol`) ON DELETE NO ACTION ON UPDATE NO ACTION)' in /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Connection.php:276
+Stack trace:
+#0 /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Table.php(317): ActiveRecord\Connection->query('INSERT INTO `vt...', Array)
+#1 /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Model.php(803): ActiveRecord\Table->insert(Array)
+#2 /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Model.php(758): ActiveRecord\Model->insert(true)
+#3 /home/voyatodo/public_html/site/backend/modules/login/registro.php(46): ActiveRecord\Model->save()
+#4 {main}
+  thrown in /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Connection.php on line 276
+[24-Jun-2016 22:48:20 America/Chicago] PHP Fatal error:  Uncaught exception 'ActiveRecord\DatabaseException' with message '23000, 1452, Cannot add or update a child row: a foreign key constraint fails (`voyatodo_dev`.`vt_tuser`, CONSTRAINT `fk_VT_Tuser_VT_Trol1` FOREIGN KEY (`rol`) REFERENCES `vt_trol` (`pkrol`) ON DELETE NO ACTION ON UPDATE NO ACTION)' in /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Connection.php:276
+Stack trace:
+#0 /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Table.php(317): ActiveRecord\Connection->query('INSERT INTO `vt...', Array)
+#1 /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Model.php(803): ActiveRecord\Table->insert(Array)
+#2 /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Model.php(758): ActiveRecord\Model->insert(true)
+#3 /home/voyatodo/public_html/site/backend/modules/login/registro.php(46): ActiveRecord\Model->save()
+#4 {main}
+  thrown in /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Connection.php on line 276
+[24-Jun-2016 22:48:21 America/Chicago] PHP Fatal error:  Uncaught exception 'ActiveRecord\DatabaseException' with message '23000, 1452, Cannot add or update a child row: a foreign key constraint fails (`voyatodo_dev`.`vt_tuser`, CONSTRAINT `fk_VT_Tuser_VT_Trol1` FOREIGN KEY (`rol`) REFERENCES `vt_trol` (`pkrol`) ON DELETE NO ACTION ON UPDATE NO ACTION)' in /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Connection.php:276
+Stack trace:
+#0 /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Table.php(317): ActiveRecord\Connection->query('INSERT INTO `vt...', Array)
+#1 /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Model.php(803): ActiveRecord\Table->insert(Array)
+#2 /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Model.php(758): ActiveRecord\Model->insert(true)
+#3 /home/voyatodo/public_html/site/backend/modules/login/registro.php(46): ActiveRecord\Model->save()
+#4 {main}
+  thrown in /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Connection.php on line 276
+[24-Jun-2016 22:48:22 America/Chicago] PHP Fatal error:  Uncaught exception 'ActiveRecord\DatabaseException' with message '23000, 1452, Cannot add or update a child row: a foreign key constraint fails (`voyatodo_dev`.`vt_tuser`, CONSTRAINT `fk_VT_Tuser_VT_Trol1` FOREIGN KEY (`rol`) REFERENCES `vt_trol` (`pkrol`) ON DELETE NO ACTION ON UPDATE NO ACTION)' in /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Connection.php:276
+Stack trace:
+#0 /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Table.php(317): ActiveRecord\Connection->query('INSERT INTO `vt...', Array)
+#1 /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Model.php(803): ActiveRecord\Table->insert(Array)
+#2 /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Model.php(758): ActiveRecord\Model->insert(true)
+#3 /home/voyatodo/public_html/site/backend/modules/login/registro.php(46): ActiveRecord\Model->save()
+#4 {main}
+  thrown in /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Connection.php on line 276
+[24-Jun-2016 22:48:23 America/Chicago] PHP Fatal error:  Uncaught exception 'ActiveRecord\DatabaseException' with message '23000, 1452, Cannot add or update a child row: a foreign key constraint fails (`voyatodo_dev`.`vt_tuser`, CONSTRAINT `fk_VT_Tuser_VT_Trol1` FOREIGN KEY (`rol`) REFERENCES `vt_trol` (`pkrol`) ON DELETE NO ACTION ON UPDATE NO ACTION)' in /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Connection.php:276
+Stack trace:
+#0 /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Table.php(317): ActiveRecord\Connection->query('INSERT INTO `vt...', Array)
+#1 /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Model.php(803): ActiveRecord\Table->insert(Array)
+#2 /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Model.php(758): ActiveRecord\Model->insert(true)
+#3 /home/voyatodo/public_html/site/backend/modules/login/registro.php(46): ActiveRecord\Model->save()
+#4 {main}
+  thrown in /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Connection.php on line 276
+[24-Jun-2016 22:49:08 America/Chicago] PHP Fatal error:  Uncaught exception 'ActiveRecord\DatabaseException' with message '23000, 1452, Cannot add or update a child row: a foreign key constraint fails (`voyatodo_dev`.`vt_tuser`, CONSTRAINT `fk_VT_Tuser_VT_Trol1` FOREIGN KEY (`rol`) REFERENCES `vt_trol` (`pkrol`) ON DELETE NO ACTION ON UPDATE NO ACTION)' in /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Connection.php:276
+Stack trace:
+#0 /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Table.php(317): ActiveRecord\Connection->query('INSERT INTO `vt...', Array)
+#1 /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Model.php(803): ActiveRecord\Table->insert(Array)
+#2 /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Model.php(758): ActiveRecord\Model->insert(true)
+#3 /home/voyatodo/public_html/site/backend/modules/login/registro.php(46): ActiveRecord\Model->save()
+#4 {main}
+  thrown in /home/voyatodo/public_html/site/backend/orm/php-activerecord/lib/Connection.php on line 276
+[25-Jun-2016 00:10:15 America/Chicago] PHP Fatal error:  Class 'User' not found in /home/voyatodo/public_html/site/backend/modules/login/activation.php on line 11
+[25-Jun-2016 00:10:15 America/Chicago] PHP Fatal error:  Class 'User' not found in /home/voyatodo/public_html/site/backend/modules/login/activation.php on line 11
+[25-Jun-2016 01:04:31 America/Chicago] PHP Fatal error:  Class 'PHPMailer' not found in /home/voyatodo/public_html/site/backend/modules/login/forgot.php on line 12
+[25-Jun-2016 01:05:40 America/Chicago] PHP Fatal error:  Class 'PHPMailer' not found in /home/voyatodo/public_html/site/backend/modules/login/forgot.php on line 12
