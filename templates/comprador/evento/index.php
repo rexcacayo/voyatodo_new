@@ -111,7 +111,7 @@
     <input  type="hidden"  name="FormCreateEvent[status]" ng-model="data.status" value="1">
     <input  type="hidden"  name="FormCreateEvent[fkstatus]" ng-model="data.fkstatus" value="1">
     <input  type="hidden"  name="FormCreateEvent[eventid]" ng-model="data.eventid" value="">
-
+    
     <div class="menu-modal information-modal summary-modal dashboard-modal scrollbar" id="opcion2">
       
       <div class="separator"></div>
@@ -137,7 +137,9 @@
           <label class="lblnegro">FECHA INICO</label>
           <div class="input-group">
             <div class="form-group field-formcreateevent-event_stardate required">
-
+<date-picker ng-model="date" format-date="formatDate" parse-date="parseDate">
+</date-picker>
+<input ng-model="date">
 <div class="input-group date"><input ng-model="data.event_stardate" type="text" id="formcreateevent-event_stardate" class="form-control" name="FormCreateEvent[event_stardate]" ng-model="data.status"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span></div>
 
 <div class="help-block"></div>

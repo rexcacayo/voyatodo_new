@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('appVoyatodo', ['ngResource','ngRoute', 'ngCookies', 'oitozero.ngSweetAlert'])
+angular.module('appVoyatodo', ['ngResource','ngRoute', 'ngCookies', 'oitozero.ngSweetAlert','mp.datePicker'])
         .config(function($routeProvider){
             $routeProvider
             .when('/inicio',
