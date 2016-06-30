@@ -182,6 +182,11 @@ angular.module('appVoyatodo', ['ngResource','ngRoute', 'ngCookies', 'oitozero.ng
                 templateUrl: 'templates/comprador/tienda/index.php',
                 controller: 'CompradorTiendaCrtl'
             })
+            .when('/inicio_comprador',
+            {
+                templateUrl: 'templates/comprador/index.php',
+                controller: 'InicioCompradorCrtl'
+            })
             .when('/miseventos',
             {
                 templateUrl: 'templates/comprador/miseventos/index.php',
