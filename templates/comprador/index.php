@@ -25,7 +25,7 @@
             <li><a href="#/comprador_contact">Contacto</a> </li>
             <li>
               <a href="#"> 
-                {{usuario_email}}              </a>
+                {{usuario_fullname}}              </a>
               <ul class="ul-menu">
                 <li><a href="#/comprador_evento?open=true"> Crear Evento </a> </li>              
                 <li><a href="#/comprador_perfil"> Mi Perfil </a> </li> 

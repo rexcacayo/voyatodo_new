@@ -1,5 +1,5 @@
 <!doctype html>
-  <header class="clearfix"> 
+<header class="clearfix" ng-controller="CompradorContactCrtl"> 
     <div class="navbar navbar-default navbar-top">
       <div class="container-fluid">
         <div class="navbar-header"> 
@@ -23,15 +23,15 @@
             <li><a href="#/comprador_tienda">Tienda</a> </li>
             <li><a href="#/miseventos">Mis eventos</a> </li>
             <li><a href="#/mistickets">Mis entradas</a></li>
-            <li><a href="#/comprador_contact">Contacto</a> </li>
+            <li><a href="#">Contacto</a> </li>
             <li>
               <a href="#"> 
-                Guzbeny Ramirez              </a>
+                {{usuario_fullname}}                </a>
               <ul class="ul-menu">
                 <li><a href="#/comprador_evento?open=true"> Crear Evento </a> </li>              
                 <li><a href="#/comprador_perfil"> Mi Perfil </a> </li> 
                 <li><a href="#/favoritos"> Favoritos </a> </li>
-                <li><a href="#/inicio"> Cerrar sesi&oacute;n </a> </li>              
+                <li><a href="#" ng-click="logout()"> Cerrar sesi&oacute;n </a> </li>              
               </ul>
             </li>
                             <li><div class="fa-circle-menu"></div></li>

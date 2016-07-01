@@ -8,7 +8,7 @@
           <!-- Stat Toggle Nav Link For Mobiles -->
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <i class="fa fa-bars"></i> </button>
           <!-- End Toggle Nav Link For Mobiles --> 
-          <a class="navbar-brand" href="#/inicio"> <img alt="" src="tema/images/logo.png"> </a> </div>
+          <a class="navbar-brand" href="#/inicio_comprador"> <img alt="" src="tema/images/logo.png"> </a> </div>
       </div>
     </div>
   </header>
@@ -1603,10 +1603,11 @@
             <h5 class="txt_gray">ORGANIZADO POR</h5>
             <div class="blog-d-right">
               <div class="blog-d-right-w">
-                <h5>Guzbeny Ramirez </h5>
+                
+                <h5>{{usuario_fullname}}</h5>
                 <div style="background-size:100% 100%;background-image:url('tema');background-repeat: no-repeat;" class="blog-d-right-w-img img_p"></div>
                 <h6>Email</h6>
-                <a target="_blank" href="mailto:guzbenyramirez@gmail.com">guzbenyramirez@gmail.com</a> <br />
+                <a target="_blank" href="mailto:{{usuario_email}}">{{usuario_correo}}</a> <br />
                 <br />
                 <div class="blog-d-right-w-img">
                   <a target="_blank" href="" class="text-facebook"> 

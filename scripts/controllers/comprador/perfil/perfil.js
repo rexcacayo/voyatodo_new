@@ -2,13 +2,16 @@
 
 angular.module('appVoyatodo')
         .controller('CompradorPerfilCrtl',function($scope, $http, SweetAlert, $cookies, $cookieStore){
-            $scope.usuario_email = $cookieStore.get('userEmail');
-            $scope.id_profile = $cookieStore.get('userId');
+            $scope.usuario_fullname = $cookieStore.get('userFullname');
+            $scope.usuario_id = $cookieStore.get('userId');
+     
+        
+        $scope.logout=function(){
             
-            $scope.logout=function(){
-                $cookieStore.remove('userEmail');
-                $cookieStore.remove('userName');
-                $cookieStore.remove('userRol');
-                location.href='#/inicio';
-        };    
+            $cookieStore.remove('userFullname');
+            $cookieStore.remove('userRol');
+            $cookieStore.remove('userEmail');
+            $cookieStore.remove('userId');
+            location.href='#/inicio';
+        }; 
         });
