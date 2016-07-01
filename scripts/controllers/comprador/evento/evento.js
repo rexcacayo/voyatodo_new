@@ -3,7 +3,7 @@
 angular.module('appVoyatodo')
     .controller('CompradorEventoCrtl',function($scope, $http, SweetAlert, $cookies, $cookieStore)
         {
-        
+            $scope.user_id=$cookieStore.get('userId');
             $scope.guardar_evento = function(data)
             {  
                 $("#accion").val("guardar_evento");

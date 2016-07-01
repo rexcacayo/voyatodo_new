@@ -111,6 +111,7 @@
     <input  type="hidden"  name="FormCreateEvent[status]" ng-model="data.status" value="1">
     <input  type="hidden"  name="FormCreateEvent[fkstatus]" ng-model="data.fkstatus" value="1">
     <input  type="hidden"  name="FormCreateEvent[eventid]" ng-model="data.eventid" value="">
+    <input  type="hidden"  name="FormCreateEvent[userid]" ng-model="data.eventid" value="">
     
     <div class="menu-modal information-modal summary-modal dashboard-modal scrollbar" id="opcion2">
       

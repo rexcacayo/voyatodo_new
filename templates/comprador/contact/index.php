@@ -19,11 +19,11 @@
           <!-- End Search --> 
           <!-- Start Navigation List -->
           <ul class="nav navbar-nav navbar-right">
-            <li> <a class="active" href="#/inicio">Inicio</a></li>
+            <li> <a class="active" href="#/inicio_comprador">Inicio</a></li>
             <li><a href="#/comprador_tienda">Tienda</a> </li>
             <li><a href="#/miseventos">Mis eventos</a> </li>
             <li><a href="#/mistickets">Mis entradas</a></li>
-            <li><a href="#">Contacto</a> </li>
+            <li><a href="#/comprador_contact">Contacto</a> </li>
             <li>
               <a href="#"> 
                 {{usuario_fullname}}                </a>
@@ -78,10 +78,11 @@
   <div class="container container-update"> 
     <div class="row">
       <div class="text-center">
-        <form id="contact" action="tema/site/contact" method="post">
-<input type="hidden" name="_csrf" value="LktKXzlLc018PwUJQBw0K3YRCQBaOzIIegkdEUMtKRJ6LhoXXiUdJA==">          <h2 class="ttlwhite">CONTACTANOS</h2>
-          <h3 class="ttlwhite">Desde aqu&iacute; puedes enviarnos mensajes</h3>
-        </div> 
+          <form id="contact">
+            <input type="hidden" name="_csrf" value="LktKXzlLc018PwUJQBw0K3YRCQBaOzIIegkdEUMtKRJ6LhoXXiUdJA=="> 
+            <h2 class="ttlwhite">CONTACTANOS</h2>
+            <h3 class="ttlwhite">Desde aqu&iacute; puedes enviarnos mensajes</h3>
+      </div> 
 
         <div class="col-md-6 col-md-offset-3">
           <div class="logi-box logicontact">
@@ -91,7 +92,7 @@
                 <label>NOMBRE</label>    
                 <div class="form-group field-contact-name required">
 
-<input type="text" id="contact-name" class="form-control" name="Contact[name]" placeholder="Ingrese su nombre">
+                <input type="text" id="contact-name" class="form-control" name="Contact[name]" ng-model="usuario_fullname" placeholder="Ingrese su nombre">
 
 <div class="help-block"></div>
 </div>              </div>
@@ -101,7 +102,7 @@
                 <label>CORREO</label>
                 <div class="form-group field-contact-email required">
 
-<input type="email" id="contact-email" class="form-control event-name" name="Contact[email]" placeholder="jsonde@hotmail.com">
+<input type="email" id="contact-email" class="form-control event-name" name="Contact[email]" placeholder="jsonde@hotmail.com" ng-model="usuario_email">
 
 <div class="help-block"></div>
 </div>              </div>
@@ -111,7 +112,7 @@
                 <label>MENSAJE</label>    
                 <div class="form-group field-contact-body required">
 
-<input type="textarea" id="contact-body" class="form-control event-name" name="Contact[body]" placeholder="Ingrese su mensaje">
+                    <input type="textarea" id="contact-body" class="form-control event-name" name="Contact[body]" ng-model="usuario_mensaje" placeholder="Ingrese su mensaje">
 
 <div class="help-block"></div>
 </div>              </div>
@@ -119,7 +120,7 @@
             <div class="form-group">
               <div class="col-md-12 top">
                 <center>
-                  <a id="message" class="btn btn-yellow btn-block send_message" >ENVIAR MENSAJE</a>
+                    <button  class="btn btn-yellow btn-block" ng-click="enviar_correo()" >ENVIAR MENSAJE</button>
                 </center>
               </div>
             </div>
@@ -195,7 +196,7 @@
     </div>
   </footer>	
   
-  <script type="text/javascript" src="tema/js/script_account.js"></script>
+  
   <!--
 <script src="tema/assets/1162a20a/jquery.js"></script>
 <script src="tema/assets/a2d710a7/yii.js"></script>

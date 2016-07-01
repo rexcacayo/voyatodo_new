@@ -30,7 +30,7 @@
               <ul class="ul-menu">
                 <li><a href="#/comprador_evento?open=true"> Crear Evento </a> </li>              
                 <li><a href="#/comprador_perfil"> Mi Perfil </a> </li> 
-                <li><a href="#"> Favoritos </a> </li>
+                <li><a href="#/favoritos"> Favoritos </a> </li>
                 <li><a href="#" ng-click="logout()"> Cerrar sesi&oacute;n </a> </li>              
               </ul>
             </li>

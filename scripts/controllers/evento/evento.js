@@ -14,7 +14,9 @@ angular.module('appVoyatodo')
             $cookieStore.remove('userEmail');
             $cookieStore.remove('userId');
             location.href='#/inicio';
-        };        
+        };
+        
+        
     });
     
     

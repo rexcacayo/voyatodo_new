@@ -72,7 +72,7 @@
       <div class="slider-content">
         <form id="form-update" action="#/perfil" method="post" enctype="multipart/form-data">
 <input type="hidden" name="_csrf" value="bDBrU2p6UXk.RCQFEy0WHzRqKAwJChA8OHI8HRAcCyY4VTsbDRQ/EA==">          <div class="col-md-12 text-center hitop">
-            <div class="ttlperfil">Guzbeny Ramirez</div>                                 
+            <div class="ttlperfil">{{usuario_fullname}}</div>                                 
           </div>
           <div class="col-lg-2 col-lg-offset-5 col-sm-2 col-sm-offset-5 col-xs-12">
             <center>

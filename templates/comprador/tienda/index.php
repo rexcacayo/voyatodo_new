@@ -20,7 +20,7 @@
           <!-- Start Navigation List -->
           <ul class="nav navbar-nav navbar-right">
             <li> <a class="active" href="#/inicio_comprador">Inicio</a></li>
-            <li><a href="#">Tienda</a> </li>
+            <li><a href="#comprador_tienda">Tienda</a> </li>
             <li><a href="#/miseventos">Mis eventos</a> </li>
             <li><a href="#/mistickets">Mis entradas</a></li>
             <li><a href="#/comprador_contact">Contacto</a> </li>
