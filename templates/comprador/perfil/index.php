@@ -6,7 +6,7 @@
           <!-- Stat Toggle Nav Link For Mobiles -->
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <i class="fa fa-bars"></i> </button>
           <!-- End Toggle Nav Link For Mobiles --> 
-          <a class="navbar-brand" href="#/inicio"> <img alt="" src="tema/images/logo.png"> </a> </div>
+          <a class="navbar-brand" href="#/inicio_comprador"> <img alt="" src="tema/images/logo.png"> </a> </div>
         <div class="navbar-collapse collapse mn"> 
           <!-- Stat Search -->
           <div class="search-side"> <a class="show-search"><i class="fa fa-search"></i></a>
@@ -102,7 +102,7 @@
 </section>
 
 <div class="container-fluid">
-  <div class="col-md-12 col-sm-12 big-title text-center">
+    <div class="col-md-12 col-sm-12 big-title text-center" ng-init="Get_Info()">
     <h1 class="">DATOS PERSONALES</h1> <p class="help-block">Informaci&oacute;n b&aacute;sica de la cuenta</p>
   </div>
 

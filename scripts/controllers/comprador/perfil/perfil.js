@@ -9,7 +9,7 @@ angular.module('appVoyatodo')
             
            $scope.Get_Info=function(){
                var id = $scope.usuario_id;
-               $http.post("backend/modules/comprador/perfil/perfil.php",id)
+               $http.post("backend/modules/comprador/perfil/datos_perfil.php?user_id="+id)
                  .success(function(data) {
                      
                       if(data.result[0].personal === "success"){
@@ -34,7 +34,7 @@ angular.module('appVoyatodo')
                 var id = $scope.usuario_id;
                 
                 console.log(data);
-                $http.post("backend/modules/comprador/perfil/datos_personales.php/"+id, data)
+                $http.post("backend/modules/comprador/perfil/datos_personales.php?user_id="+id, data)
                  .success(function(data) {
                      
                       if(data.result[0].personal === "success"){
@@ -46,7 +46,7 @@ angular.module('appVoyatodo')
             $scope.datos_bancarios=function(dataB){
                 console.log(dataB);
                  var id = $scope.usuario_id;
-                 $http.post("backend/modules/comprador/perfil/datos_bancarios.php/"+id, dataB)
+                 $http.post("backend/modules/comprador/perfil/datos_bancarios.php?user_id="+id, dataB)
                  .success(function(dataB) {
                      
                       if(dataB.result[0].banco === "success"){
@@ -59,7 +59,7 @@ angular.module('appVoyatodo')
             $scope.datos_contrasena=function(dataC){
                  var id = $scope.usuario_id;
                 console.log(dataC);
-                $http.post("backend/modules/comprador/perfil/datos_contrasena.php/"+id,dataC)
+                $http.post("backend/modules/comprador/perfil/datos_contrasena.php?user_id="+id,dataC)
                  .success(function(dataC) {
                      
                       if(data.result[0].contrasena === "success"){
@@ -72,7 +72,7 @@ angular.module('appVoyatodo')
              $scope.data_network=function(dataS){
                  var id = $scope.usuario_id;
                 console.log(dataS);
-                $http.post("backend/modules/comprador/perfil/datos_network.php/"+id, dataS)
+                $http.post("backend/modules/comprador/perfil/datos_network.php?user_id="+id, dataS)
                  .success(function(dataS) {
                      
                       if(dataS.result[0].social === "success"){
