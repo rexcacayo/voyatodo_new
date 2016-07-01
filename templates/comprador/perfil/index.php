@@ -121,10 +121,12 @@
         <div id="collapse3" class="panel-collapse collapse in">
           <div class="panel-body">
             <div class="form-group">
+                
                <label class="col-md-12 control-label">NOMBRE</label>
                <div class="col-md-12">
                 <div class="form-group field-formupdateinformation-username required">
 
+                    
 <input type="text" id="formupdateinformation-username" class="form-control" name="FormUpdateInformation[username]" ng-model="data.usuario_nombre" />
 <div class="help-block"></div>
 </div>               </div>

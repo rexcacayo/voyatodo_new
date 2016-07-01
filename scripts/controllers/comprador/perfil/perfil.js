@@ -6,6 +6,7 @@ angular.module('appVoyatodo')
             $scope.usuario_id = ($cookieStore.get('userId'));
             $scope.usuario_email = $cookieStore.get('userEmail');
             
+            
            $scope.Get_Info=function(){
                var id = $scope.usuario_id;
                $http.post("backend/modules/comprador/perfil/perfil.php",id)
@@ -32,7 +33,8 @@ angular.module('appVoyatodo')
             $scope.datos_personales=function(data){
                 var id = $scope.usuario_id;
                 
-                $http.post("backend/modules/comprador/perfil/datos_personales.php", data,id)
+                console.log(data);
+                $http.post("backend/modules/comprador/perfil/datos_personales.php/"+id, data)
                  .success(function(data) {
                      
                       if(data.result[0].personal === "success"){
