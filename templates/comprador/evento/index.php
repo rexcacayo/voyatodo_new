@@ -137,10 +137,12 @@
           <label class="lblnegro">FECHA INICO</label>
           <div class="input-group">
             <div class="form-group field-formcreateevent-event_stardate required">
-<date-picker ng-model="date" format-date="formatDate" parse-date="parseDate">
+<div ng-init="isReplyFormOpen = false" ng-show="isReplyFormOpen" id="replyForm">
+<date-picker ng-model="data.event_stardate">
 </date-picker>
-<input ng-model="date">
-<div class="input-group date"><input ng-model="data.event_stardate" type="text" id="formcreateevent-event_stardate" class="form-control" name="FormCreateEvent[event_stardate]" ng-model="data.status"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span></div>
+
+</div>
+<div class="input-group date"><input ng-model="data.event_stardate" type="text" id="formcreateevent-event_stardate" class="form-control" name="FormCreateEvent[event_stardate]" ng-model="data.status"><span class="input-group-addon" ng-click="isReplyFormOpen = !isReplyFormOpen"><i class="glyphicon glyphicon-calendar"></i></span></div>
 
 <div class="help-block"></div>
 </div>          </div> 
@@ -164,8 +166,12 @@
           <label class="lblnegro">FECHA FINAL</label>
           <div class="input-group">
               <div class="form-group field-formcreateevent-event_enddate required">
+<div ng-init="isReplyFormOpenF = false" ng-show="isReplyFormOpenF" id="replyForm">
+<date-picker ng-model="data.event_enddate">
+</date-picker>
 
-<div class="input-group date"><input ng-model="data.event_enddate" type="text" id="formcreateevent-event_enddate" class="form-control" name="FormCreateEvent[event_enddate]" ng-model="data.status"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span></div>
+</div>
+<div class="input-group date"><input ng-model="data.event_enddate" type="text" id="formcreateevent-event_enddate" class="form-control" name="FormCreateEvent[event_enddate]" ng-model="data.status"><span class="input-group-addon" ng-click="isReplyFormOpenF = !isReplyFormOpenF"><i class="glyphicon glyphicon-calendar"></i></span></div>
 
 <div class="help-block"></div>
 </div>          </div> 
