@@ -13,7 +13,8 @@ if ($data):
         if ($objUser->activate == 1):
             $result .= '{';
             $result .= '"login":"success",';
-            $result .= '"username":"' . $objUser->username . '",';
+			$result .= '"userid":"' . $objUser->id . '",';
+			$result .= '"fullname":"' . $objUser->username .' '.$objUser->last_name. '",';
             $result .= '"rol":"' . $objUser->rol . '",';
             $result .= '"email":"' . $objUser->email . '"';
             $result .= '}';
