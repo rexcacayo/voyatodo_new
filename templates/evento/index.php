@@ -27,8 +27,8 @@
               <a href="#"> 
                 {{usuario_email}}      </a>
               <ul class="ul-menu">
-                <li><a href="#/prefil/{{usuario_email}}"> Mi Perfil </a> </li>
-                <li><a href="#" ng-click="logout()">Cerrar sesi&oacute;n </a> </li>              
+                <li><a href=""> Mi Perfil </a> </li>
+                <li><a href="#">Cerrar sesi&oacute;n </a> </li>              
               </ul>
             </li>
                             <li><div class="fa-circle-menu"></div></li>

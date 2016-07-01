@@ -25,12 +25,14 @@ angular.module('appVoyatodo')
                  console.log(datas.result[0].login);  
                    
                  if(datas.result[0].login === "success"){
-                  console.log(datas);
+                  
                   $cookieStore.put('userName', datas.result[0].username);
                   $cookieStore.put('userRol', datas.result[0].rol);
                   $cookieStore.put('userEmail', datas.result[0].email);
+                  
+                         
                   if(datas.result[0].rol == 3){
-                    location.href='#/evento';
+                    location.href='#/inicio_comprador';
                   }
                   if(datas.result[0].rol == 1){
                     location.href='#/';

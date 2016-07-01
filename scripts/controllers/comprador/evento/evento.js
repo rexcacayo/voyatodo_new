@@ -1,11 +1,9 @@
 'use strict';
 
 angular.module('appVoyatodo')
-    .controller
-    (
-        'CompradorEventoCrtl',
-        function($scope)//, $http, SweetAlert, $cookies, $cookieStore)
+    .controller('CompradorEventoCrtl',function($scope, $http, SweetAlert, $cookies, $cookieStore)
         {
+        
             $scope.guardar_evento = function(data)
             {  
                 $("#accion").val("guardar_evento");
