@@ -25,7 +25,7 @@
             <li><a href="#/mistickets">Mis entradas</a></li>
             <li><a href="#/comprador_contact">Contacto</a> </li>
             <li>
-              <a href="#"> 
+              <a href="javasciprt:void(0)"> 
                 {{usuario_fullname}}                </a>
               <ul class="ul-menu">
                 <li><a href="#/comprador_evento?open=true"> Crear Evento </a> </li>              
@@ -52,11 +52,11 @@
         </li>
         <li> <a href="#/mistickets">MIS TICKETS</a>
         </li>
-        <li> <a href="#/comprador_contact">CONTACTO</a>
+        <li> <a href="javasciprt:void(0)">CONTACTO</a>
         </li>
         <li> 
-          <a href="">  <li>
-            Guzbeny Ramirez          </a>
+          <a href="javasciprt:void(0)">  <li>
+            {{usuario_fullname}}            </a>
           <ul>
             <li><a href="#/comprador_evento"> Crear Evento </a> </li>              
             <li><a href="#/perfil"> Mi Perfil </a> </li>   
@@ -202,3 +202,4 @@
 <script src="tema/assets/a2d710a7/yii.js"></script>
 <script src="tema/assets/a2d710a7/yii.validation.js"></script>
   -->
+  <script type="text/javascript" src="tema/js/script_account.js"></script>

@@ -24,7 +24,7 @@
             <li><a href="#/mistickets">Mis entradas</a></li>
             <li><a href="#/comprador_contact">Contacto</a> </li>
             <li>
-              <a href="#"> 
+              <a href="javasciprt:void(0)"> 
                 {{usuario_fullname}}              </a>
               <ul class="ul-menu">
                 <li><a href="#/comprador_evento?open=true"> Crear Evento </a> </li>              

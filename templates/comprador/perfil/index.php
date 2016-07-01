@@ -25,11 +25,11 @@
             <li><a href="#/mistickets">Mis entradas</a></li>
             <li><a href="#/comprador_contact">Contacto</a> </li>
             <li>
-              <a href="#"> 
+              <a href="javasciprt:void(0)"> 
                 {{usuario_fullname}}                </a>
               <ul class="ul-menu">
                 <li><a href="#/comprador_evento?open=true"> Crear Evento </a> </li>              
-                <li><a href="#/comprador_perfil"> Mi Perfil </a> </li> 
+                <li><a href="javasciprt:void(0)"> Mi Perfil </a> </li> 
                 <li><a href="#/favoritos"> Favoritos </a> </li>
                 <li><a href="#" ng-click="logout()"> Cerrar sesi&oacute;n </a> </li>              
               </ul>
@@ -59,7 +59,7 @@
             {{usuario_fullname}}         </a>
           <ul>
             <li><a href="#/comprador_evento"> Crear Evento </a> </li>              
-            <li><a href="#/comprador_perfil"> Mi Perfil </a> </li>   
+            <li><a href="javasciprt:void(0)"> Mi Perfil </a> </li>   
             <li><a href="#/favoritos"> Favoritos </a> </li>           
             <li><a href="#/inicio"> Cerrar sesi&oacute;n </a> </li>              
           </ul>

@@ -170,8 +170,10 @@
          <!-- <img src="web/images/designby.png"> -->
       </div>
     </div>
-  </footer>	
+  </footer>
+   
 	<!--
 <script src="web/assets/1162a20a/jquery.js"></script>
 <script src="web/assets/a2d710a7/yii.js"></script>
 <script src="web/assets/a2d710a7/yii.validation.js"></script>-->
+        <script type="text/javascript" src="tema/js/script_account.js"></script>
