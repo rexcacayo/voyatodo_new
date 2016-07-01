@@ -46,7 +46,7 @@ angular.module('appVoyatodo')
             $scope.datos_bancarios=function(dataB){
                 console.log(dataB);
                  var id = $scope.usuario_id;
-                 $http.post("backend/modules/comprador/perfil/datos_bancarios.php", dataB, id)
+                 $http.post("backend/modules/comprador/perfil/datos_bancarios.php/"+id, dataB)
                  .success(function(dataB) {
                      
                       if(dataB.result[0].banco === "success"){
@@ -56,11 +56,11 @@ angular.module('appVoyatodo')
                     });
             };
             
-            $scope.datos_contrasena=function(dataC,id){
+            $scope.datos_contrasena=function(dataC){
                  var id = $scope.usuario_id;
                 console.log(dataC);
-                $http.post("backend/modules/comprador/perfil/datos_contrasena.php", data)
-                 .success(function(data) {
+                $http.post("backend/modules/comprador/perfil/datos_contrasena.php/"+id,dataC)
+                 .success(function(dataC) {
                      
                       if(data.result[0].contrasena === "success"){
                             SweetAlert.swal("Su Información fue actualizada con exito");
@@ -72,7 +72,7 @@ angular.module('appVoyatodo')
              $scope.data_network=function(dataS){
                  var id = $scope.usuario_id;
                 console.log(dataS);
-                $http.post("backend/modules/comprador/perfil/datos_network.php", dataS,id)
+                $http.post("backend/modules/comprador/perfil/datos_network.php/"+id, dataS)
                  .success(function(dataS) {
                      
                       if(dataS.result[0].social === "success"){
