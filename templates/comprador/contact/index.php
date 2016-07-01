@@ -23,7 +23,7 @@
             <li><a href="#/comprador_tienda">Tienda</a> </li>
             <li><a href="#/miseventos">Mis eventos</a> </li>
             <li><a href="#/mistickets">Mis entradas</a></li>
-            <li><a href="#/comprador_contact">Contacto</a> </li>
+            <li><a href="javasciprt:void(0)">Contacto</a> </li>
             <li>
               <a href="javasciprt:void(0)"> 
                 {{usuario_fullname}}                </a>

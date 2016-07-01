@@ -11,7 +11,7 @@
           <!-- Stat Search -->
           <div class="search-side"> <a class="show-search"><i class="fa fa-search"></i></a>
             <div class="search-form">
-              <form autocomplete="off" role="search" method="post" class="searchform" action="#">
+              <form autocomplete="off" role="search" method="post" class="searchform">
                 <input type="text" value="" name="s" id="s" placeholder="Search the site...">
               </form>
             </div>
@@ -70,7 +70,7 @@
   <div id="main-slide" class="carousel00 slide slide_galery" data-ride="carousel">
     <div class="item active"> <img class="img-responsive02 heigtht_img" src="tema/images/inner-banner01.jpg" alt="slider">
       <div class="slider-content">
-        <form id="form-update" action="#/perfil" method="post" enctype="multipart/form-data">
+          <form id="form-update" enctype="multipart/form-data" >
 <input type="hidden" name="_csrf" value="bDBrU2p6UXk.RCQFEy0WHzRqKAwJChA8OHI8HRAcCyY4VTsbDRQ/EA==">          <div class="col-md-12 text-center hitop">
             <div class="ttlperfil">{{usuario_fullname}}</div>                                 
           </div>
@@ -84,13 +84,16 @@
             <label for="files" data-role="button" class="btn btn_green top" data-inline="true" data-mini="true" data-corners="false">Cambiar foto</label>
             <div class="form-group field-formupdateinformation-user_photo">
 
-<input type="hidden" name="FormUpdateInformation[user_photo]" value=""><input type="file" id="formupdateinformation-user_photo" class="change_photo" name="FormUpdateInformation[user_photo]" accept="image/*" style="margin-top: -35px; margin-left: 40px;">
+<input type="hidden" name="FormUpdateInformation[user_photo]" value="">
+<input type="file" id="formupdateinformation-user_photo" class="change_photo" name="FormUpdateInformation[user_photo]" accept="image/*" style="margin-top: -35px; margin-left: 40px;" ng-model="data.usuario_foto">
 
 <div class="help-block"></div>
 </div>          </div>
           <div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
                         <input id="input-21d" value="0" type="number" readonly="true" class="rating" min=0 max=5 step=1 data-size="xs">          
           </div>
+            <!--<button ng-click="foto_upload(data)">cambiar</button>-->
+        </form>
     </div>
   </div>
 </section>
@@ -110,6 +113,8 @@
             </a>
           </h4>
         </div>
+       <form name="InfoPersonal" novalidate>
+
         <div id="collapse3" class="panel-collapse collapse in">
           <div class="panel-body">
             <div class="form-group">
@@ -117,8 +122,7 @@
                <div class="col-md-12">
                 <div class="form-group field-formupdateinformation-username required">
 
-<input type="text" id="formupdateinformation-username" class="form-control" name="FormUpdateInformation[username]" value="Guzbeny">
-
+<input type="text" id="formupdateinformation-username" class="form-control" name="FormUpdateInformation[username]" ng-model="data.usuario_nombre" />
 <div class="help-block"></div>
 </div>               </div>
             </div><!--form-group-->
@@ -129,7 +133,7 @@
              <div class="col-md-12">
               <div class="form-group field-formupdateinformation-last_name">
 
-<input type="text" id="formupdateinformation-last_name" class="form-control" name="FormUpdateInformation[last_name]" value="Ramirez">
+<input type="text" id="formupdateinformation-last_name" class="form-control" name="FormUpdateInformation[last_name]" ng-model="data.usuario_apellido">
 
 <div class="help-block"></div>
 </div>             </div>
@@ -149,7 +153,7 @@
               <div class="col-md-12">
                 <div class="form-group field-formupdateinformation-user_phone1">
 
-<input type="text" id="formupdateinformation-user_phone1" class="form-control" name="FormUpdateInformation[user_phone1]">
+<input type="text" id="formupdateinformation-user_phone1" class="form-control" ng-model="data.usuario_telf1" name="FormUpdateInformation[user_phone1]">
 
 <div class="help-block"></div>
 </div>              </div>
@@ -161,7 +165,7 @@
               <div class="col-md-12">
                 <div class="form-group field-formupdateinformation-user_phone2">
 
-<input type="text" id="formupdateinformation-user_phone2" class="form-control" name="FormUpdateInformation[user_phone2]">
+<input type="text" id="formupdateinformation-user_phone2" class="form-control" ng-model="data.usuario_telf2" name="FormUpdateInformation[user_phone2]">
 
 <div class="help-block"></div>
 </div>              </div>
@@ -170,18 +174,19 @@
           <div class="panel-body">
             <div class="row">
               <div class="col-md-12">
-                <a class="btn btn_sm btn-block save_information">ACTUALIZAR INFORMACI&Oacute;N</a>
+                <a class="btn btn_sm btn-block" ng-click="datos_personales(data)" >ACTUALIZAR INFORMACI&Oacute;N</a>
               </div>
             </div>
           </div>
         </div>
+       </form>
       </div>
     </div>
   </div>  
-  </form> 
-  <div class="col-md-4 col-xs-12 col-sm-6">
-    <form id="form-update-bank" action="#/perfil" method="post">
-<input type="hidden" name="_csrf" value="bDBrU2p6UXk.RCQFEy0WHzRqKAwJChA8OHI8HRAcCyY4VTsbDRQ/EA==">    <div class="panel-group" id="accordion1">
+    <form name="InfoBanco" novalidate>  
+<div class="col-md-4 col-xs-12 col-sm-6">
+<input type="hidden" name="_csrf" value="bDBrU2p6UXk.RCQFEy0WHzRqKAwJChA8OHI8HRAcCyY4VTsbDRQ/EA==">    
+<div class="panel-group" id="accordion1">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4 class="panel-title">
@@ -197,7 +202,7 @@
                <div class="col-md-12">
                                <div class="form-group field-formupdatebank-fkbank required">
 
-<select id="formupdatebank-fkbank" class="form-control fkbank" name="FormUpdateBank[fkbank]">
+<select id="formupdatebank-fkbank" class="form-control fkbank" name="FormUpdateBank[fkbank]" ng-model="dataB.usuario_banco">
 <option value=""></option>
 <option value="1">BANCOLOMBIA</option>
 <option value="2">BANCO DE BOGOTÁ</option>
@@ -234,7 +239,7 @@
              <div class="col-md-12">
               <div class="form-group field-formupdatebank-userbank_titularname required">
 
-<input type="text" id="formupdatebank-userbank_titularname" class="form-control" name="FormUpdateBank[userbank_titularname]" value="">
+<input type="text" id="formupdatebank-userbank_titularname" class="form-control" name="FormUpdateBank[userbank_titularname]" ng-model="dataB.usuario_banco_nombretitular">
 
 <div class="help-block"></div>
 </div>             </div>
@@ -246,7 +251,7 @@
               <div class="col-md-12">
                 <div class="form-group field-formupdatebank-userbank_identification required">
 
-<input type="text" id="formupdatebank-userbank_identification" class="form-control" name="FormUpdateBank[userbank_identification]" value="">
+<input type="text" id="formupdatebank-userbank_identification" class="form-control" name="FormUpdateBank[userbank_identification]" ng-model="dataB.usuario_banco_cedula">
 
 <div class="help-block"></div>
 </div>              </div>
@@ -258,7 +263,7 @@
               <div class="col-md-12">
                 <div class="form-group field-formupdatebank-userbank_numberacount required">
 
-<input type="text" id="formupdatebank-userbank_numberacount" class="form-control" name="FormUpdateBank[userbank_numberacount]" value="">
+<input type="text" id="formupdatebank-userbank_numberacount" class="form-control" name="FormUpdateBank[userbank_numberacount]" ng-model="dataB.usuario_banco_numerocuenta">
 
 <div class="help-block"></div>
 </div>              </div>
@@ -270,7 +275,7 @@
                 <div class="col-md-12">
                                     <div class="form-group field-formupdatebank-userbank_tipeacount required">
 
-<select id="formupdatebank-userbank_tipeacount" class="form-control" name="FormUpdateBank[userbank_tipeacount]">
+<select id="formupdatebank-userbank_tipeacount" class="form-control" name="FormUpdateBank[userbank_tipeacount]" ng-model="dataB.usuario_banco_tipocuenta">
 <option value="">Seleccione una opción</option>
 <option value="Corriente">Corriente</option>
 <option value="Crédito">Crédito</option>
@@ -284,17 +289,18 @@
           <div class="panel-body">
             <div class="row">
               <div class="col-md-12">
-                <a class="btn btn_sm btn-block update_acount_bank_btn">ACTUALIZAR CUENTA</a>
+                <a class="btn btn_sm btn-block" ng-click="datos_bancarios(dataB)">ACTUALIZAR CUENTA</a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    </form> 
-  </div>  
+  </div> 
+</form>   
   <div class="col-md-4 col-lg-3 col-sm-6 col-xs-12">
     <div class="panel-group" id="accordion">
+        <form name="InfoPass" novalidate>
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4 class="panel-title">
@@ -308,7 +314,7 @@
             <div class="form-group">
               <label class="col-md-12 control-label">CONTRASE&Ntilde;A</label>
               <div class="col-md-12">
-                <input type="password" class="form-control password" placeholder="•••••••••••••••••••••">
+                <input type="password" class="form-control password" placeholder="•••••••••••••••••••••" ng-model="dataC.usuario_pass">
                 <div id="error1" style="color:#A94452;"></div>
               </div>
             </div>
@@ -317,7 +323,7 @@
             <div class="form-group">
               <label class="col-md-12 control-label">CONFIRMAR CONTRASE&Ntilde;A</label>
               <div class="col-md-12">
-                <input type="password" class="form-control password_repeat" placeholder="•••••••••••••••••••••">
+                <input type="password" class="form-control password_repeat" placeholder="•••••••••••••••••••••" ng-model="dataC.usuario_confpass">
                 <div id="error2" style="color:#A94452;"></div>
               </div>
             </div>
@@ -325,26 +331,27 @@
           <div class="panel-body">
             <div class="row">
               <div class="col-md-12">
-                <a class="btn btn_sm btn-block save_password">ACTUALIZAR CONTRASE&Ntilde;A</a>
+                <a class="btn btn_sm btn-block" ng-click="datos_contrasena(dataC)">ACTUALIZAR CONTRASE&Ntilde;A</a>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </form>
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-              A&Ntilde;ADIR REDES SOCIALES
+              <a href="javascript:void(0)" ng-click="isReplyFormOpen = !isReplyFormOpen">A&Ntilde;ADIR REDES SOCIALES</a>
             </a>
           </h4>
         </div>
-        <div id="collapse2" class="panel-collapse collapse">
+          <div ng-init="isReplyFormOpen = false" ng-show="isReplyFormOpen" id="replyForm">
+              <form name="NetSocial">   
           <div class="panel-body">
             <div class="form-group">
               <label class="col-md-12 control-label">FACEBOOK</label>
               <div class="col-md-12">
-                <input type="text" value="" class="form-control txt_facebook">
+                <input type="text" value="" class="form-control txt_facebook" ng-model="dataS.usuario_facebook">
               </div>
             </div>
           </div>
@@ -352,7 +359,7 @@
             <div class="form-group">
               <label class="col-md-12 control-label">TWITTER</label>
               <div class="col-md-12">
-                <input type="text" value="" class="form-control txt_twitter">
+                <input type="text" value="" class="form-control txt_twitter" ng-model="dataS.usuario_twitter">
               </div>
             </div>
           </div>
@@ -360,7 +367,7 @@
             <div class="form-group">
               <label class="col-md-12 control-label">GOOGLE+</label>
               <div class="col-md-12">
-                <input type="text" value="" class="form-control txt_google">
+                <input type="text" value="" class="form-control txt_google" ng-model="dataS.usuario_google">
               </div>
             </div>
           </div>
@@ -368,7 +375,7 @@
             <div class="form-group">
               <label class="col-md-12 control-label">YOUTUBE</label>
               <div class="col-md-12">
-                <input type="text" value="" class="form-control txt_youtube">
+                <input type="text" value="" class="form-control txt_youtube" ng-model="dataS.usuario_youtube">
               </div>
             </div>
           </div>
@@ -376,10 +383,11 @@
             <div class="form-group">
               <div class="col-md-12">
                 <div id="error3" style="color:#A94452;"></div>
-                <a class="btn btn_sm btn-block save_social">GUARDAR</a>
+                <a class="btn btn_sm btn-block" ng-click="data_network(dataS)">GUARDAR</a>
               </div>
             </div><!--form-group-->
           </div>
+         </form>        
         </div>
       </div>
     </div>

@@ -225,6 +225,6 @@ angular.module('appVoyatodo', ['ngResource','ngRoute', 'ngCookies', 'oitozero.ng
             .otherwise({
                 redirectTo: '/inicio'
             });
-        })
+        });
            
            
