@@ -70,6 +70,9 @@
   <div id="main-slide" class="carousel00 slide slide_galery" data-ride="carousel">
     <div class="item active"> <img class="img-responsive02 heigtht_img" src="tema/images/inner-banner01.jpg" alt="slider">
       <div class="slider-content">
+          <form name="InicioData">
+            <!--aqui consulta-->     
+          </form>
           <form id="form-update" enctype="multipart/form-data" >
 <input type="hidden" name="_csrf" value="bDBrU2p6UXk.RCQFEy0WHzRqKAwJChA8OHI8HRAcCyY4VTsbDRQ/EA==">          <div class="col-md-12 text-center hitop">
             <div class="ttlperfil">{{usuario_fullname}}</div>                                 
@@ -114,7 +117,7 @@
           </h4>
         </div>
        <form name="InfoPersonal" novalidate>
-
+           
         <div id="collapse3" class="panel-collapse collapse in">
           <div class="panel-body">
             <div class="form-group">
