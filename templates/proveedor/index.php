@@ -213,7 +213,7 @@
 		</script> 
 		<script type="text/javascript" src="tema/js/script.js"></script>
 	</div>
-<script src="tema/assets/1162a20a/jquery.js"></script>
+<script src="tema/js/jquery-2.1.4.min.js"></script>
 
 <!--
 <script src="tema/assets/a2d710a7/yii.js"></script>

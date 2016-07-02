@@ -106,7 +106,7 @@
   <form id="save-form" action="tema/account/guardar" method="post" enctype="multipart/form-data">      
   </form>
 
-<form id="form-create" action="tema/account/evento?open=true" method="post" enctype="multipart/form-data">
+<form id="form-create"  enctype="multipart/form-data">
     <input  type="hidden" name="_csrf" ng-model="data._csrf" value="R2NVNTBhTVcVFxpjSTYKMR85FmpTEQwSEyECe0oHFwgTBgV9Vw8jPg==">    
     <input  type="hidden"  name="FormCreateEvent[status]" ng-model="data.status" value="1">
     <input  type="hidden"  name="FormCreateEvent[fkstatus]" ng-model="data.fkstatus" value="1">
@@ -149,22 +149,17 @@
 </div>          </div> 
         </div>
         <div class="col-md-6 col-sm-6 col-xs-6 div_fecha">
-          <label class="lblnegro">HORA INICIO</label>
-          <div class="input-group clockpicker" data-donetext="Listo">
-            <div class="form-group field-formcreateevent-event_starthour required">
-
-<input ng-model="data.event_starthour" type="text" id="formcreateevent-event_starthour" class="form-control event-starthour" name="FormCreateEvent[event_starthour]" ng-model="data.status">
-
-<div class="help-block"></div>
-</div>            <span class="input-group-addon">
-              <span class="glyphicon glyphicon-time"></span>
-            </span>
-          </div>
+            <label class="lblnegro">HORA INICIAL</label>
+            <kk-timepicker settings="ctrl.settings1" ng-disabled="ctrl.disabled" ng-model="data.start_time"></kk-timepicker>    
+                    
+                   
+                
         </div>
       </div>
       <div class="row">
         <div class="col-md-6 col-sm-6 col-xs-6">
           <label class="lblnegro">FECHA FINAL</label>
+          
           <div class="input-group">
               <div class="form-group field-formcreateevent-event_enddate required">
 <div ng-init="isReplyFormOpenF = false" ng-show="isReplyFormOpenF" id="replyForm">
@@ -179,16 +174,7 @@
         </div>
         <div class="col-md-6 col-sm-6 col-xs-6 div_fecha">
           <label class="lblnegro">HORA FINAL</label>
-          <div class="input-group clockpicker" data-donetext="Listo">
-            <div class="form-group field-formcreateevent-event_endhour required">
-
-<input ng-model="data.event_endhour" type="text" id="formcreateevent-event_endhour" class="form-control event-endhour" name="FormCreateEvent[event_endhour]">
-
-<div class="help-block"></div>
-</div>            <span class="input-group-addon">
-              <span class="glyphicon glyphicon-time"></span>
-            </span>
-          </div>
+          <kk-timepicker settings="ctrl.settings2" ng-disabled="ctrl.disabled" ng-model="data_end_time"></kk-timepicker>
         </div>                                        
       </div>
 
@@ -1676,11 +1662,6 @@
 
 
 
-<script src="tema/assets/1162a20a/jquery.js"></script>
-
-<script src="tema/assets/1fae2c8b/js/bootstrap.js"></script>
-<script src="tema/assets/4b276f76/js/bootstrap-datepicker.js"></script>
-<script src="tema/assets/2168c2cb/bootstrap-datepicker.es.min.js"></script>
 
 
 
