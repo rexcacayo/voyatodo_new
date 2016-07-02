@@ -3,7 +3,7 @@
 angular.module('appVoyatodo')
     .controller('CompradorEventoCrtl',function($scope, $http, SweetAlert, $cookies, $cookieStore)
         {
-            $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
+            
             $scope.user_id=$cookieStore.get('userId');
             $scope.guardar_evento = function(data)
             {  

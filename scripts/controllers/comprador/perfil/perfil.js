@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('appVoyatodo')
-        .controller('CompradorPerfilCrtl',function($scope, $http, SweetAlert, $cookies, $cookieStore){
+        .controller('CompradorPerfilCrtl',function($scope, $http, SweetAlert, $cookies, $cookieStore, fileUpload){
             $scope.usuario_fullname = $cookieStore.get('userFullname');
             $scope.usuario_id = ($cookieStore.get('userId'));
             $scope.usuario_email = $cookieStore.get('userEmail');
@@ -28,9 +28,14 @@ angular.module('appVoyatodo')
                 location.href='#/inicio';
             };
             
-            $scope.foto_upload=function(data){
-                console.log(data);
+             $scope.uploadFile = function(){
+                var file = $scope.myFile;
+                console.log('file is ' );
+                console.dir(file);
+                var uploadUrl = "tmp";
+                fileUpload.uploadFileToUrl(file, uploadUrl);
             };
+            
             $scope.datos_personales=function(data){
                 var id = $scope.usuario_id;
                 
