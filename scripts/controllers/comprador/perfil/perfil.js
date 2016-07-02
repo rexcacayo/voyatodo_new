@@ -10,13 +10,14 @@ angular.module('appVoyatodo')
            $scope.Get_Info=function(){
                var id = $scope.usuario_id;
                $http.post("backend/modules/comprador/perfil/datos_perfil.php?user_id="+id)
-                 .success(function(data) {
-                     
-                      if(data.result[0].personal === "success"){
-                            
-                        }
-                    });
-               
+                .success(function(data) {
+                    console.log(data);
+                if(data.result[0].perfil === "succes"){
+                    $scope.data=data.result[0];   
+                    $scope.dataB=data.result[1];
+                    $scope.dataS=data.result[2];    
+                }
+                });
             };
         
             $scope.logout=function(){
@@ -49,7 +50,7 @@ angular.module('appVoyatodo')
                  $http.post("backend/modules/comprador/perfil/datos_bancarios.php?user_id="+id, dataB)
                  .success(function(dataB) {
                      
-                      if(dataB.result[0].banco === "success"){
+                    if(data.result[1].banco === "success"){
                             SweetAlert.swal("Su Información fue actualizada con exito");
                             location.href='#/inicio_comprador';
                         }
@@ -73,9 +74,9 @@ angular.module('appVoyatodo')
                  var id = $scope.usuario_id;
                 console.log(dataS);
                 $http.post("backend/modules/comprador/perfil/datos_network.php?user_id="+id, dataS)
-                 .success(function(dataS) {
-                     
-                      if(dataS.result[0].social === "success"){
+                 .success(function(data) {
+                  console.log(data);   
+                      if(data.result[0].network === "success"){
                             SweetAlert.swal("Su Información fue actualizada con exito");
                             location.href='#/inicio_comprador';
                         }

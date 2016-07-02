@@ -88,7 +88,7 @@
             <div class="form-group field-formupdateinformation-user_photo">
 
 <input type="hidden" name="FormUpdateInformation[user_photo]" value="">
-<input type="file" id="formupdateinformation-user_photo" class="change_photo" name="FormUpdateInformation[user_photo]" accept="image/*" style="margin-top: -35px; margin-left: 40px;" ng-model="data.usuario_foto">
+<input type="file" id="formupdateinformation-user_photo" class="change_photo" name="FormUpdateInformation[user_photo]" accept="image/*" style="margin-top: -35px; margin-left: 40px;" ng-model="data.user_foto">
 
 <div class="help-block"></div>
 </div>          </div>
@@ -127,7 +127,7 @@
                 <div class="form-group field-formupdateinformation-username required">
 
                     
-<input type="text" id="formupdateinformation-username" class="form-control" name="FormUpdateInformation[username]" ng-model="data.usuario_nombre" />
+<input type="text" id="formupdateinformation-username" class="form-control" name="FormUpdateInformation[username]" ng-model="data.user_name" />
 <div class="help-block"></div>
 </div>               </div>
             </div><!--form-group-->
@@ -138,7 +138,7 @@
              <div class="col-md-12">
               <div class="form-group field-formupdateinformation-last_name">
 
-<input type="text" id="formupdateinformation-last_name" class="form-control" name="FormUpdateInformation[last_name]" ng-model="data.usuario_apellido">
+<input type="text" id="formupdateinformation-last_name" class="form-control" name="FormUpdateInformation[last_name]" ng-model="data.user_lastname">
 
 <div class="help-block"></div>
 </div>             </div>
@@ -158,7 +158,7 @@
               <div class="col-md-12">
                 <div class="form-group field-formupdateinformation-user_phone1">
 
-<input type="text" id="formupdateinformation-user_phone1" class="form-control" ng-model="data.usuario_telf1" name="FormUpdateInformation[user_phone1]">
+<input type="text" id="formupdateinformation-user_phone1" class="form-control" ng-model="data.user_phone1" name="FormUpdateInformation[user_phone1]">
 
 <div class="help-block"></div>
 </div>              </div>
@@ -170,7 +170,7 @@
               <div class="col-md-12">
                 <div class="form-group field-formupdateinformation-user_phone2">
 
-<input type="text" id="formupdateinformation-user_phone2" class="form-control" ng-model="data.usuario_telf2" name="FormUpdateInformation[user_phone2]">
+<input type="text" id="formupdateinformation-user_phone2" class="form-control" ng-model="data.user_phone2" name="FormUpdateInformation[user_phone2]">
 
 <div class="help-block"></div>
 </div>              </div>
@@ -207,7 +207,7 @@
                <div class="col-md-12">
                                <div class="form-group field-formupdatebank-fkbank required">
 
-<select id="formupdatebank-fkbank" class="form-control fkbank" name="FormUpdateBank[fkbank]" ng-model="dataB.usuario_banco">
+<select id="formupdatebank-fkbank" class="form-control fkbank" name="FormUpdateBank[fkbank]" ng-model="dataB.user_banco">
 <option value=""></option>
 <option value="1">BANCOLOMBIA</option>
 <option value="2">BANCO DE BOGOTÁ</option>
@@ -319,7 +319,7 @@
             <div class="form-group">
               <label class="col-md-12 control-label">CONTRASE&Ntilde;A</label>
               <div class="col-md-12">
-                <input type="password" class="form-control password" placeholder="•••••••••••••••••••••" ng-model="dataC.usuario_pass">
+                <input type="password" class="form-control password" placeholder="•••••••••••••••••••••" ng-model="dataC.user_pass">
                 <div id="error1" style="color:#A94452;"></div>
               </div>
             </div>
@@ -328,7 +328,7 @@
             <div class="form-group">
               <label class="col-md-12 control-label">CONFIRMAR CONTRASE&Ntilde;A</label>
               <div class="col-md-12">
-                <input type="password" class="form-control password_repeat" placeholder="•••••••••••••••••••••" ng-model="dataC.usuario_confpass">
+                <input type="password" class="form-control password_repeat" placeholder="•••••••••••••••••••••" ng-model="dataC.user_confpass">
                 <div id="error2" style="color:#A94452;"></div>
               </div>
             </div>
@@ -356,7 +356,7 @@
             <div class="form-group">
               <label class="col-md-12 control-label">FACEBOOK</label>
               <div class="col-md-12">
-                <input type="text" value="" class="form-control txt_facebook" ng-model="dataS.usuario_facebook">
+                <input type="text" value="" class="form-control txt_facebook" ng-model="dataS.user_facebook">
               </div>
             </div>
           </div>
@@ -364,7 +364,7 @@
             <div class="form-group">
               <label class="col-md-12 control-label">TWITTER</label>
               <div class="col-md-12">
-                <input type="text" value="" class="form-control txt_twitter" ng-model="dataS.usuario_twitter">
+                <input type="text" value="" class="form-control txt_twitter" ng-model="dataS.user_twitter">
               </div>
             </div>
           </div>
@@ -372,7 +372,7 @@
             <div class="form-group">
               <label class="col-md-12 control-label">GOOGLE+</label>
               <div class="col-md-12">
-                <input type="text" value="" class="form-control txt_google" ng-model="dataS.usuario_google">
+                <input type="text" value="" class="form-control txt_google" ng-model="dataS.user_google">
               </div>
             </div>
           </div>
@@ -380,7 +380,7 @@
             <div class="form-group">
               <label class="col-md-12 control-label">YOUTUBE</label>
               <div class="col-md-12">
-                <input type="text" value="" class="form-control txt_youtube" ng-model="dataS.usuario_youtube">
+                <input type="text" value="" class="form-control txt_youtube" ng-model="dataS.user_youtube">
               </div>
             </div>
           </div>

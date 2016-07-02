@@ -450,30 +450,30 @@
         Agrega la información que crees pertinente al momento que los usuarios se registren a tu evento.
       </p>
       <div class="input-group top">
-        <input ng-model="data.generic" type="text" id="name" class="form-control form_regist" name="generic[]" value="NOMBRE" readonly style="border-right: 0px !important;">
+        <input  type="text" id="name" class="form-control form_regist" name="generic[]" value="NOMBRE" readonly style="border-right: 0px !important;">
       </div>  
       <hr/>
       <div class="input-group">
-        <input ng-model="data.generic" type="text" id="last_name" class="form-control form_regist" name="generic[]" value="APELLIDO" readonly style="border-right: 0px !important;">
+        <input n type="text" id="last_name" class="form-control form_regist" name="generic[]" value="APELLIDO" readonly style="border-right: 0px !important;">
       </div>
       <hr/>
       <div class="input-group">
-        <input ng-model="data.generic" type="text" id="email" class="form-control form_regist" name="generic[]" value="E-MAIL" readonly style="border-right: 0px !important;">
+        <input  type="text" id="email" class="form-control form_regist" name="generic[]" value="E-MAIL" readonly style="border-right: 0px !important;">
       </div>
       <hr/>
       <div class="input-group">
-        <input ng-model="data.generic" type="text" id="telefono" class="form-control form_regist" name="generic[]" value="TEL&Eacute;FONO" readonly style="border-right: 0px !important;">
+        <input  type="text" id="telefono" class="form-control form_regist" name="generic[]" value="TEL&Eacute;FONO" readonly style="border-right: 0px !important;">
       </div>
       <hr/>
       <div class="input-group divciudad">
-        <input ng-model="data.generic" type="text" id="ciudad" class="form-control form_regist" name="generic[]" value="CIUDAD" style="border-right: 0px !important;">
+        <input  type="text" id="ciudad" class="form-control form_regist" name="generic[]" value="CIUDAD" style="border-right: 0px !important;">
         <span class="input-group-btn">
           <a class="btn btn-default btn_delete" style="height: 108%;"><span class="glyphicon glyphicon-trash"></span></a>
         </span>
       </div>
       <hr class="divciudad"/>
       <div id="divotro" class="input-group">
-        <input ng-model="data.generic" type="text" id="otro" class="form-control form_regist" name="generic[]" value="CIUDAD">
+        <input type="text" id="otro" class="form-control form_regist" name="generic[]" value="CIUDAD">
       </div>
       <div class="input-group">
         <div class="col-md-8 col-sm-8 col-xs-8  col-md-offset-2 col-sm-offset-2 col-xs-offset-2">
