@@ -119,7 +119,7 @@
             </a>
           </h4>
         </div>
-       <form name="InfoPersonal" novalidate>
+       <form name="InfoPersonal" id="InfoPersonal" novalidate>
            
         <div id="collapse3" class="panel-collapse collapse in">
           <div class="panel-body">

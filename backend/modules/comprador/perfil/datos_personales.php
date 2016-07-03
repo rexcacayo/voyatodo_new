@@ -21,3 +21,5 @@ $result = '{';
         $result .= '"personal":"'.$return_user.'"';
         $result .= '}';
 echo '{"result":[' . $result . ']}';
+
+
