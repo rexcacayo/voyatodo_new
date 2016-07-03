@@ -7,12 +7,12 @@ require_once(APPROOT . "models/user.php");
 $objUser = User::find($_GET['user_id']);
 if($objUser):
 $data = json_decode(file_get_contents("php://input"));
-$objUser->user_facebook = $data->usuario_facebook;
-$objUser->user_twitter = $data->usuario_twitter;
-$objUser->user_google = $data->usuario_google;
-$objUser->user_youtube = $data->usuario_youtube;
+$objUser->user_facebook = $data->user_facebook;
+$objUser->user_twitter = $data->user_twitter;
+$objUser->user_google = $data->user_google;
+$objUser->user_youtube = $data->user_youtube;
 if($objUser->save()):
-$return_user = 'succes';
+$return_user = 'success';
 endif;
 endif;
 endif;
