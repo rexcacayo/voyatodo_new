@@ -1,4 +1,6 @@
-<!doctype html>
+﻿<header class="clearfix" ng-controller="UsuariosCrtl"> 
+
+<!--<!doctype html>-->
 
   <header class="clearfix"> 
     <div class="navbar navbar-default navbar-top">
@@ -81,7 +83,7 @@
               <h2 style="margin-top: 0px !important;">Esta es la lista de todos los usuarios</h2>
               <h3 class="help-block">ENCUENTRA A LOS USUARIOS EN EL BUSCADOR</h3>
               <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 col-lg-offset-1 top_10">
-                <select class="form-control slc_rol">
+                <select ng-model="data.tipo_usuario" class="form-control slc_rol">
                   <option value="">Seleccione tipo de usuario</option>
                   <option value="1">Administrador</option>
                   <option value="2">Patrocinador</option>
@@ -91,8 +93,8 @@
                 </select>
               </div>
               <div class="col-lg-1 col-md-1 col-sm-6 col-xs-6 top_10">
-                <a class="btn btn-sm xsbtn btn-block visible-xs visible-md visible-lg btn_filter_users">Buscar</a>
-                <a class="btn cargar_ visible-sm btn_filter_users">Buscar</a>
+                <a ng-click="buscar_usuario(data)" class="btn btn-sm xsbtn btn-block visible-xs visible-md visible-lg btn_filter_users">Buscar</a>
+                <a ng-click="buscar_usuario(data)" class="btn cargar_ visible-sm btn_filter_users">Buscar</a>
               </div>
             </div>
           </div><!--row-->

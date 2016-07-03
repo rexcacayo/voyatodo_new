@@ -1,6 +1,8 @@
 <?php
 include_once '../../../app_config.php';
 require_once(APPROOT . "models/event.php");
+
+
 $fields = array(
 'fkuser'=> 'fkuser',
 'fkstatus'=>'fkstatus',
@@ -20,6 +22,10 @@ $fields = array(
 'event_linkvideo'=>'event_linkvideo',
 'event_terms'=>'event_terms',
 'event_visible'=>'event_visible');
+
+
+
+
     //se verifica que accion viene
     switch($_REQUEST["accion"])
     {
@@ -41,7 +47,6 @@ $fields = array(
 				endforeach;
 				//$objEvent->fkuser = 70;
 				$objEvent->save();
-                $numero_carpeta_evento=$objEvent->id;  //aqui iria l numero del evento cundo se guarde en la base de datos
                 //verifico si viene imagen
                 if(isset($_FILES))
                 {

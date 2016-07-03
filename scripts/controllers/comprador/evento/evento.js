@@ -17,7 +17,7 @@ angular.module('appVoyatodo')
                             alert($index+"--->"+$valor);
                         }
                 );*/
-                
+                //alert(formData);
                 $.ajax(
                         {
                             url: ruta,
