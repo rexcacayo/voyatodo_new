@@ -5,12 +5,15 @@
         <group>
             <file>file:/C:/xampp/htdocs/desarrollos/voyatodo_new/scripts/controllers/comprador/perfil/perfil.js</file>
             <file>file:/C:/xampp/htdocs/desarrollos/voyatodo_new/scripts/services.js</file>
+            <file>file:/C:/xampp/htdocs/desarrollos/voyatodo_new/backend/modules/comprador/perfil/datos_perfil.php</file>
             <file>file:/C:/xampp/htdocs/desarrollos/voyatodo_new/scripts/router.js</file>
             <file>file:/C:/xampp/htdocs/desarrollos/voyatodo_new/backend/modules/comprador/perfil/datos_network.php</file>
             <file>file:/C:/xampp/htdocs/desarrollos/voyatodo_new/scripts/controllers/comprador/evento/evento.js</file>
+            <file>file:/C:/xampp/htdocs/desarrollos/voyatodo_new/backend/modules/comprador/perfil/datos_personales.php</file>
             <file>file:/C:/xampp/htdocs/desarrollos/voyatodo_new/index.html</file>
             <file>file:/C:/xampp/htdocs/desarrollos/voyatodo_new/templates/comprador/perfil/index.php</file>
             <file>file:/C:/xampp/htdocs/desarrollos/voyatodo_new/templates/comprador/evento/index.php</file>
+            <file>file:/C:/xampp/htdocs/desarrollos/voyatodo_new/backend/modules/comprador/perfil/datos_bancarios.php</file>
         </group>
     </open-files>
 </project-private>

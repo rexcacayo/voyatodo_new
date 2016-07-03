@@ -7,10 +7,10 @@ require_once(APPROOT . "models/user.php");
 $objUser = User::find($_GET['user_id']);
 if($objUser):
 $data = json_decode(file_get_contents("php://input"));
-$objUser->username = $data->usuario_nombre;
-$objUser->last_name = $data->usuario_apellido;
-$objUser->user_phone1 = $data->usuario_telf1;
-$objUser->user_phone2 = $data->usuario_telf2;
+$objUser->username = $data->user_name;
+$objUser->last_name = $data->user_lastname;
+$objUser->user_phone1 = $data->user_phone1;
+$objUser->user_phone2 = $data->user_phone2;
 if($objUser->save()):
 $return_user = 'succes';
 endif;

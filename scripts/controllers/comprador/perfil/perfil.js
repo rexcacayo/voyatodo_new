@@ -55,7 +55,7 @@ angular.module('appVoyatodo')
                  $http.post("backend/modules/comprador/perfil/datos_bancarios.php?user_id="+id, dataB)
                  .success(function(dataB) {
                      
-                    if(data.result[1].banco === "success"){
+                    if(dataB.result[1].banco === "success"){
                             SweetAlert.swal("Su Información fue actualizada con exito");
                             location.href='#/inicio_comprador';
                         }
