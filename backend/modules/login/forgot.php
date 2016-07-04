@@ -34,7 +34,7 @@ if ($data):
             $mail->setFrom("accounts@voyatodo.com", "Voy a Todo");
             $mail->addAddress($to, $objUser->username);
             $mail->Subject = "Restablecimiento de contraseña - VoyaTodo";
-            $body = file_get_contents('../../mail/reset_password.php');
+            $body = file_get_contents(APPROOT .'mail/reset_password.php');
             $search = array('##TOKEN##');
             $replace = array($TOKEN);
             $newbody = str_replace($search, $replace, $body);
