@@ -92,7 +92,7 @@ angular.module('appVoyatodo')
             $scope.btmregistrovisibility = true;
             $scope.telf1visibility = false;
             $scope.telf2visibility = false;
-            $scope.btmsolicitarvisibility = true;
+            $scope.btmsolicitarvisibility = false;
         };    
         $scope.create=function(){
         

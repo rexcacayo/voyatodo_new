@@ -86,7 +86,7 @@
                     
                     <div class="col-md-6">
                         <div class="checkbox" style="z-index: 9;">
-                            <input type="radio" name="user_rol" ng-model="data.user_rol" value="1" class="inputradio">
+                            <input type="radio" name="user_rol" ng-model="data.user_rol" value="3" class="inputradio">
                                 <span class="inputfalso">
                                     <label class="lbl_radio">
                                         COMPRADOR
@@ -111,7 +111,7 @@
 
                 <div class="col-md-6">
                     <label class="checkbox" style="z-index: 9;">
-                        <input class="inputradio" name="user_rol" ng-model="data.user_rol" type="radio" value="3">
+                        <input class="inputradio" name="user_rol" ng-model="data.user_rol" type="radio" value="4">
                             <span class="inputfalso">
                             </span>
                             <span class="lbl_radio">
