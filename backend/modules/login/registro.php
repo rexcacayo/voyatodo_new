@@ -32,12 +32,10 @@ if ($data):
         $objUser = new User();
         $objUser->username = $data->user_name;
         $objUser->email = $data->email;
+        $objUser->rol = $data->rol;
+        $objUser->last_name = $data->user_lastname;
         if ($data->type == 1):
-            $objUser->rol = 3;
-            $objUser->last_name = $data->user_lastname;
             $objUser->password = md5($data->password);
-        else:
-            $objUser->rol = 4;
         endif;
         $objUser->user_phone1 = $data->telefono1;
         $objUser->user_phone2 = $data->telefono2;
@@ -72,7 +70,7 @@ if ($data):
                     $mail->setFrom("accounts@voyatodo.com", "Voy a Todo");
                     $mail->addAddress($to, $objUser->username);
                     $mail->Subject = "Debes confirmar tu cuenta";
-                    $body = file_get_contents(APPROOT .'mail/register_mail.php');
+                    $body = file_get_contents(APPROOT . 'mail/register_mail.php');
                     $search = array('##TOKEN##');
                     $replace = array($TOKEN);
                     $newbody = str_replace($search, $replace, $body);
