@@ -72,7 +72,7 @@ if ($data):
                     $mail->setFrom("accounts@voyatodo.com", "Voy a Todo");
                     $mail->addAddress($to, $objUser->username);
                     $mail->Subject = "Debes confirmar tu cuenta";
-                    $body = file_get_contents(APPROOT .'mail/register_mail.html');
+                    $body = file_get_contents(APPROOT .'mail/register_mail.php');
                     $search = array('##TOKEN##');
                     $replace = array($TOKEN);
                     $newbody = str_replace($search, $replace, $body);
