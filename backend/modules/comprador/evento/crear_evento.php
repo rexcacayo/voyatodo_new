@@ -1,30 +1,12 @@
 <?php
-include_once '../../../app_config.php';
-require_once(APPROOT . "models/event.php");
-
-
-$fields = array(
-'fkuser'=> 'fkuser',
-'fkstatus'=>'fkstatus',
-'event_name'=>'event_name',
-'event_stardate'=>'event_stardate',
-'event_starthour'=>'event_starthour',
-'event_country'=>'fkcountry',
-'event_city'=>'fkcity',
-'event_place'=>'event_place',
-'event_address'=>'event_address',
-'event_category_principal'=>'fkcategory1',
-'event_category_secundary'=>'fkcategory2',
-'event_review'=>'event_review',
-'event_description'=>'event_description',
-'event_crowfunding'=>'event_crowfunding',
-'event_url'=>'event_url',
-'event_linkvideo'=>'event_linkvideo',
-'event_terms'=>'event_terms',
-'event_visible'=>'event_visible');
-
-
-
+//    echo "POST<pre>";
+//    print_r($_POST);
+//    echo "</pre>";exit;
+//
+//    echo "FILE<pre>";
+//    print_r($_FILES["imagen_evento"]);
+//    echo "</pre>";exit;
+    
 
     //se verifica que accion viene
     switch($_REQUEST["accion"])
@@ -32,26 +14,12 @@ $fields = array(
         case "guardar_evento":
             if($_POST)
             {
-				if(!$_POST['FormCreateEvent']['eventid']):
-				$objEvent = New Event();
-				else:
-				$objEvent = Event::find($_POST['FormCreateEvent']['eventid']);
-				endif;
-				$objEvent->event_name = $_POST['FormCreateEvent']['event_name'];
-				foreach($fields as $k=>$v):
-				if(array_key_exists($k,$_POST['FormCreateEvent'])):
-					if($_POST['FormCreateEvent'][$k]):
-						$objEvent->$v = $_POST['FormCreateEvent'][$k];
-					endif;
-				endif;
-				endforeach;
-				//$objEvent->fkuser = 70;
-				$objEvent->save();
+                $numero_carpeta_evento=rand();  //aqui iria l numero del evento cundo se guarde en la base de datos
                 //verifico si viene imagen
                 if(isset($_FILES))
                 {
                     //armo la ruta
-                    $ruta = $_SERVER ['DOCUMENT_ROOT']."/templates/comprador/evento/v/$numero_carpeta_evento";
+                    $ruta = "../../../../templates/comprador/evento/v/$numero_carpeta_evento";
                     //verifico si existe la ruta
                     if( !is_dir($ruta))
                     {
@@ -60,7 +28,6 @@ $fields = array(
                         {
                             //no se pudo crear la ruta
                             $retorna["estado"]="no_creo_ruta";
-							$retorna["ruta"]=$ruta;
                             $retorna["mensaje"]="No se Pudo Crer la Ruta para Guardar la imagen";
                             $retorna["datos"]=$_POST;
                             echo json_encode($retorna);
@@ -73,42 +40,22 @@ $fields = array(
                     $archivo = $_FILES['imagen_evento'];                    
                     foreach($archivo["name"] as $index=>$valor)
                     {
-						if ($archivo['error'][$index] == 0):
-							$uploaddir = $ruta;
-							$fileName = $archivo['name'][$index];
-							$newfilename = round(microtime(true)) . '_' . $fileName;
-							$uploadfile = $uploaddir .'/'. $newfilename;
-							$finfo = new finfo(FILEINFO_MIME_TYPE);
-							if (false === $ext = array_search(
-									$finfo->file($archivo['tmp_name'][$index]), array(
-								'jpg' => 'image/jpeg',
-								'png' => 'image/png',
-								'gif' => 'image/gif',
-									), true
-									)):
-								$retorna["estado"][$index]="error_subir_archivo"; 
-                                $retorna["mensaje"][$index]="Extension no valida";
-								$retorna["archivo"][$index]=$fileName;
-							else:
-								if (move_uploaded_file($archivo['tmp_name'][$index], $uploadfile)):
-								$retorna["estado"][$index]="archivo_subido"; 
-                                $retorna["mensaje"][$index]="El Archivo fue Subido Correctamente";
-								$retorna["archivo"][$index]=$newfilename;
-								else:
-									$retorna["estado"][$index]="error_subir_archivo"; 
-                                $retorna["mensaje"][$index]="No se pudo mover el archivo";
-								$retorna["archivo"][$index]=$uploadfile;
-								endif;
-							endif;
-						else:
-							$retorna["estado"][$index]="error_subir_archivo";
-                                $retorna["mensaje"][$index]="Archivo Vacio";
-						endif;
+                        $extension=basename($archivo['name'][$index]);
+                        $time = time();									
+                        if (move_uploaded_file($archivo['tmp_name'][$index], $ruta."/".$extension)) 
+                        {
+                                $retorna["estado"]="archivo_subido"; 
+                                $retorna["mensaje"]="El Archivo fue Subido Correctamente";                        
+                        }
+                        else
+                        { 
+                                $retorna["estado"]="error_subir_archivo";
+                                $retorna["mensaje"]="Ocurrio un Error al Subir el archivo";
+                        }
                     }
                                  
                 }
                 $retorna["datos"]=$_POST;
-				$retorna["eventid"] = $objEvent->id;
                 echo json_encode($retorna);               
             }
             else
