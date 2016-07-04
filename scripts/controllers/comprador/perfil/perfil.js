@@ -32,14 +32,14 @@ angular.module('appVoyatodo')
             };
             
              $scope.uploadFile = function(){
-                /*var file = $scope.myFile;
-                console.log('file is ' );
-                console.dir(file);
-                var uploadUrl = "tmp";*/
+                var file = $scope.myFile;
+                var uploadUrl = 'http://voyatodo_new.localhost/imagen/';
+                fileUpload.uploadFileToUrl(file, uploadUrl);
+                
                 alert("imagen");
-                var formData = new FormData($("#form-update-foto")[0]); 
-                console.log(FormData);
-                    $.ajax(
+               // var formData = new FormData($("#form-update-foto")[0]); 
+                //console.log(FormData);
+                /*    $.ajax(
                         {
                             url: "backend/modules/comprador/perfil/uploadFile.php?accion=uploadFile",
                             type: "POST",
@@ -51,7 +51,7 @@ angular.module('appVoyatodo')
                                 console.log(datos)   ;
                             }
 	            }
-               );
+               );*/
                 
                 
                 

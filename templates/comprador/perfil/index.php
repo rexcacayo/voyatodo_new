@@ -128,8 +128,9 @@
                <div class="col-md-12">
                 <div class="form-group field-formupdateinformation-username required">
 
-                    
+                   
 <input type="text" id="formupdateinformation-username" class="form-control" name="FormUpdateInformation[username]" ng-model="data.user_name" />
+ 
 <div class="help-block"></div>
 </div>               </div>
             </div><!--form-group-->
