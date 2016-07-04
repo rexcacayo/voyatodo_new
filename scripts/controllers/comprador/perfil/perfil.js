@@ -17,7 +17,7 @@ angular.module('appVoyatodo')
                 if(data.result[0].perfil === "succes"){
                   
                     $scope.data=data.result[0];   
-                    //$scope.dataB=data.result[1];
+                    $scope.dataB=data.result[1];
                     $scope.dataS=data.result[2];    
                 }
                 });
@@ -85,7 +85,7 @@ angular.module('appVoyatodo')
                  $http.post("backend/modules/comprador/perfil/datos_bancarios.php?user_id="+id, dataB)
                  .success(function(dataB) {
                  console.log(dataB);    
-                    if(dataB.result[1].banco === "succes"){
+                    if(dataB.result[1].bancario === "succes"){
                             SweetAlert.swal("Su Información fue actualizada con exito");
                             location.href='#/inicio_comprador';
                         }
@@ -94,7 +94,7 @@ angular.module('appVoyatodo')
             
             $scope.datos_contrasena=function(dataC){
                  var id = $scope.usuario_id;
-                console.log(dataC);
+                
                 $http.post("backend/modules/comprador/perfil/datos_contrasena.php?user_id="+id,dataC)
                  .success(function(dataC) {
                      

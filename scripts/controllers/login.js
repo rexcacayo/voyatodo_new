@@ -25,7 +25,7 @@ angular.module('appVoyatodo')
                  console.log(datas);  
                    
                  if(datas.result[0].login === "success"){
-                     alert("login");
+                  
                   $cookieStore.put('userRol', datas.result[0].rol);
                   $cookieStore.put('userEmail', datas.result[0].email);
                   $cookieStore.put('userFullname', datas.result[0].fullname);
