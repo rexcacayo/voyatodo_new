@@ -84,11 +84,11 @@
             </center>
           </div>
           <div class="col-lg-2 col-sm-3 col-xs-12"> 
-              <label for="files" data-role="button" class="btn btn_green top" data-inline="true" data-mini="true" data-corners="false" ng-click="uploadFile()">Cambiar foto</label>
+            <button for="files" data-role="button" class="btn btn_green top" data-inline="true" data-mini="true" data-corners="false" ng-click="uploadFile()">Cambiar foto</button>
             <div class="form-group field-formupdateinformation-user_photo">
 
-<input type="hidden" name="FormUpdateInformation[user_photo]" value="">
-<input type="file" id="formupdateinformation-user_photo" class="change_photo" name="FormUpdateInformation[user_photo]" accept="image/*" style="margin-top: -35px; margin-left: 40px;" file-model="myFile">
+<!--<input type="hidden" name="FormUpdateInformation[user_photo]" value="">-->
+<input type="file" id="formupdateinformation-user_photo" class="change_photo" name="FormUpdateInformation[user_photo]" accept="image/*" style="margin-top: -35px; margin-left: 40px;">
 
 
     
@@ -414,6 +414,7 @@
         object = {};
         object.filename = file.name;
         object.data = event.target.result;
+        console.log(object.data);
         $(".field_photo").attr("style","background: url(" + object.data + ") center no-repeat; background-size: auto 100%");
       };  
       reader.readAsDataURL(file);

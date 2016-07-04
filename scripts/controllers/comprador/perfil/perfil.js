@@ -36,7 +36,9 @@ angular.module('appVoyatodo')
                 console.log('file is ' );
                 console.dir(file);
                 var uploadUrl = "tmp";*/
-                var formData = new FormData($("#form-update-foto")[0]);                    
+                alert("imagen");
+                var formData = new FormData($("#form-update-foto")[0]); 
+                console.log(FormData);
                     $.ajax(
                         {
                             url: "backend/modules/comprador/perfil/uploadFile.php?accion=uploadFile",

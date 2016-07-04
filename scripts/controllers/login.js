@@ -34,17 +34,17 @@ angular.module('appVoyatodo')
                   if(datas.result[0].rol == 3){
                     location.href='#/inicio_comprador';
                   }
-                  if(datas.result[0].rol == 1){
+                  if(datas.result[0].rol == 2){
                     location.href='#/';
                     SweetAlert.swal("Usuario Patrocinador");
                    
                   }
-                  if(datas.result[0].rol == 2){
+                  if(datas.result[0].rol == 4){
                     location.href='#/';
                     SweetAlert.swal("Usuario Tienda");
                    
                   }
-                  if(datas.result[0].rol == 4){
+                  if(datas.result[0].rol == 1){
                     location.href='#/';
                     SweetAlert.swal("Usuario Admistrador");
                    
@@ -166,6 +166,7 @@ angular.module('appVoyatodo')
         if($scope.data.user_type == 2){
             $scope.data.user_pass = "N/A";
             $scope.data.user_lastname="empresa"
+            
             
         }
         
