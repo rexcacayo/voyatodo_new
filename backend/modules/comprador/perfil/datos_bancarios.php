@@ -10,15 +10,16 @@ else:
 $objUserBank = new UserBank();
 $objUserBank->fkuser = $_GET['user_id'];
 endif;
+
 if($objUserBank):
 $data = json_decode(file_get_contents("php://input"));
-$objUserBank->userbank_tipeacount = $data->user_banco_tipocuenta;
-$objUserBank->userbank_numberacount = $data->user_banco_numerocuenta;
-$objUserBank->userbank_titularname = $data->user_banco_nombretitular;
-$objUserBank->userbank_identification = $data->user_banco_cedula;
-$objUserBank->fkbank = $data->user_banco;
+$objUserBank->userbank_tipeacount = $data->usuario_banco_tipocuenta;
+$objUserBank->userbank_numberacount = $data->usuario_banco_numerocuenta;
+$objUserBank->userbank_titularname = $data->usuario_banco_nombretitular;
+$objUserBank->userbank_identification = $data->usuario_banco_cedula;
+$objUserBank->fkbank = $data->usuario_banco;
 if($objUserBank->save()):
-$return_bank = 'succes';
+$return_bank = 'success';
 endif;
 endif;
 endif;

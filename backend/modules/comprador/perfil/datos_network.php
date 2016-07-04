@@ -12,7 +12,7 @@ $objUser->user_twitter = $data->user_twitter;
 $objUser->user_google = $data->user_google;
 $objUser->user_youtube = $data->user_youtube;
 if($objUser->save()):
-$return_user = 'success';
+$return_user = 'succes';
 endif;
 endif;
 endif;

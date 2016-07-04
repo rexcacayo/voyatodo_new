@@ -83,16 +83,15 @@
                    
             </center>
           </div>
-          <div class="col-lg-2 col-sm-3 col-xs-12">
-              <button ng-click="uploadFile()">update</button>
-              <label for="files" data-role="button" class="btn btn_green top" data-inline="true" data-mini="true" data-corners="false">Cambiar foto</label>
+          <div class="col-lg-2 col-sm-3 col-xs-12"> 
+              <label for="files" data-role="button" class="btn btn_green top" data-inline="true" data-mini="true" data-corners="false" ng-click="uploadFile()">Cambiar foto</label>
             <div class="form-group field-formupdateinformation-user_photo">
 
 <input type="hidden" name="FormUpdateInformation[user_photo]" value="">
 <input type="file" id="formupdateinformation-user_photo" class="change_photo" name="FormUpdateInformation[user_photo]" accept="image/*" style="margin-top: -35px; margin-left: 40px;" file-model="myFile">
 
 
-    <button ng-click="uploadFile()">upload me</button>
+    
 <div class="help-block"></div>
 </div>          </div>
           <div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
@@ -210,7 +209,7 @@
                <div class="col-md-12">
                                <div class="form-group field-formupdatebank-fkbank required">
 
-<select id="formupdatebank-fkbank" class="form-control fkbank" name="FormUpdateBank[fkbank]" ng-model="dataB.user_banco">
+<select id="formupdatebank-fkbank" class="form-control fkbank" name="FormUpdateBank[fkbank]" ng-model="dataB.usuario_banco">
 <option value=""></option>
 <option value="1">BANCOLOMBIA</option>
 <option value="2">BANCO DE BOGOTÁ</option>
@@ -322,7 +321,7 @@
             <div class="form-group">
               <label class="col-md-12 control-label">CONTRASE&Ntilde;A</label>
               <div class="col-md-12">
-                <input type="password" class="form-control password" placeholder="•••••••••••••••••••••" ng-model="dataC.user_pass">
+                <input type="password" class="form-control password" placeholder="•••••••••••••••••••••" ng-model="dataC.usuario_pass">
                 <div id="error1" style="color:#A94452;"></div>
               </div>
             </div>
@@ -331,7 +330,7 @@
             <div class="form-group">
               <label class="col-md-12 control-label">CONFIRMAR CONTRASE&Ntilde;A</label>
               <div class="col-md-12">
-                <input type="password" class="form-control password_repeat" placeholder="•••••••••••••••••••••" ng-model="dataC.user_confpass">
+                <input type="password" class="form-control password_repeat" placeholder="•••••••••••••••••••••" ng-model="dataC.usuario_confpass">
                 <div id="error2" style="color:#A94452;"></div>
               </div>
             </div>

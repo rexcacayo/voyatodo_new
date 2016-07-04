@@ -8,14 +8,16 @@ angular.module('appVoyatodo')
             
             
            $scope.Get_Info=function(){
+               
                var id = $scope.usuario_id;
                $http.post("backend/modules/comprador/perfil/datos_perfil.php?user_id="+id)
                 .success(function(data) {
-                console.log(data);
-                return;
-                if(data.result.perfil === "succes"){
+                console.log(data);  
+                
+                if(data.result[0].perfil === "succes"){
+                  
                     $scope.data=data.result[0];   
-                    $scope.dataB=data.result[1];
+                    //$scope.dataB=data.result[1];
                     $scope.dataS=data.result[2];    
                 }
                 });
@@ -65,7 +67,7 @@ angular.module('appVoyatodo')
                 $http.post("backend/modules/comprador/perfil/datos_personales.php?user_id="+id, data)
                  .success(function(data) {
                      
-                      if(data.result[0].personal === "success"){
+                      if(data.result[0].personal === "succes"){
                             SweetAlert.swal("Su Información fue actualizada con exito");
                             location.href='#/inicio_comprador';
                         }
@@ -83,7 +85,7 @@ angular.module('appVoyatodo')
                  $http.post("backend/modules/comprador/perfil/datos_bancarios.php?user_id="+id, dataB)
                  .success(function(dataB) {
                  console.log(dataB);    
-                    if(dataB.result[1].banco === "success"){
+                    if(dataB.result[1].banco === "succes"){
                             SweetAlert.swal("Su Información fue actualizada con exito");
                             location.href='#/inicio_comprador';
                         }
@@ -96,10 +98,16 @@ angular.module('appVoyatodo')
                 $http.post("backend/modules/comprador/perfil/datos_contrasena.php?user_id="+id,dataC)
                  .success(function(dataC) {
                      
-                      if(data.result[0].contrasena === "success"){
+                      if(dataC.result[0].change === "succes"){
                             SweetAlert.swal("Su Información fue actualizada con exito");
                             location.href='#/inicio_comprador';
                         }
+                        
+                      if(dataC.result[0].change === "no_match"){
+                            SweetAlert.swal("Las contraseñas no coinciden");
+                            location.href='#/inicio_comprador';
+                        }
+                        
                     });
             };
             
@@ -109,7 +117,7 @@ angular.module('appVoyatodo')
                 $http.post("backend/modules/comprador/perfil/datos_network.php?user_id="+id, dataS)
                  .success(function(data) {
                   console.log(data.result[0].network);   
-                      if(data.result[0].network === "success"){
+                      if(data.result[0].network === "succes"){
                             SweetAlert.swal("Su Información fue actualizada con exito");
                             location.href='#/inicio_comprador';
                         }
