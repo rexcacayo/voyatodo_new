@@ -259,7 +259,7 @@ abstract class Connection
 			$this->logger->log($sql);
 
 		$this->last_query = $sql;
-
+		
 		try {
 			if (!($sth = $this->connection->prepare($sql)))
 				throw new DatabaseException($this);
@@ -396,7 +396,7 @@ abstract class Connection
 	 */
 	public function date_to_string($datetime)
 	{
-		return $datetime->format('Y-m-d');
+		return $datetime->format('Y-m-d H:i:s');
 	}
 
 	/**
@@ -407,7 +407,7 @@ abstract class Connection
 	 */
 	public function datetime_to_string($datetime)
 	{
-		return $datetime->format('Y-m-d H:i:s T');
+		return $datetime->format('Y-m-d H:i:s');
 	}
 
 	/**
@@ -424,7 +424,7 @@ abstract class Connection
 		if ($errors['warning_count'] > 0 || $errors['error_count'] > 0)
 			return null;
 
-		return new DateTime($date->format('Y-m-d H:i:s T'));
+		return new DateTime($date->format('Y-m-d H:i:s'));
 	}
 
 	/**

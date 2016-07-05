@@ -8,12 +8,12 @@ $ini_request=microtime(true);
 $mysql_host = "127.0.0.1";
 $mysql_database = "voyatodo_dev";
 $mysql_user = "root";
-$mysql_password = "";
+$mysql_password = "manager";
 $mysql_host1 = "localhost";
 $mysql_database1 = "voyatodo_dev";
 $mysql_user1 = "voyatodo_develop";
 $mysql_password1 = "SHr1pC}C2cTR";
-define ( "APPROOT", $_SERVER ['DOCUMENT_ROOT'] . "/backend/" );
+define ( "APPROOT", $_SERVER ['DOCUMENT_ROOT'] . "/site/backend/" );
 $arrDB = array("_PROD" => array("host" => $mysql_host1, "user" => $mysql_user1, "pass" => $mysql_password1, "db" => $mysql_database1),
 			   "_DEFAULT" => array("host" => $mysql_host, "user" => $mysql_user, "pass" => $mysql_password, "db" => $mysql_database));
 require_once(APPROOT."class/externals/cake/inflector.php");
@@ -31,6 +31,6 @@ ActiveRecord\Config::initialize(function($cfg)
   global $arrCon;
   $cfg->set_model_directory(APPROOT.'models');
   $cfg->set_connections(array(
-         'development' => $arrCon['development']));
+         'development' => $arrCon['prod']));
  });
 //Autoloader::Register();

@@ -32,12 +32,10 @@ if ($data):
         $objUser = new User();
         $objUser->username = $data->user_name;
         $objUser->email = $data->email;
-        if ($data->type == 1):
-            $objUser->rol = 3;
+        $objUser->rol = $data->rol;
             $objUser->last_name = $data->user_lastname;
+        if ($data->type == 1):
             $objUser->password = md5($data->password);
-        else:
-            $objUser->rol = 4;
         endif;
         $objUser->user_phone1 = $data->telefono1;
         $objUser->user_phone2 = $data->telefono2;
