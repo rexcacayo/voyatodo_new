@@ -114,7 +114,7 @@
     <input  type="hidden"  name="FormCreateEvent[userid]" ng-model="data.eventid" value="">
     
     <div class="menu-modal information-modal summary-modal dashboard-modal scrollbar" id="opcion2">
-      
+        
       <div class="separator"></div>
       
       <h3>INFORMACI&Oacute;N DEL EVENTO</h3>
@@ -146,7 +146,8 @@
 <div class="input-group date"><input ng-model="data.event_stardate" type="text" id="formcreateevent-event_stardate" class="form-control" name="FormCreateEvent[event_stardate]" ng-model="data.status"><span class="input-group-addon" ng-click="isReplyFormOpen = !isReplyFormOpen"><i class="glyphicon glyphicon-calendar"></i></span></div>
 
 <div class="help-block"></div>
-</div>          </div> 
+</div>          
+          </div> 
         </div>
         <div class="col-md-6 col-sm-6 col-xs-6 div_fecha">
             <label class="lblnegro">HORA INICIAL</label>
@@ -475,9 +476,11 @@
       <div id="divotro" class="input-group">
         <input type="text" id="otro" class="form-control form_regist" name="generic[]" value="CIUDAD">
       </div>
+      
       <div class="input-group">
         <div class="col-md-8 col-sm-8 col-xs-8  col-md-offset-2 col-sm-offset-2 col-xs-offset-2">
-        <a class="btn cargar btn-block" id="btnagregar_campo">AGREGRAR CAMPO</a>
+            <a class="btn cargar btn-block" id="btnagregar_campo" >AGREGRAR CAMPO</a>
+            
         </div>
       </div>
 
@@ -874,11 +877,11 @@
         </div>
         <div class="col-md-4 col-sm-4 col-xs-4">
           <div class="input-group">
-            <input data_entrada.ticket_qty" name="FormCreateEvent[ticket_qty]" type="number" class="form-control ticket-qty" placeholder="100" />
+            <input ng-model="data_entrada.ticket_qty" name="FormCreateEvent[ticket_qty]" type="number" class="form-control" placeholder="100" />
           </div>
         </div>
         <div class="col-md-8 col-sm-4 col-xs-4">
-          <input data_entrada.sin_limite" class="inputradio out_limit" type="checkbox"><span class="inputfalso"> <label class="lbl_radio">SIN L&Iacute;MITE</label></span>
+          <input ng-model="data_entrada.sin_limite" class="inputradio out_limit" type="checkbox"><span class="inputfalso"> <label class="lbl_radio">SIN L&Iacute;MITE</label></span>
         </div>
       </div>
       <div class="row top">
@@ -889,11 +892,11 @@
         </div>
         <div class="entrance_tic">
           <div class="col-md-4 col-sm-4 col-xs-4">
-            <input data_entrada.ticket_seeclaim" type="radio" name="FormCreateEvent[ticket_seeclaim]" value="0" checked class="inputradio"> 
+            <input ng-model="data_entrada.ticket_seeclaim" type="radio" name="FormCreateEvent[ticket_seeclaim]" value="0" checked class="inputradio"> 
             <span class="inputfalso"/> <label class="lbl_radio">OCULTAR</label> </span>
           </div>
           <div class="col-md-4 col-sm-4 col-xs-4">
-            <input data_entrada.ticket_seeclaim" type="radio" name="FormCreateEvent[ticket_seeclaim]" value="1" class="inputradio"> 
+            <input ng-model="data_entrada.ticket_seeclaim" type="radio" name="FormCreateEvent[ticket_seeclaim]" value="1" class="inputradio"> 
             <span class="inputfalso"/> <label class="lbl_radio">MOSTRAR</label> </span>
           </div>
         </div>
@@ -912,14 +915,19 @@
           </label>
         </div>
         <div class="col-md-6 col-sm-4 col-xs-4">
-          <div class="form-group field-formcreateevent-ticket_start">
+            <div class="form-group field-formcreateevent-ticket_start required">
+<div ng-init="isReplyFormOpen = false" ng-show="isReplyFormOpen" id="replyForm">
+<date-picker ng-model="data_entrada.tiket_stardate">
+</date-picker>
 
-<div class="input-group date"><input data_entrada.ticket_start" type="text" id="formcreateevent-ticket_start" class="form-control" name="FormCreateEvent[ticket_start]"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span></div>
+</div>
+<div class="input-group date"><input ng-model="data_entrada.tiket_stardate" type="text" id="formcreateevent-event_stardate" class="form-control" name="FormCreateEvent[event_stardate]" ng-model="data.status"><span class="input-group-addon" ng-click="isReplyFormOpen = !isReplyFormOpen"><i class="glyphicon glyphicon-calendar"></i></span></div>
 
 <div class="help-block"></div>
-</div>        </div>
+</div>      
+        </div>
         <div class="col-md-6 col-sm-4 col-xs-4">
-          <input data_entrada.inmediatamente" class="inputradio start_date" type="checkbox">
+          <input ng-model="data_entrada.inmediatamente" class="inputradio" type="checkbox">
           <span class="inputfalso"> 
             <label class="lbl_radio">INMEDIATAMENTE</label> 
           </span>
@@ -929,16 +937,22 @@
             HASTA
           </label>
         </div>
-        <div class="col-md-6 col-sm-4 col-xs-4">
-          <div class="form-group field-formcreateevent-ticket_finish">
-
-<div class="input-group date">
-    <input data_entrada.ticket_finish" type="text" id="formcreateevent-ticket_finish" class="form-control" name="FormCreateEvent[ticket_finish]"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span></div>
-
-<div class="help-block"></div>
-</div>        </div>
+<div class="col-md-6 col-sm-4 col-xs-4">
+<div class="form-group field-formcreateevent-ticket_end required">
+    <div ng-init="isReplyFormOpen1 = false" ng-show="isReplyFormOpen1" id="replyForm">
+        <date-picker ng-model="data_entrada.tiket_enddate"></date-picker>
+    </div>
+    <div class="input-group date">
+        <input ng-model="data_entrada.tiket_enddate" type="text" id="formcreateevent-tiket_enddate" class="form-control" name="FormCreateEvent[event_enddate]">
+        <span class="input-group-addon" ng-click="isReplyFormOpen1 = !isReplyFormOpen1">
+            <i class="glyphicon glyphicon-calendar"></i>
+        </span>
+    </div>
+    <div class="help-block"></div>
+</div>         
+</div>
         <div class="col-md-5 col-sm-4 col-xs-4">
-          <input data_entrada.dia_evento" class="inputradio end_date" type="checkbox">
+          <input ng-model="data_entrada.dia_evento" class="inputradio" type="checkbox">
           <span class="inputfalso"> 
             <label class="lbl_radio">D&Iacute;A DEL EVENTO</label> 
           </span>
@@ -1154,7 +1168,7 @@
         </div> 
       </div><!--row end-->
       <div class="row">
-        <a ng-click="guardar_tdc_pagos(data_tdc_pagos)" class="btn btn-yellow btn-block create_target hidden">CREAR TARJETA</a>
+        <a ng-click="guardar_tdc_pagos(data_tdc_pagos)" class="btn btn-yellow btn-block">CREAR TARJETA</a>
         <a class="btn btn-yellow btn-block update_target hidden">ACTUALIZAR TARJETA</a>
       </div>
     </div><!--modal end-->

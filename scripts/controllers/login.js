@@ -23,7 +23,7 @@ angular.module('appVoyatodo')
                 $http.post("backend/modules/login/login.php", datas)
                  .success(function(datas) {
                  console.log(datas);  
-                   
+                
                  if(datas.result[0].login === "success"){
                   
                   $cookieStore.put('userRol', datas.result[0].rol);

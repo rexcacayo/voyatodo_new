@@ -31,27 +31,24 @@ angular.module('appVoyatodo')
                 location.href='#/inicio';
             };
             
+            
              $scope.uploadFile = function(){
-                var file = $scope.myFile;
-                var uploadUrl = 'http://voyatodo_new.localhost/imagen/';
-                fileUpload.uploadFileToUrl(file, uploadUrl);
-                
-                alert("imagen");
-               // var formData = new FormData($("#form-update-foto")[0]); 
-                //console.log(FormData);
-                /*    $.ajax(
+                 alert("aqui");
+                var formData = new FormData($("#form-update-foto")[0]);
+                var id = $scope.usuario_id;
+                   $.ajax(
                         {
-                            url: "backend/modules/comprador/perfil/uploadFile.php?accion=uploadFile",
+                            url: "backend/modules/comprador/perfil/uploadFile.php?user_id="+id,
                             type: "POST",
                             data: formData,
                             contentType: false,
                             processData: false,
                             success: function(datos)
                             {
-                                console.log(datos)   ;
+                                //console.log(datos)   ;
                             }
 	            }
-               );*/
+               );
                 
                 
                 
@@ -59,18 +56,19 @@ angular.module('appVoyatodo')
                 
                 
                 
-                //fileUpload.uploadFileToUrl(file, uploadUrl);
+                
             };
             
             $scope.datos_personales=function(data){
                 var id = $scope.usuario_id;
-                
+                $scope.uploadFile();
                 console.log(data);
                 $http.post("backend/modules/comprador/perfil/datos_personales.php?user_id="+id, data)
                  .success(function(data) {
                      
                       if(data.result[0].personal === "succes"){
                             SweetAlert.swal("Su Información fue actualizada con exito");
+                    
                             location.href='#/inicio_comprador';
                         }
                     });
