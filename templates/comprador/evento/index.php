@@ -124,7 +124,7 @@
       <div class="input-group">
         <div class="form-group field-formcreateevent-event_name required">
 
-    <input ng-model="data.event_name" type="text" id="formcreateevent-event_name" class="form-control event-name" name="FormCreateEvent[event_name]" ng-model="data.status" placeholder="Mi primer evento">
+    <input ng-model="data.event_name" type="text" id="formcreateevent-event_name" class="form-control event-name" name="FormCreateEvent[event_name]" placeholder="Mi primer evento" ng-blur="prueba_cambio()">
     <input type="hidden" value="guardar_evento" name="accion" id="accion" ng-model="data.accion">
 <div class="help-block"></div>
 </div>        <span class="input-group-addon">
@@ -472,10 +472,6 @@
           <a class="btn btn-default btn_delete" style="height: 108%;"><span class="glyphicon glyphicon-trash"></span></a>
         </span>
       </div>
-      <hr class="divciudad"/>
-      <div id="divotro" class="input-group">
-        <input type="text" id="otro" class="form-control form_regist" name="generic[]" value="CIUDAD">
-      </div>
       
       <div class="input-group">
         <div class="col-md-8 col-sm-8 col-xs-8  col-md-offset-2 col-sm-offset-2 col-xs-offset-2">
@@ -631,7 +627,7 @@
               <div class="form-group field-formcreateevent-event_image">
 
 <input ng-model="data.event_image2" type="hidden" name="FormCreateEvent[event_image]" value="">
-<input ng-model="data.imagen_evento" type="file" id="formcreateevent-event_image" class="eventos archivos upload-banner" name="imagen_evento[]" accept="image/*">
+<input ng-model="data.imagen_evento" type="file" id="formcreateevent-event_image-baner" class="eventos archivos upload-banner" name="imagen_evento[]" accept="image/*">
 <!--<input ng-model="data.imagen_opacidad" type="file" id="formcreateevent-event_image" class="eventos archivos upload-banner" name="FormCreateEvent[event_image]" accept="image/*">-->
 
 <div class="help-block"></div>

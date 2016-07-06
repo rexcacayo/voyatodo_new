@@ -33,7 +33,7 @@ angular.module('appVoyatodo')
             
             
              $scope.uploadFile = function(){
-                 alert("aqui");
+                
                 var formData = new FormData($("#form-update-foto")[0]);
                 var id = $scope.usuario_id;
                    $.ajax(
@@ -45,7 +45,7 @@ angular.module('appVoyatodo')
                             processData: false,
                             success: function(datos)
                             {
-                                //console.log(datos)   ;
+                                console.log(datos)   ;
                             }
 	            }
                );
