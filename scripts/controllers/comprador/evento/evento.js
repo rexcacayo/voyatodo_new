@@ -9,7 +9,8 @@ angular.module('appVoyatodo')
             {  
                 $("#accion").val("guardar_evento");
                 var formData = new FormData($("#form-create")[0]);
-                var ruta = "backend/modules/comprador/evento/crear_evento.php";  
+                var id = ($cookieStore.get('userId'));
+                var ruta = "backend/modules/comprador/evento/crear_evento_prueba.php?user_id="+id;  
                 /*$.each(
                         formData,
                         function($index,$valor)
@@ -54,16 +55,17 @@ angular.module('appVoyatodo')
                         alert(datas.result[0]);                        
                    }
                 );*/
-            }
+            };
             
             
             
             //GUARDAR ENTRADA
             $scope.guardar_entrada = function(data_entrada)
-            {  
+            {
+                var id = ($cookieStore.get('userId'));
                 data_entrada.accion="guardar_entrada";               
                 $.post(
-                        "backend/modules/comprador/evento/crear_evento.php",
+                        "backend/modules/comprador/evento/crear_evento_entrada.php?user_id="+id,
                         data_entrada,
                         function(datos)
                         {
@@ -75,10 +77,12 @@ angular.module('appVoyatodo')
             
             //GUARDAR CUENTA BANCO
             $scope.guardar_cuenta_banco = function(data_cuenta_pagos)
-            {  
+            
+            {
+                 var id = ($cookieStore.get('userId'));
                 data_cuenta_pagos.accion="guardar_cuenta_banco";               
                 $.post(
-                        "backend/modules/comprador/evento/crear_evento.php",
+                        "backend/modules/comprador/evento/crear_evento_banco.php?user_id="+id,
                         data_cuenta_pagos,
                         function(datos)
                         {
@@ -88,12 +92,13 @@ angular.module('appVoyatodo')
                 );
             }
             
-            //GUARDAR CUENTA BANCO
+            //GUARDAR CUENTA tdc
             $scope.guardar_tdc_pagos = function(data_tdc_pagos)
-            {  
+            {
+                 var id = ($cookieStore.get('userId'));
                 data_tdc_pagos.accion="guardar_tdc_pagos";               
                 $.post(
-                        "backend/modules/comprador/evento/crear_evento.php",
+                        "backend/modules/comprador/evento/crear_evento_tdc.php?user_id="+id,
                         data_tdc_pagos,
                         function(datos)
                         {
@@ -137,6 +142,3 @@ angular.module('appVoyatodo')
             
         }
     );
-
-
-

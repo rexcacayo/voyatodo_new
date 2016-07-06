@@ -23,9 +23,9 @@ angular.module('appVoyatodo')
                 $http.post("backend/modules/login/login.php", datas)
                  .success(function(datas) {
                  console.log(datas);  
-                   
+                
                  if(datas.result[0].login === "success"){
-                     alert("login");
+                  
                   $cookieStore.put('userRol', datas.result[0].rol);
                   $cookieStore.put('userEmail', datas.result[0].email);
                   $cookieStore.put('userFullname', datas.result[0].fullname);
@@ -34,17 +34,17 @@ angular.module('appVoyatodo')
                   if(datas.result[0].rol == 3){
                     location.href='#/inicio_comprador';
                   }
-                  if(datas.result[0].rol == 1){
+                  if(datas.result[0].rol == 2){
                     location.href='#/';
                     SweetAlert.swal("Usuario Patrocinador");
                    
                   }
-                  if(datas.result[0].rol == 2){
+                  if(datas.result[0].rol == 4){
                     location.href='#/';
                     SweetAlert.swal("Usuario Tienda");
                    
                   }
-                  if(datas.result[0].rol == 4){
+                  if(datas.result[0].rol == 1){
                     location.href='#/';
                     SweetAlert.swal("Usuario Admistrador");
                    
@@ -92,7 +92,7 @@ angular.module('appVoyatodo')
             $scope.btmregistrovisibility = true;
             $scope.telf1visibility = false;
             $scope.telf2visibility = false;
-            $scope.btmsolicitarvisibility = true;
+            $scope.btmsolicitarvisibility = false;
         };    
         $scope.create=function(){
         
@@ -166,6 +166,7 @@ angular.module('appVoyatodo')
         if($scope.data.user_type == 2){
             $scope.data.user_pass = "N/A";
             $scope.data.user_lastname="empresa"
+            
             
         }
         

@@ -197,7 +197,7 @@ class Config extends Singleton
 	 * @throws ConfigException if specified directory was not found
 	 */
 	public function set_model_directory($dir)
-	{   
+	{
 		if (!file_exists($dir))
 			throw new ConfigException("Invalid or non-existent directory: $dir");
 

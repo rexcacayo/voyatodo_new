@@ -74,21 +74,24 @@
             <!--aqui consulta-->     
           </form>
           <form id="form-update-foto" enctype="multipart/form-data" name="form-update-foto" >
+              
 <input type="hidden" name="_csrf" value="bDBrU2p6UXk.RCQFEy0WHzRqKAwJChA8OHI8HRAcCyY4VTsbDRQ/EA==">          <div class="col-md-12 text-center hitop">
             <div class="ttlperfil">{{usuario_fullname}}</div>                                 
           </div>
           <div class="col-lg-2 col-lg-offset-5 col-sm-2 col-sm-offset-5 col-xs-12">
             <center>
                                 <div class="fa_circle field_photo"></div>
-                   
+                                
+                                    
+                               
             </center>
           </div>
           <div class="col-lg-2 col-sm-3 col-xs-12"> 
-              <label for="files" data-role="button" class="btn btn_green top" data-inline="true" data-mini="true" data-corners="false" ng-click="uploadFile()">Cambiar foto</label>
+            <button for="files"  data-role="button" class="btn btn_green" data-inline="true" data-mini="true" data-corners="false" ng-click="uploadFile(form-update-foto)">Cambiar foto</button>
             <div class="form-group field-formupdateinformation-user_photo">
-
-<input type="hidden" name="FormUpdateInformation[user_photo]" value="">
-<input type="file" id="formupdateinformation-user_photo" class="change_photo" name="FormUpdateInformation[user_photo]" accept="image/*" style="margin-top: -35px; margin-left: 40px;" file-model="myFile">
+             
+<!--<input type="hidden" name="FormUpdateInformation[user_photo]" value="">-->
+<input type="file" id="formupdateinformation-user_photo" class="change_photo" name="FormUpdateInformation[user_photo]" accept="image/*" style="margin-top: -35px; margin-left: 40px;" ng-click="uploadFile(form-update-foto)">
 
 
     
@@ -108,6 +111,9 @@
     <h1 class="">DATOS PERSONALES</h1> <p class="help-block">Informaci&oacute;n b&aacute;sica de la cuenta</p>
   </div>
 
+<input type="file" ngf-select ng-model="picFile" name="file"    
+             accept="image/*" ngf-max-size="2MB" required
+             ngf-model-invalid="errorFile">
   <div class="col-md-4 col-xs-12 col-lg-4 col-sm-6">
     <div class="panel-group" id="accordion1">
       <div class="panel panel-default">
@@ -128,8 +134,9 @@
                <div class="col-md-12">
                 <div class="form-group field-formupdateinformation-username required">
 
-                    
+                   
 <input type="text" id="formupdateinformation-username" class="form-control" name="FormUpdateInformation[username]" ng-model="data.user_name" />
+ 
 <div class="help-block"></div>
 </div>               </div>
             </div><!--form-group-->
@@ -414,7 +421,9 @@
         object = {};
         object.filename = file.name;
         object.data = event.target.result;
+        //console.log(object.data);
         $(".field_photo").attr("style","background: url(" + object.data + ") center no-repeat; background-size: auto 100%");
+        
       };  
       reader.readAsDataURL(file);
     });
