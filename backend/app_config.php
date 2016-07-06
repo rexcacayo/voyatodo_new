@@ -18,7 +18,7 @@ $arrDB = array("_PROD" => array("host" => $mysql_host1, "user" => $mysql_user1, 
 			   "_DEFAULT" => array("host" => $mysql_host, "user" => $mysql_user, "pass" => $mysql_password, "db" => $mysql_database));
 require_once(APPROOT."class/externals/cake/inflector.php");
 //require(APPROOT."class/autoloader.class.php");
-require_once APPROOT.'orm/php-activerecord/ActiveRecord.php';
+require_once APPROOT.'orm/phpar/ActiveRecord.php';
 //if($arrDB['_DEFAULT']['pass']):
 //$arrCon = array('development' => 'mysql://'.$arrDB['_DEFAULT']['user'].':'.$arrDB['_DEFAULT']['pass'].'@'.$arrDB['_DEFAULT']['host'].'/'.$arrDB['_DEFAULT']['db']);
 //else:
