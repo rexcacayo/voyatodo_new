@@ -627,7 +627,7 @@
               <div class="form-group field-formcreateevent-event_image">
 
 <input ng-model="data.event_image2" type="hidden" name="FormCreateEvent[event_image]" value="">
-<input ng-model="data.imagen_evento" type="file" id="formcreateevent-event_image-baner" class="eventos archivos upload-banner" name="imagen_evento[]" accept="image/*">
+<input ng-model="data.imagen_evento" type="file" id="formcreateevent-event_image-baner" class="eventos archivos upload-banner" name="imagen_evento_banner[]" accept="image/*">
 <!--<input ng-model="data.imagen_opacidad" type="file" id="formcreateevent-event_image" class="eventos archivos upload-banner" name="FormCreateEvent[event_image]" accept="image/*">-->
 
 <div class="help-block"></div>
