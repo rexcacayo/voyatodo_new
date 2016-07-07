@@ -10,15 +10,14 @@ angular.module('appVoyatodo')
                 $("#accion").val("guardar_evento");
                 var formData = new FormData($("#form-create")[0]);
                 var id = ($cookieStore.get('userId'));
-                var ruta = "backend/modules/comprador/evento/crear_evento_prueba.php?user_id="+id;  
-                /*$.each(
-                        formData,
-                        function($index,$valor)
-                        {
-                            alert($index+"--->"+$valor);
-                        }
-                );*/
-                //alert(formData);
+                var eventid = ($cookieStore.get('eventId'));
+                
+                if($cookieStore.get('eventId')){
+                    var ruta = "backend/modules/comprador/evento/crear_evento_prueba.php?event_id="+eventid;  
+                }else{
+                   var ruta = "backend/modules/comprador/evento/crear_evento_prueba.php?user_id="+id;  
+                }
+               
                 $.ajax(
                         {
                             url: ruta,
@@ -28,44 +27,30 @@ angular.module('appVoyatodo')
                             processData: false,
                             success: function(datos)
                             {
-                                console.log(datos)   ;
+                                console.log(datos);
+                                return;
+                                if(datos.result[0].event=== success){
+                                    $cookieStore.put('eventId', datos.result[0].eventid);
+                                }
                             }
 	            }
                );
                 
-                /*$.post(
-                        "backend/modules/comprador/evento/crear_evento.php",
-                        data,
-                        function(datos)
-                        {
-                            console.log(datos)   ;
-                        },
-                        "json"
-                );*/
-                
-                /*$http.post
-                (
-                    "backend/modules/comprador/evento/crear_evento.php",
-                    data
-                )
-                .success
-                (
-                    function(datas) 
-                    {           
-                        alert(datas.result[0]);                        
-                   }
-                );*/
+               
             };
             
-            
+            $scope.prueba_cambio = function(){
+                $scope.guardar_evento();
+            };
             
             //GUARDAR ENTRADA
             $scope.guardar_entrada = function(data_entrada)
             {
                 var id = ($cookieStore.get('userId'));
+                var eventid = ($cookieStore.get('eventId'));
                 data_entrada.accion="guardar_entrada";               
                 $.post(
-                        "backend/modules/comprador/evento/crear_evento_entrada.php?user_id="+id,
+                        "backend/modules/comprador/evento/crear_evento_entrada.php?event_id="+eventid,
                         data_entrada,
                         function(datos)
                         {
