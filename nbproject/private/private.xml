@@ -3,8 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/desarrollos/voyatodo_new/scripts/controllers/comprador/evento/evento.js</file>
-            <file>file:/C:/xampp/htdocs/desarrollos/voyatodo_new/templates/comprador/evento/index.php</file>
+            <file>file:/C:/xampp/htdocs/projects/voyatodo2/voyatodo_new/backend/models/event.php</file>
+            <file>file:/C:/xampp/htdocs/projects/voyatodo2/voyatodo_new/scripts/controllers/evento/evento.js</file>
+            <file>file:/C:/xampp/htdocs/projects/voyatodo2/voyatodo_new/backend/app_config.php</file>
+            <file>file:/C:/xampp/htdocs/projects/voyatodo2/voyatodo_new/backend/modules/login/activation.php</file>
+            <file>file:/C:/xampp/htdocs/projects/voyatodo2/voyatodo_new/backend/modules/login/login.php</file>
+            <file>file:/C:/xampp/htdocs/projects/voyatodo2/voyatodo_new/backend/models/FormEventGeneric.php</file>
+            <file>file:/C:/xampp/htdocs/projects/voyatodo2/voyatodo_new/backend/models/EventImages.php</file>
+            <file>file:/C:/xampp/htdocs/projects/voyatodo2/voyatodo_new/backend/modules/comprador/evento/crear_evento_prueba.php</file>
         </group>
     </open-files>
 </project-private>
