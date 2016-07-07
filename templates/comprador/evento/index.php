@@ -124,7 +124,7 @@
       <div class="input-group">
         <div class="form-group field-formcreateevent-event_name required">
 
-    <input ng-model="data.event_name" type="text" id="formcreateevent-event_name" class="form-control event-name" name="FormCreateEvent[event_name]" placeholder="Mi primer evento" ng-blur="prueba_cambio()">
+    <input ng-model="data.event_name" type="text" id="formcreateevent-event_name" class="form-control" name="FormCreateEvent[event_name]" placeholder="Mi primer evento" ng-blur="prueba_cambio()">
     <input type="hidden" value="guardar_evento" name="accion" id="accion" ng-model="data.accion">
 <div class="help-block"></div>
 </div>        <span class="input-group-addon">
@@ -569,7 +569,7 @@
                 <div class="form-group field-mailsend-image">
 
 <input ng-model="data.image" type="hidden" name="MailSend[image]" value="">
-<input ng-model="data.image" type="file" id="mailsend-image" class="eventos archivos upload_email" name="MailSend[image]" accept="image/*">
+<input ng-model="data.image" type="file" id="mailsend-image"  name="MailSend[image]" accept="image/*">
 
 <div class="help-block"></div>
 </div>                </div>
@@ -1426,61 +1426,61 @@
       <div class="dashboard-content col-sm-12">
         <div class="col-md-12 col-xs-0 col-md-offset-0 dashboard-element" id="dashboard-summary">
           <a class="img_click" name="summary-" style="cursor: pointer">
-            <img class="img_summary-" src="tema/images/summary-gray.png">
+            <img  src="tema/images/summary-gray.png">
             <p class="hidden-sm hidden-xs">DASHBOARD</p>
           </a>
         </div>
         <div class="col-md-12 col-xs-0 dashboard-element" id="dashboard-information">
           <a class="img_click" name="information-" style="cursor: pointer">
-            <img class="img_information-" src="tema/images/information-gray.png">
+            <img src="tema/images/information-gray.png">
             <p class="hidden-sm hidden-xs">INFORMACI&Oacute;N</p>
           </a>
         </div>
         <div class="col-md-12 col-xs-0 dashboard-element" id="dashboard-design">
           <a class="img_click" name="design-" style="cursor: pointer">
-            <img class="img_design-" src="tema/images/design-gray.png">
+            <img src="tema/images/design-gray.png">
             <p class="hidden-sm hidden-xs">DISE&Ntilde;O</p>
           </a>
         </div>
         <div class="col-md-12 col-xs-0 dashboard-element" id="dashboard-tickets">
           <a class="img_click menu_tickets" name="tickets-" style="cursor: pointer">
-            <img class="img_tickets-" src="tema/images/tickets-gray.png">
+            <img src="tema/images/tickets-gray.png">
             <p class="hidden-sm hidden-xs">ENTRADAS</p>
           </a>
         </div>
         <div class="col-md-12 col-xs-0 dashboard-element" id="dashboard-bank">
           <a class="img_click menu_banks" name="bank-" style="cursor: pointer">
-            <img class="img_bank-" src="tema/images/bank-gray.png">
+            <img  src="tema/images/bank-gray.png">
             <p class="hidden-sm hidden-xs">BANCO</p>
           </a>
         </div>
         <div class="col-md-12 col-xs-0 col-sm-offset-0  dashboard-element" id="dashboard-share">
           <a class="img_click" name="share-" style="cursor: pointer">
-            <img class="img_share-" src="tema/images/share-gray.png">
+            <img  src="tema/images/share-gray.png">
             <p class="hidden-sm hidden-xs">COMPARTIR</p>
           </a>
         </div>
         <div class="col-md-12 col-xs-0 col-sm-offset-1 dashboard-element" id="dashboard-sponsor">
           <a class="img_click" name="sponsor-" style="cursor: pointer">
-            <img class="img_sponsor-" src="tema/images/sponsor-gray.png">
+            <img  src="tema/images/sponsor-gray.png">
             <p class="hidden-sm hidden-xs" style="margin-left: -18px;">PATROCINADOR</p>
           </a>
         </div>
         <div class="col-md-12 col-xs-0 dashboard-element" id="dashboard-asistent">
           <a class="img_click" name="asistent-" style="cursor: pointer">
-            <img class="img_asistent-" src="tema/images/asistent-gray.png">
+            <img src="tema/images/asistent-gray.png">
             <p class="hidden-sm hidden-xs">ASISTENTES</p>
           </a>
         </div>
         <div class="col-md-12 col-xs-0 dashboard-element" id="dashboard-access">
           <a class="img_click" name="access-" style="cursor: pointer">
-            <img class="img_access-" src="tema/images/access-gray.png">
+            <img src="tema/images/access-gray.png">
             <p class="hidden-sm hidden-xs">ACCESO</p>
           </a>
         </div>
         <div class="col-md-12 col-xs-0 dashboard-element" id="dashboard-publicity">
           <a class="img_click" name="publicity-" style="cursor: pointer">
-            <img class="img_publicity-" src="tema/images/publicity-gray.png">
+            <img  src="tema/images/publicity-gray.png">
             <p class="hidden-sm hidden-xs">PUBLICIDAD</p>
           </a>
         </div>
