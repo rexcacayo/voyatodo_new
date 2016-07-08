@@ -1376,7 +1376,8 @@
             </div>
             <div class="col-md-12">
               <h1>Invitaci&oacute;n al Evento</h1>
-              <h2 class="titulo">[NOMBRE EVENTO]</h2>
+              <h2 class="titulo">{{dataok
+                          .event_name}}</h2>
             </div>
             <div class="col-md-12 top"> 
               Fecha: <span class="text_date"></span><br>
@@ -1390,7 +1391,7 @@
               <span id="md_description"></span>
             </div>
             <div class="col-md-12 top">
-              Te puedes comunicar al correo: <span id="md_response">tucorreo@email.com</span>
+              Te puedes comunicar al correo: <span id="md_response">{{usuario_email}}/span>
             </div>
             <div class="col-md-12">
               <a class="btn btn-block btn_url_email" style="background: #f3d71a; color: #4B0082 !important;">VER DETALLES DEL EVENTO</a>
@@ -1602,21 +1603,21 @@
               <div class="blog-d-right-w">
                 
                 <h5>{{usuario_fullname}}</h5>
-                <div style="background-size:100% 100%;background-image:url('tema');background-repeat: no-repeat;" class="blog-d-right-w-img img_p"></div>
+                <div style="background-size:100% 100%;background-image:url('{{user_picture}}');background-repeat: no-repeat;" class="blog-d-right-w-img img_p"></div>
                 <h6>Email</h6>
-                <a target="_blank" href="mailto:{{usuario_email}}">{{usuario_correo}}</a> <br />
+                <a target="_blank" href="mailto:{{usuario_email}}">{{usuario_email}}</a> <br />
                 <br />
                 <div class="blog-d-right-w-img">
-                  <a target="_blank" href="" class="text-facebook"> 
+                  <a target="_blank" href="{{user_facebook}}" class="text-facebook"> 
                     <i class="fa fa-facebook"></i> 
                   </a>
-                  <a target="_blank" href="" class="text-twitter"> 
+                  <a target="_blank" href="{{user_twitter}}" class="text-twitter"> 
                     <i class="fa fa-twitter"></i> 
                   </a>
-                  <a target="_blank" href="" class="text-you"> 
+                  <a target="_blank" href="{{user_youtube}}" class="text-you"> 
                     <i class="fa fa-youtube-play"></i> 
                   </a>
-                  <a target="_blank" href="" class="text-google"> 
+                  <a target="_blank" href="{{user_google}}" class="text-google"> 
                     <i class="fa fa-google-plus"></i> 
                   </a>
                  </div>

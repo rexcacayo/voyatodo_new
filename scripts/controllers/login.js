@@ -1,9 +1,34 @@
 'use strict';
 
 angular.module('appVoyatodo')
-        .controller('LoginCrtl',function($scope, $http, SweetAlert, $cookies, $cookieStore){
+        .controller('LoginCrtl',function($scope, $http, SweetAlert, $cookies, $cookieStore, $auth, toastr){
+            
+                
+    $scope.authenticate = function(provider) {
+        
+           $auth.authenticate(provider)
+        .then(function() {
+          toastr.success('You have successfully signed in with ' + provider + '!');
+          $location.path('/');
+        })
+        .catch(function(error) {
+          if (error.error) {
+            // Popup error - invalid redirect_uri, pressed cancel button, etc.
+            toastr.error(error.error);
+          } else if (error.data) {
+            // HTTP response error from server
+            toastr.error(error.data.message, error.status);
+          } else {
+            toastr.error(error);
+          }
+        });
+    };
+        
+    
+          
             
             $scope.login = function(){
+                
                 
               if($scope.data.user_email === undefined){
                  SweetAlert.swal("Debe llenar el campo E_MAIL");
@@ -30,6 +55,12 @@ angular.module('appVoyatodo')
                   $cookieStore.put('userEmail', datas.result[0].email);
                   $cookieStore.put('userFullname', datas.result[0].fullname);
                   $cookieStore.put('userId', datas.result[0].userid);
+                  $cookieStore.put('userFacebook', datas.result[0].userfacebook);
+                  $cookieStore.put('userTwitter', datas.result[0].usertwitter);
+                  $cookieStore.put('useryoutube', datas.result[0].useryoutube);
+                  $cookieStore.put('userGoogle', datas.result[0].usergoogle);
+                  $cookieStore.put('userPicture', datas.result[0].userpicture);
+                  
                   
                   if(datas.result[0].rol == 3){
                     location.href='#/inicio_comprador';

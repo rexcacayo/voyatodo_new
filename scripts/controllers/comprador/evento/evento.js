@@ -3,8 +3,15 @@
 angular.module('appVoyatodo')
     .controller('CompradorEventoCrtl',function($scope, $http, SweetAlert, $cookies, $cookieStore)
         {
-            
+            $scope.usuario_fullname = $cookieStore.get('userFullname');
+            $scope.usuario_email = $cookieStore.get('userEmail');
             $scope.user_id=$cookieStore.get('userId');
+            $scope.user_facebook=$cookieStore.get('userFacebook');
+            $scope.user_youtube=$cookieStore.get('useryoutube');
+            $scope.user_google=$cookieStore.get('userGoogle');
+            $scope.user_twitter=$cookieStore.get('userTwitter');
+            $scope.user_picture=$cookieStore.get('userPicture');
+            
             $scope.guardar_evento = function(data)
             {  
                 $("#accion").val("guardar_evento");

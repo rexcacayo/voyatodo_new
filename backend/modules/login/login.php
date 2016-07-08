@@ -16,7 +16,14 @@ if ($data):
             $result .= '"userid":"' . $objUser->id . '",';
             $result .= '"fullname":"' . $objUser->username . ' ' . $objUser->last_name . '",';
             $result .= '"rol":"' . $objUser->rol . '",';
-            $result .= '"email":"' . $objUser->email . '"';
+            $result .= '"email":"' . $objUser->email . '",';
+            $result .= '"userfacebook":"' . $objUser->user_facebook . '",';
+            $result .= '"usertwitter":"' . $objUser->user_twitter . '",';
+            $result .= '"usergoogle":"' . $objUser->user_google . '",';
+            $result .= '"useryoutube":"' . $objUser->user_youtube . '",';
+            $result .= '"userpicture":"' . $objUser->user_image . '"';
+            
+            
             $result .= '}';
         else:
             $result .= '{';

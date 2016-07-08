@@ -89,14 +89,17 @@
                   <div class="social-auth-links text-center text-social">
                       
                       
-                      <div id="w0" class="auth-clients"><ul class="auth-clients clear"><li class="auth-client"><a class="auth-link google" href="javascript:void(0)"><i class="margin fa fa-google"></i><span class="auth-title" >Google</span></a></li>
-                              <li class="auth-client"><a class="auth-link facebook" href="../auth?authclient=facebook"><i class="margin fa fa-facebook"></i><span class="auth-title">Facebook</span></a></li></ul></div> 
+                      <div id="w0" class="auth-clients" ><ul class="auth-clients clear"><li class="auth-client"><a class="auth-link google" href="" ng-click="authenticate('google')"><i class="margin fa fa-google"></i><span class="auth-title" >Google</span></a></li>
+                              <li class="auth-client" ><a class="auth-link facebook" href="" ng-click="authenticate('facebook')"><i class="margin fa fa-facebook"></i><span class="auth-title">Facebook</span></a></li></ul></div> 
                  </div>
-                  <div class="g-signin2" ng-click="googlein()"></div>
+                  
                   <p class="title-n">&iquest;ERES NUEVO?</p>
                   <p><span>Reg&iacute;strate y obt&eacute;n tu cuenta gratis
                     y empieza a crear y gestionar eventos.</span></p>
+                   
                   <div class="re-link"> <a href="#/registro">REGISTRARME</a> </div>
+                   <div class="g-signin2" data-onsuccess=""></div>
+                    
               </div>
               <div class="descarga-box">
                 <p>Descarga la app:</p>

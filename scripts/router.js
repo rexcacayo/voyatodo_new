@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('appVoyatodo', ['ngResource','ngRoute', 'ngCookies', 'oitozero.ngSweetAlert','mp.datePicker','kk.timepicker','appVoyatodo.services'])
-        .config(function($routeProvider){
+angular.module('appVoyatodo', ['ngResource','ngRoute', 'ngCookies', 'oitozero.ngSweetAlert','mp.datePicker','kk.timepicker','appVoyatodo.services','satellizer','toastr'])
+        .config(function($routeProvider, $authProvider ){
             $routeProvider
             .when('/inicio',
             {
@@ -222,9 +222,18 @@ angular.module('appVoyatodo', ['ngResource','ngRoute', 'ngCookies', 'oitozero.ng
                 templateUrl: 'templates/comprador/producto/v/6/index.php',
                 controller: 'CompradorProductoCrtl'
             })
+            
             .otherwise({
                 redirectTo: '/inicio'
             });
+            
+            $authProvider.google({
+                clientId: '508633381295-hbactr3dpuelntr1hvotbg0tb79ul20b.apps.googleusercontent.com'
+            });
+            
+            $authProvider.facebook({
+                clientId: '261890787515465'
+            });
         });
-           
+
   
