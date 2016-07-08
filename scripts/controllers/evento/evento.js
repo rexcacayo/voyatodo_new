@@ -15,7 +15,26 @@ angular.module('appVoyatodo')
             $cookieStore.remove('userId');
             location.href='#/inicio';
         };
+    $scope.eventos=function(){
         
+        var ruta = "backend/modules/comprador/evento/publish_events.php"; 
+        var x = "";
+            $.ajax(
+               {
+                    url: ruta,
+                    type: "POST",
+                    data: x,
+                    contentType: false,
+                    processData: false,
+                    dataType: 'json',
+                    success: function(datas)
+                        {
+                            console.log("eventos_general1:"+datas);
+                            console.log(datas.event_adress);
+                            $scope.datas=datas;
+                        }
+                });
+    };    
         
     });
     

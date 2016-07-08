@@ -84,7 +84,7 @@
   <div class="section destacados">
     <div class="container container-update"> 
       <div class="row">
-                    <div class="big-title text-center">
+                    <div class="big-title text-center" ng-init="eventos()">
               <h1>Lista de todos los  <span>eventos</span></h1>
         <p class="text-center">Desde aquí puedes ver todos los eventos</p>
               
@@ -94,7 +94,7 @@
         <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="team-member modern">
                 <a href="#/inicio/evento/v/maraton-de-medellin"> 
-                    <div class="member-photo imgevent" style="background-image: url('{{data.event_image}}');background-size: 100% 100%;">
+                    <div class="member-photo imgevent" style="background-image: url('templates/comprador/v/{{data.event_id}}/{{data.event_image}}');background-size: 100% 100%;">
                         <div class="member-name color01">
                             <span>{{data.fktipetickect}}</span> 
                         </div>

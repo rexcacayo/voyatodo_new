@@ -3,7 +3,7 @@
 angular.module('appVoyatodo').controller('InicioCompradorCrtl',function($scope, $http, SweetAlert, $cookies, $cookieStore){
     $scope.eventos=function(){
         
-        var ruta = "backend/modules/comprador/evento/publish_event.php"; 
+        var ruta = "backend/modules/comprador/evento/publish_events.php"; 
         var x = "";
             $.ajax(
                {
@@ -13,9 +13,11 @@ angular.module('appVoyatodo').controller('InicioCompradorCrtl',function($scope, 
                     contentType: false,
                     processData: false,
                     dataType: 'json',
+                    
                     success: function(datas)
                         {
-                            console.log("eventos_general:"+datas);
+                            console.log("eventos:"+datas);
+                            
                             $scope.datas=datas;
                         }
                 });
