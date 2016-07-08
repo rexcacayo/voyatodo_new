@@ -9,7 +9,7 @@ angular.module('appVoyatodo')
            $auth.authenticate(provider)
         .then(function() {
           toastr.success('You have successfully signed in with ' + provider + '!');
-          $location.path('/');
+          SweetAlert.swal("conexion exitosa a provedor de datos debe definir rol");
         })
         .catch(function(error) {
           if (error.error) {

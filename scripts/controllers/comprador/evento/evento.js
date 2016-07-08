@@ -12,6 +12,24 @@ angular.module('appVoyatodo')
             $scope.user_twitter=$cookieStore.get('userTwitter');
             $scope.user_picture=$cookieStore.get('userPicture');
             
+            $scope.pais = function(){
+                var ruta = "backend/modules/comprador/evento/pais_evento.php"; 
+                var x = "";
+                $.ajax(
+                        {
+                            url: ruta,
+                            type: "POST",
+                            data: x,
+                            contentType: false,
+                            processData: false,
+                            dataType: 'json',
+                            success: function(datas)
+                            {
+                                console.log("pais:"+datas);
+                                
+                                }
+                            });
+            };
             $scope.guardar_evento = function(data)
             {  
                 $("#accion").val("guardar_evento");
@@ -148,6 +166,50 @@ angular.module('appVoyatodo')
                         "json"
                 )*/
             };
+            
+            $scope.publicar=function(){
+                var eventid = ($cookieStore.get('eventId'));
+                var ruta = "backend/modules/comprador/evento/publicar_evento.php?event_id="+eventid;  
+                var formData = new FormData($("#form-create")[0]);
+                
+                $.ajax(
+                        {
+                            url: ruta,
+                            type: "POST",
+                            data: formData,
+                            contentType: false,
+                            processData: false,
+                            dataType: 'json',
+                            success: function(datas)
+                            {
+                                console.log("evento:"+datas);
+                                SweetAlert.swal("Evento plubicado");
+                                location.href='#/inicio_comprador';
+                            }
+                        });
+	    };
+            
+            $scope.ciudad = function(id){
+                
+                var ruta = "backend/modules/comprador/evento/ciudad_evento.php";  
+                
+                
+                $.ajax(
+                        {
+                            url: ruta,
+                            type: "POST",
+                            data: id,
+                            contentType: false,
+                            processData: false,
+                            dataType: 'json',
+                            success: function(datas)
+                            {
+                                console.log("ciudad:"+datas);
+                                $scope.datasc=datas.result;
+                            }
+                        });
+            }
+            
             
         });
         

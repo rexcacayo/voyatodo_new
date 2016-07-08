@@ -89,32 +89,36 @@
         <p class="text-center">Desde aquí puedes ver todos los eventos</p>
               
             </div>
-                           
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                  <div class="team-member modern">
-                    <a href="#/inicio/evento/v/maraton-de-medellin"> 
-                      <div class="member-photo imgevent" style="background-image: url('tema/images/system_imgs/7d3f20d64d652ced9b1c03e3430fb384110cd69bb1cd29b6eebanner_maraton.jpg');background-size: 100% 100%;">
-                                                      <div class="member-name color01">
-                                <span>GRATIS</span> 
-                              </div>
-                                                  </div>
-                    </a>
-                    <div class="member-info">
-                      <div class="post-date">
-                        30 Mar, 2016. 07:30                      </div>
-
-                      <h2><a href="#/inicio/evento/v/maraton-de-medellin"> Maratón de Medellín</a></h2>
-                      <div class="post-date">Avenida 33 </div>
-                    </div>  
-                    <div class="member-socail"> 
-                       
-                      <a class="icon05" style="background: url('tema/images/system_imgs/categorys/icon-sport.png') center no-repeat;" data-toggle="tooltip" title="Deportes y bienestar" data-placement="bottom"></a> 
-                      <a class="icon03" data-toggle="tooltip" title="Compartir" data-placement="bottom" href="#"></a> 
-                      <a class="link-button" href="#/inicio/evento/v/maraton-de-medellin">ver m&aacute;s</a> 
+        <!--aqui comienza el cuadro de eventos-->                   
+    <div ng-repeat="data in datas">
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="team-member modern">
+                <a href="#/inicio/evento/v/maraton-de-medellin"> 
+                    <div class="member-photo imgevent" style="background-image: url('{{data.event_image}}');background-size: 100% 100%;">
+                        <div class="member-name color01">
+                            <span>{{data.fktipetickect}}</span> 
+                        </div>
                     </div>
+                </a>
+                <div class="member-info">
+                    <div class="post-date">
+                       {{data.event_stardate}}&nbsp;{{data.event_starthour}}                     
+                    </div>
+
+                    <h2><a href="#/inicio/evento/v/maraton-de-medellin"> {{data.event_name}}</a></h2>
+                    <div class="post-date">{{data.event_place}} </div>
+                </div>  
+                <div class="member-socail"> 
+                <a class="icon05" style="background: url('tema/images/system_imgs/categorys/icon-sport.png') center no-repeat;" data-toggle="tooltip" title="Deportes y bienestar" data-placement="bottom"></a> 
+                <a class="icon03" data-toggle="tooltip" title="Compartir" data-placement="bottom" href="#"></a> 
+                <a class="link-button" href="#/inicio/evento/v/{{data.event_url}}">ver m&aacute;s</a> 
+                </div>
                   </div>
                 </div>
-              </div>
+        </div>
+          <!--aqui termina el cuadro de eventos-->
+              
+        
       <!-- End Team Members --> 
     </div>
     <!-- .container --> 

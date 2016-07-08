@@ -20,7 +20,7 @@
         <div class="slider-content">
           <div class="col-md-12 textEvent">
             <h3 class="animated3"> <span>estado de tu evento:</span> </h3>
-            <p class="animated4"><a class="eventos public" >PUBLICAR</a> <a  ng-click="guardar_evento(data)" class="eventos save" >GUARDAR</a> </p>
+            <p class="animated4"><a class="eventos public" ng-click="publicar()">PUBLICAR</a> <a  ng-click="guardar_evento(data)" class="eventos save" >GUARDAR</a> </p>
           </div>
         </div>
       </div>
@@ -206,8 +206,8 @@
               <div class="form-group field-formcreateevent-event_city required">
 
 <select  ng-model="data.event_city" id="formcreateevent-event_city" class="form-control cmb-city" name="FormCreateEvent[event_city]">
-<option value="">Seleccione Ciudad</option>
-<option value="1">Cartajena</option>
+<option value="" ng-repeat="datac in datasc">Seleccione Ciudad</option>
+<option value="{{datac.id}}">{{datac.name}}</option>
 
 </select>
 
@@ -372,7 +372,7 @@
             <span class="input-group-addon" id="basic-addon1">http://voyatodo.com/evento/v/</span> 
              <div class="form-group field-formcreateevent-event_url required">
 
-<input ng-model="data.event_url" type="text" id="formcreateevent-event_url" class="form-control text-url" name="FormCreateEvent[event_url]">
+                 <input ng-model="data.event_url" type="text" id="formcreateevent-event_url" class="form-control text-url" name="FormCreateEvent[event_url]" value="{{data.event_name}}">
 
 <div class="help-block"></div>
 </div>          </div>
