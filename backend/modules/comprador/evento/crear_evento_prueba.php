@@ -40,13 +40,23 @@ $fields = array(
     'event_crowfunding' => 'event_crowfunding',
     'event_linkvideo' => 'event_linkvideo',
     'event_terms' => 'event_terms',
-    'event_visible' => 'event_visible'
-    , 'event_opacityimage' => 'event_opacityimage');
+    'typeticket_name' => 'fktipetickect',
+    'event_visible' => 'event_visible',
+    'event_opacityimage' => 'event_opacityimage');
+if ($_GET):
 if ($_POST):
-    if ($_POST['FormCreateEvent']['eventid'] === ''):
-        $objEvent = New Event();
+//    if ($_POST['FormCreateEvent']['eventid'] === ''):
+//        $objEvent = New Event();
+//    else:
+//        $objEvent = Event::find($_POST['FormCreateEvent']['eventid']);
+//    endif;
+    if (array_key_exists('event_id', $_GET)):
+        $objEvent = Event::find($_GET['event_id']);
     else:
-        $objEvent = Event::find($_POST['FormCreateEvent']['eventid']);
+        $objEvent = New Event();
+    endif;
+    if (array_key_exists('user_id', $_GET)):
+        $objEvent->fkuser = $_GET['user_id'];
     endif;
     foreach ($fields as $vector => $campo):
         if (array_key_exists($vector, $_POST['FormCreateEvent'])):
@@ -55,10 +65,12 @@ if ($_POST):
             endif;
         endif;
     endforeach;
-    $objEvent->fkuser = $_GET['user_id'];
+    
+endif;
 endif;
 $objEvent->save();
-if (Event::exists(array('conditions' => array('event_url' => $_POST['FormCreateEvent']['event_url'])))):
+//if (Event::exists(array('conditions' => array('event_url' => $_POST['FormCreateEvent']['event_url'])))):
+if (Event::exists(array('conditions' => array('event_url = ? and pkevent <> ?', $_POST['FormCreateEvent']['event_url'], $objEvent->pkevent)))):
     $objEvent->event_url = $_POST['FormCreateEvent']['event_url'] . '-' . $objEvent->pkevent;
 else:
     $objEvent->event_url = $_POST['FormCreateEvent']['event_url'];
@@ -130,6 +142,49 @@ if (isset($_FILES)):
                     $EI->fkevent = $objEvent->pkevent;
                     $EI->save();
                 endforeach;
+            endif;
+        endif;
+        $archivob = $_FILES['imagen_evento_banner'];
+        $new_filesb = null;
+        foreach ($archivob["name"] as $index => $valor) :
+            if ($archivob['error'][$index] == 0):
+                $uploaddir = $ruta;
+                $fileName = $archivob['name'][$index];
+                $newfilename = round(microtime(true)) . '_' . $fileName;
+                $uploadfile = $uploaddir . '/' . $newfilename;
+                $finfo = new finfo(FILEINFO_MIME_TYPE);
+                if (false === $ext = array_search(
+                        $finfo->file($archivob['tmp_name'][$index]), array(
+                    'jpg' => 'image/jpeg',
+                    'png' => 'image/png',
+                    'gif' => 'image/gif',
+                        ), true
+                        )):
+                    $retorna["estado"][$index] = "error_subir_archivo";
+                    $retorna["mensaje"][$index] = "Extension no valida";
+                    $retorna["archivo"][$index] = $fileName;
+                else:
+                    if (move_uploaded_file($archivob['tmp_name'][$index], $uploadfile)):
+                        $retorna["estado"][$index] = "archivo_subido";
+                        $retorna["mensaje"][$index] = "El Archivo fue Subido Correctamente";
+                        $retorna["archivo"][$index] = $newfilename;
+                        $new_filesb[$index] = $newfilename;
+                    else:
+                        $retorna["estado"][$index] = "error_subir_archivo";
+                        $retorna["mensaje"][$index] = "No se pudo mover el archivo";
+                        $retorna["archivo"][$index] = $uploadfile;
+                    endif;
+                endif;
+            else:
+                $retorna["estado"][$index] = "error_subir_archivo";
+                $retorna["mensaje"][$index] = "Archivo Vacio";
+            endif;
+        endforeach;
+        if ($new_filesb):
+            
+            if (count($new_filesb) > 0):
+                $objEvent->event_image = $new_filesb[0];
+                $objEvent->save();
             endif;
         endif;
     endif;
