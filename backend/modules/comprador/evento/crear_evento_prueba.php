@@ -1,5 +1,4 @@
 <?php
-
 include_once '../../../app_config.php';
 require_once("../../../models/event.php");
 require_once("../../../models/EventImages.php");
