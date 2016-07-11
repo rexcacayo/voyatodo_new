@@ -1,4 +1,4 @@
-<header class="clearfix" ng-controller="EventoCrtl"> 
+<header class="clearfix" ng-controller="InicioCompradorCrtl"> 
     <div class="navbar navbar-default navbar-top">
       <div class="container-fluid">
         <div class="navbar-header"> 
@@ -82,9 +82,9 @@
     </div>
   </section>  
   <div class="section destacados">
-    <div class="container container-update"> 
-      <div class="row">
-                    <div class="big-title text-center" ng-init="eventos()">
+      <div class="container container-update"> 
+          <div class="row" ng-controller="ListadoEventoCrtl">
+                    <div class="big-title text-center" ng-init="eventos(1)">
               <h1>Lista de todos los  <span>eventos</span></h1>
         <p class="text-center">Desde aquí puedes ver todos los eventos</p>
               
@@ -93,10 +93,10 @@
     <div ng-repeat="data in datas">
         <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="team-member modern">
-                <a href="#/inicio/evento/v/maraton-de-medellin"> 
-                    <div class="member-photo imgevent" style="background-image: url('templates/comprador/v/{{data.event_id}}/{{data.event_image}}');background-size: 100% 100%;">
+                <a href="#/inicio/evento/v/{{data.event_url}}"> 
+                    <div class="member-photo imgevent" style="background-image: url('templates/evento/v/{{data.pkevent}}{{data.event_image}}');background-size: 100% 100%;">
                         <div class="member-name color01">
-                            <span>{{data.fktipetickect}}</span> 
+                            <span>{{type_event}}</span> 
                         </div>
                     </div>
                 </a>
@@ -116,6 +116,7 @@
                   </div>
                 </div>
         </div>
+       
           <!--aqui termina el cuadro de eventos-->
               
         

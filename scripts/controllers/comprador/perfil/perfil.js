@@ -45,7 +45,7 @@ angular.module('appVoyatodo')
                             processData: false,
                             success: function(datos)
                             {
-                                console.log(datos)   ;
+                                console.log(datos);
                             }
 	            }
                );

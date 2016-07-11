@@ -1,5 +1,5 @@
 'use strict';
-
+/////modulo crear evento//////////////
 angular.module('appVoyatodo')
     .controller('CompradorEventoCrtl',function($scope, $http, SweetAlert, $cookies, $cookieStore)
         {
@@ -11,6 +11,7 @@ angular.module('appVoyatodo')
             $scope.user_google=$cookieStore.get('userGoogle');
             $scope.user_twitter=$cookieStore.get('userTwitter');
             $scope.user_picture=$cookieStore.get('userPicture');
+            
             
             $scope.pais = function(){
                 var ruta = "backend/modules/comprador/evento/pais_evento.php"; 

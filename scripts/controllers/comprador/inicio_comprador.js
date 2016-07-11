@@ -1,26 +1,35 @@
 'use strict';
 
 angular.module('appVoyatodo').controller('InicioCompradorCrtl',function($scope, $http, SweetAlert, $cookies, $cookieStore){
-    $scope.eventos=function(){
+    $scope.usuario_fullname = $cookieStore.get('userFullname');
+    $scope.usuario_id = $cookieStore.get('userId');
+    $scope.usuario_correo = $cookieStore.get('userEmail');
+    
+   
+    
         
-        var ruta = "backend/modules/comprador/evento/publish_events.php"; 
-        var x = "";
-            $.ajax(
-               {
-                    url: ruta,
-                    type: "POST",
-                    data: x,
-                    contentType: false,
-                    processData: false,
-                    dataType: 'json',
-                    
-                    success: function(datas)
-                        {
-                            console.log("eventos:"+datas);
-                            
-                            $scope.datas=datas;
-                        }
-                });
-    };
+        $scope.logout=function(){
+           
+            $cookieStore.remove('userFullname');
+            $cookieStore.remove('userRol');
+            $cookieStore.remove('userEmail');
+            $cookieStore.remove('userId');
+            $cookieStore.remove('userFacebook');
+            $cookieStore.remove('userTwitter');
+            $cookieStore.remove('useryoutube');
+            $cookieStore.remove('userGoogle');
+            $cookieStore.remove('userPicture');
+            location.href='#/inicio';
+        };
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
     
 });

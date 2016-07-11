@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('appVoyatodo', ['ngResource','ngRoute', 'ngCookies', 'oitozero.ngSweetAlert','mp.datePicker','kk.timepicker','appVoyatodo.services','satellizer','toastr'])
-        .config(function($routeProvider, $authProvider ){
+        .config(function($routeProvider, $authProvider){
             $routeProvider
             .when('/inicio',
             {
@@ -234,6 +234,8 @@ angular.module('appVoyatodo', ['ngResource','ngRoute', 'ngCookies', 'oitozero.ng
             $authProvider.facebook({
                 clientId: '261890787515465'
             });
+            
+            
         });
 
   

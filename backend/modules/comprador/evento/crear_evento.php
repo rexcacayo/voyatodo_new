@@ -57,7 +57,7 @@ switch ($_REQUEST["accion"]) {
                         //no se pudo crear la ruta
                         $retorna["estado"] = "no_creo_ruta";
                         $retorna["ruta"] = $ruta;
-                        $retorna["mensaje"] = "No se Pudo Crer la Ruta para Guardar la imagen";
+                        $retorna["mensaje"] = "No se Pudo Crear la Ruta para Guardar la imagen";
                         $retorna["datos"] = $_POST;
                         echo json_encode($retorna);
                         break;

@@ -241,6 +241,7 @@
       
       <div class="input-group">
         <label>Ubicación del evento</label>
+        <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
         <div class="map_canvas1" style="height:200px;"></div>
       </div>
       <div class="form-group field-formcreateevent-event_lat">
@@ -341,10 +342,10 @@
                 <input ng-model="data.typeticket_name" type="radio" name="FormCreateEvent[typeticket_name]" value="2" class="inputradio type_tic"> <span class="inputfalso"> <label class="lbl_radio">PAGO</label> </span> <br>
               </div>
               <div class="col-md-4">
-                <input ng-model="data.typeticket_name" type="radio" name="FormCreateEvent[typeticket_name]" value="4" class="inputradio type_tic"> <span class="inputfalso"> <label class="lbl_radio">LIBRE</label> </span> <br>
+                <input ng-model="data.typeticket_name" type="radio" name="FormCreateEvent[typeticket_name]" value="3" class="inputradio type_tic"> <span class="inputfalso"> <label class="lbl_radio">LIBRE</label> </span> <br>
               </div>
               <div class="col-md-6 col-md-offset-3">
-                <input ng-model="data.typeticket_name" type="radio" name="FormCreateEvent[typeticket_name]" value="3" class="inputradio type_tic"> <span class="inputfalso"> <label class="lbl_radio">PREVENTA</label> </span> <br>
+                <input ng-model="data.typeticket_name" type="radio" name="FormCreateEvent[typeticket_name]" value="4" class="inputradio type_tic"> <span class="inputfalso"> <label class="lbl_radio">PREVENTA</label> </span> <br>
               </div>
             </div>
           </div>
@@ -1183,10 +1184,10 @@
         contactos a trav&eacute;s de las redes sociales
       </p>
       <span>
-        <a class="text-facebook red_margin no_share"> <i class="fa fa-facebook"></i> </a>
-        <a class="text-twitter red_margin no_share"> <i class="fa fa-twitter"></i> </a>
-        <a class="text-linkedin red_margin no_share"> <i class="fa fa-linkedin"></i> </a>
-        <a class="text-google red_margin no_share"> <i class="fa fa-google-plus"></i> </a>
+        <a class="text-facebook red_margin no_share" href="{{user_facebook}}"> <i class="fa fa-facebook"></i> </a>
+        <a class="text-twitter red_margin no_share" href="{{user_twitter}}"> <i class="fa fa-twitter"></i> </a>
+        <a class="text-youtube red_margin no_share" href="{{user_youtube}}"> > <i class="fa fa-youtube-play"></i> </a>
+        <a class="text-google red_margin no_share" href="{{user_google}}"> <i class="fa fa-google-plus"></i> </a>
       </span>
 
       <div class="separator"></div>
@@ -1376,8 +1377,7 @@
             </div>
             <div class="col-md-12">
               <h1>Invitaci&oacute;n al Evento</h1>
-              <h2 class="titulo">{{dataok
-                          .event_name}}</h2>
+              <h2 class="titulo">{{data.event_name}}</h2>
             </div>
             <div class="col-md-12 top"> 
               Fecha: <span class="text_date"></span><br>
@@ -1534,13 +1534,14 @@
           <div class="blog-d">
             <p>COMPARTIR POR REDES SOCIALES &nbsp; &nbsp;
               <span>
-                <a class="text-facebook no_share"> <i class="fa fa-facebook"></i> </a>
-                <a class="text-twitter no_share"> <i class="fa fa-twitter"></i> </a>
-                <a class="text-linkedin no_share"> <i class="fa fa-linkedin"></i> </a>
-                <a class="text-google no_share"> <i class="fa fa-google-plus"></i> </a>
+                  <a class="text-facebook no_share" href="{{user_facebook}}"> <i class="fa fa-facebook"></i> </a>
+                <a class="text-twitter no_share" href="{{user_twitter}}"> <i class="fa fa-twitter"></i> </a>
+                
+                <a class="text-google no_share" href="{{user_google}}"> <i class="fa fa-google-plus"></i> </a>
               </span>
             </p>
             <h3 class="review txt_gray"> Resumen de tu evento </h3>
+            {{data.event_review}}
             <div class="video vy hidden">
               <iframe class="text-youtube"  id="ytplayer" type="text/html" width="200" height="100%"
                 src="https://www.youtube.com/embed/5NV6Rdv1a3I" frameborder="0" allowfullscreen>
@@ -1554,6 +1555,7 @@
             <div class="blog-text">
               <p class="text_description">
                 En este lugar coloca la descripci&oacute;n de tu evento.
+                {{data.event_description}}
               </p>
               
               <div class="row">
@@ -1582,7 +1584,9 @@
                 <br />
                 <div class="col-md-12">
                   <h5 class="txt_gray">T&Eacute;RMINOS Y CONDICIONES</h5>
+                  
                   <p class="text_terms">En esta parte agrega los t&eacute;rminos y condiciones de tu evento</p>
+                  {{data.event_terms}}
                   <br />
                 </div>
               </div>
