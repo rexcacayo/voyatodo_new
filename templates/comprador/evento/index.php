@@ -152,7 +152,7 @@
         <div class="col-md-6 col-sm-6 col-xs-6 div_fecha">
             <label class="lblnegro">HORA INICIAL</label>
             <kk-timepicker settings="ctrl.settings1" ng-disabled="ctrl.disabled" ng-model="data.start_time"></kk-timepicker>    
-                    
+            <input ng-model="data.start_time" type="text" id="formcreateevent-event_stardate" class="form-control" name="FormCreateEvent[event_starthour]">       
                    
                 
         </div>
@@ -168,7 +168,7 @@
 </date-picker>
 
 </div>
-<div class="input-group date"><input ng-model="data.event_enddate" type="text" id="formcreateevent-event_enddate" class="form-control" name="FormCreateEvent[event_enddate]" ng-model="data.status"><span class="input-group-addon" ng-click="isReplyFormOpenF = !isReplyFormOpenF"><i class="glyphicon glyphicon-calendar"></i></span></div>
+<div class="input-group date"><input ng-model="data.event_enddate" type="text" id="formcreateevent-event_enddate" class="form-control" name="FormCreateEvent[event_enddate]"><span class="input-group-addon" ng-click="isReplyFormOpenF = !isReplyFormOpenF"><i class="glyphicon glyphicon-calendar"></i></span></div>
 
 <div class="help-block"></div>
 </div>          </div> 
@@ -176,6 +176,8 @@
         <div class="col-md-6 col-sm-6 col-xs-6 div_fecha">
           <label class="lblnegro">HORA FINAL</label>
           <kk-timepicker settings="ctrl.settings2" ng-disabled="ctrl.disabled" ng-model="data_end_time"></kk-timepicker>
+           <input ng-model="data_end_time" type="text" id="formcreateevent-event_endhour" class="form-control" name="FormCreateEvent[event_endhour]">       
+           
         </div>                                        
       </div>
 
@@ -726,7 +728,7 @@
           <div class="col-md-6 col-sm-4 col-xs-4 top">
             <div class="input-group">
               <div class="input-group-addon input-group-addon0">$</div>
-              <input data_entrada.ticket_value" name="FormCreateEvent[ticket_value]" type="number" class="form-control ticket-value align_right" placeholder="30000" />
+              <input ng-model="data_entrada.ticket_value" name="FormCreateEvent[ticket_value]" type="number" class="form-control ticket-value align_right" placeholder="30000" />
             </div>
           </div>
           <div class="col-md-6 col-sm-4 col-xs-4 top">
@@ -914,7 +916,7 @@
         <div class="col-md-6 col-sm-4 col-xs-4">
             <div class="form-group field-formcreateevent-ticket_start required">
 <div ng-init="isReplyFormOpen = false" ng-show="isReplyFormOpen" id="replyForm">
-<date-picker ng-model="data_entrada.tiket_stardate">
+<date-picker ng-model="data_entrada.tiket_stardate" name="">
 </date-picker>
 
 </div>
@@ -937,7 +939,7 @@
 <div class="col-md-6 col-sm-4 col-xs-4">
 <div class="form-group field-formcreateevent-ticket_end required">
     <div ng-init="isReplyFormOpen1 = false" ng-show="isReplyFormOpen1" id="replyForm">
-        <date-picker ng-model="data_entrada.tiket_enddate"></date-picker>
+        <date-picker ng-model="data_entrada.tiket_enddate" name=""></date-picker>
     </div>
     <div class="input-group date">
         <input ng-model="data_entrada.tiket_enddate" type="text" id="formcreateevent-tiket_enddate" class="form-control" name="FormCreateEvent[event_enddate]">
