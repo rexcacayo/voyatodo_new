@@ -12,6 +12,7 @@ angular.module('appVoyatodo')
             $scope.user_twitter=$cookieStore.get('userTwitter');
             $scope.user_picture=$cookieStore.get('userPicture');
             
+            
             $scope.pais = function(){
                 var ruta = "backend/modules/comprador/evento/pais_evento.php"; 
                 var x = "";
@@ -189,18 +190,18 @@ angular.module('appVoyatodo')
                         });
 	    };
             
-            $scope.ciudad = function(id){
+            $scope.ciudad = function(){
+                $http.get("backend/modules/comprador/evento/ciudad_evento.php")
+                    .success(function(datas) {
+                    $scope.datasc= datas;   
+                });
                 
                 
-                $http.post("backend/modules/comprador/evento/ciudad_evento.php")
-                .success(function(datas) {
-                console.log(datas.result); 
-                $scope.datasc = datas.result;
-                return;
+               
                 
-            });
+          
             
             
-        }
+        };
     });
         

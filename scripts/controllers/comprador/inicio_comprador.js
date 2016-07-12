@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('appVoyatodo').controller('InicioCompradorCrtl',function($scope, $http, SweetAlert, $cookies, $cookieStore){
+     $scope.user_picture=$cookieStore.get('userPicture');
     $scope.eventos=function(){
         
         var ruta = "backend/modules/comprador/evento/publish_event.php"; 

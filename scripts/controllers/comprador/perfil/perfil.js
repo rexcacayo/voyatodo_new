@@ -5,7 +5,7 @@ angular.module('appVoyatodo')
             $scope.usuario_fullname = $cookieStore.get('userFullname');
             $scope.usuario_id = ($cookieStore.get('userId'));
             $scope.usuario_email = $cookieStore.get('userEmail');
-            
+             $scope.usuario_picture=$cookieStore.get('userPicture');
             
            $scope.Get_Info=function(){
                

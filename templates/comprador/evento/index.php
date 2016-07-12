@@ -203,11 +203,11 @@
         <div class="form-group">
           <label class="col-sm-3 col-xs-3 lblnegro">CIUDAD:</label>
            <div class="col-sm-9 col-xs-9">
-              <div class="form-group field-formcreateevent-event_city required" ng-init="ciudad(1)">
+              <div class="form-group field-formcreateevent-event_city required" ng-init="ciudad()">
 
 <select  ng-model="data.event_city" id="formcreateevent-event_city" class="form-control cmb-city" name="FormCreateEvent[event_city]">
-<option value="" ng-repeat="datac in datasc">Seleccione Ciudad</option>
-<option value="{{datac.id}}">{{datac.name}}</option>
+<option value="">Seleccione Ciudad</option>
+<option value="{{datac.id}}" ng-repeat="datac in datasc">{{datac.name}}</option>
 
 </select>
 
@@ -1024,12 +1024,12 @@
         transferencia tiene un costo de 15.000 COP 
       </p>
       <div class="row">
-        <div class="form-group">
+        <div class="form-group" ng-init="Get_Info()">
           <label for="cat_principal" class="col-md-3 col-sm-3 col-xs-3">BANCO</label>
           <div class="col-md-9 col-sm-9 col-xs-9">
                         <div class="form-group field-formcreateevent-fkbank">
 
-<select  ng-model="data_cuenta_pagos.fkbank" id="formcreateevent-fkbank" class="form-control bank-name" name="FormCreateEvent[fkbank]">
+<select  ng-model="data_cuenta_pagos.usuario_banco" id="formcreateevent-fkbank" class="form-control bank-name" name="FormCreateEvent[fkbank]">
 <option value=""></option>
 <option value="1">BANCOLOMBIA</option>
 <option value="2">BANCO DE BOGOTÁ</option>
@@ -1059,12 +1059,12 @@
 <div class="help-block"></div>
 </div>          </div>
         </div>
-        <div class="form-group">
+        <div class="form-group" >
           <label for="nombre_evento" class="col-md-3 col-sm-3 col-xs-3">NOMBRE TITULAR</label>
           <div class="col-md-9 col-sm-9 col-xs-9">
             <div class="form-group field-formcreateevent-userbank_titularname">
 
-<input ng-model="data_cuenta_pagos.userbank_titularname" type="text" id="formcreateevent-userbank_titularname" class="form-control bank-titular" name="FormCreateEvent[userbank_titularname]">
+<input ng-model="data_cuenta_pagos.usuario_nombre_titular" type="text" id="formcreateevent-userbank_titularname" class="form-control bank-titular" name="FormCreateEvent[userbank_titularname]">
 
 <div class="help-block"></div>
 </div>          </div>
@@ -1074,7 +1074,7 @@
           <div class="col-md-9 col-sm-9 col-xs-9">
              <div class="form-group field-formcreateevent-userbank_identification">
 
-<input ng-model="data_cuenta_pagos.userbank_identification" type="number" id="formcreateevent-userbank_identification" class="form-control bank-identification" name="FormCreateEvent[userbank_identification]">
+<input ng-model="data_cuenta_pagos.usuario_banco_cedula" type="number" id="formcreateevent-userbank_identification" class="form-control bank-identification" name="FormCreateEvent[userbank_identification]">
 
 <div class="help-block"></div>
 </div>          </div>
@@ -1084,7 +1084,7 @@
           <div class="col-md-9 col-sm-9 col-xs-9">
             <div class="form-group field-formcreateevent-userbank_numberacount">
 
-<input ng-model="data_cuenta_pagos.userbank_numberacount" type="number" id="formcreateevent-userbank_numberacount" class="form-control bank-numberacount" name="FormCreateEvent[userbank_numberacount]">
+<input ng-model="data_cuenta_pagos.usuario_banco_numerocuenta" type="number" id="formcreateevent-userbank_numberacount" class="form-control bank-numberacount" name="FormCreateEvent[userbank_numberacount]">
 
 <div class="help-block"></div>
 </div>          </div>
@@ -1094,7 +1094,7 @@
           <div class="col-md-9 col-sm-9 col-xs-9">
                         <div class="form-group field-formcreateevent-userbank_tipeacount">
 
-<select  ng-model="data_cuenta_pagos.userbank_tipeacount" id="formcreateevent-userbank_tipeacount" class="form-control bank-type" name="FormCreateEvent[userbank_tipeacount]">
+<select  ng-model="data_cuenta.usuario_banco_tipocuenta" id="formcreateevent-userbank_tipeacount" class="form-control bank-type" name="FormCreateEvent[userbank_tipeacount]">
 <option value=""></option>
 <option value="Corriente">Corriente</option>
 <option value="Crédito">Crédito</option>

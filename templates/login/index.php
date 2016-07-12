@@ -89,8 +89,8 @@
                   <div class="social-auth-links text-center text-social">
                       
                       
-                      <div id="w0" class="auth-clients" ><ul class="auth-clients clear"><li class="auth-client"><a class="auth-link google" href="" ng-click="authenticate('google')"><i class="margin fa fa-google"></i><span class="auth-title" >Google</span></a></li>
-                              <li class="auth-client" ><a class="auth-link facebook" href="" ng-click="authenticate('facebook')"><i class="margin fa fa-facebook"></i><span class="auth-title">Facebook</span></a></li></ul></div> 
+                      <div id="w0" class="auth-clients" ><ul class="auth-clients clear"><li class="auth-client"><a class="auth-link google" href="" ng-click=""><i class="margin fa fa-google"></i><span class="auth-title" >Google</span></a></li>
+                              <li class="auth-client" ><a class="auth-link facebook" href="" ng-click=""><i class="margin fa fa-facebook"></i><span class="auth-title">Facebook</span></a></li></ul></div> 
                  </div>
                   
                   <p class="title-n">&iquest;ERES NUEVO?</p>
