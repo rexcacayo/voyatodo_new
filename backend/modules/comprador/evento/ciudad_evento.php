@@ -28,4 +28,5 @@ if ($cities):
     endforeach;
     $result = rtrim($result, ',');
 endif;
-echo '{"result":[' . $result . ']}';
+//echo '{"result":[' . $result . ']}';
+echo '[' . $result . ']';
