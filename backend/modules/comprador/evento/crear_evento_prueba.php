@@ -27,7 +27,9 @@ $vectorP = array(
 $fields = array(
     'event_name' => 'event_name',
     'event_stardate' => 'event_stardate',
+    'event_enddate' => 'event_enddate',
     'event_starthour' => 'event_starthour',
+    'event_endhour' => 'event_endhour',
     'event_country' => 'fkcountry',
     'event_city' => 'fkcity',
     'event_place' => 'event_place',
@@ -41,6 +43,7 @@ $fields = array(
     'event_terms' => 'event_terms',
     'typeticket_name' => 'fktipetickect',
     'event_visible' => 'event_visible',
+    'fkstatus' => 'fkstatus',
     'event_opacityimage' => 'event_opacityimage');
 if ($_GET):
 if ($_POST):
