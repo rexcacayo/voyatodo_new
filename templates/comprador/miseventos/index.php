@@ -34,7 +34,7 @@
                 <li><a href="#" ng-click="logout()"> Cerrar sesi&oacute;n </a> </li>              
               </ul>
             </li>
-                            <li><div class="fa-circle-menu"></div></li>
+                            <li><div class="fa-circle-menu"><img alt="" src="{{usuario_picture}}"></div></li>
                           </ul>
           <!-- End Navigation List --> 
         </div>
@@ -78,8 +78,9 @@
         </div>
       </div>
     </div>
-  </section>  
-  <div class="section destacados">
+  </section>
+      
+  <div class="section destacados" ng-init="eventos()">
     <div class="container container-update"> 
       <div class="row">
                   <div class="big-title text-center">
@@ -93,7 +94,33 @@
     </div>
     <!-- .container --> 
   </div>
-<a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>  	<footer>
+<div ng-repeat="data in datas">
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="team-member modern">
+                <a href="#/inicio/evento/v/maraton-de-medellin"> 
+                    <div class="member-photo imgevent" style="background-image: url('{{data.event_image}}');background-size: 100% 100%;">
+                        <div class="member-name color01">
+                            <span>{{data.fktipetickect}}</span> 
+                        </div>
+                    </div>
+                </a>
+                <div class="member-info">
+                    <div class="post-date">
+                       {{data.event_stardate}}&nbsp;{{data.event_starthour}}                     
+                    </div>
+
+                    <h2><a href="#/inicio/evento/v/maraton-de-medellin"> {{data.event_name}}</a></h2>
+                    <div class="post-date">{{data.event_place}} </div>
+                </div>  
+                <div class="member-socail"> 
+                <a class="icon05" style="background: url('tema/images/system_imgs/categorys/icon-sport.png') center no-repeat;" data-toggle="tooltip" title="Deportes y bienestar" data-placement="bottom"></a> 
+                <a class="icon03" data-toggle="tooltip" title="Compartir" data-placement="bottom" href="#"></a> 
+                <a class="link-button" href="#/inicio/evento/v/{{data.event_url}}">ver m&aacute;s</a> 
+                </div>
+                  </div>
+                </div>
+        </div>
+      <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>  	<footer>
     <div class="container">
       <div class="row footer-widgets">
         <div class="col-md-3 col-xs-12">

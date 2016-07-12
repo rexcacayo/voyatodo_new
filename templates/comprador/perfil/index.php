@@ -33,8 +33,9 @@
                 <li><a href="#/favoritos"> Favoritos </a> </li>
                 <li><a href="#" ng-click="logout()"> Cerrar sesi&oacute;n </a> </li>              
               </ul>
+                
             </li>
-                            <li><div class="fa-circle-menu"><img alt="" src="template/comprador/perfil/imagen/{{user_picture}}"></div></li>
+                            <li><div class="fa-circle-menu"><img alt="" src="{{usuario_picture}}"></div></li>
                           </ul>
           <!-- End Navigation List --> 
         </div>

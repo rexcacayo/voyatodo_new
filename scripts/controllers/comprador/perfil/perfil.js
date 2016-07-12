@@ -5,7 +5,7 @@ angular.module('appVoyatodo')
             $scope.usuario_fullname = $cookieStore.get('userFullname');
             $scope.usuario_id = ($cookieStore.get('userId'));
             $scope.usuario_email = $cookieStore.get('userEmail');
-             $scope.usuario_picture=$cookieStore.get('userPicture');
+            $scope.usuario_picture=$cookieStore.get('userPicture');
             
            $scope.Get_Info=function(){
                
@@ -28,6 +28,12 @@ angular.module('appVoyatodo')
                 $cookieStore.remove('userRol');
                 $cookieStore.remove('userEmail');
                 $cookieStore.remove('userId');
+                $cookieStore.remove('userPicture');
+                $cookieStore.remove('userFacebook');
+                $cookieStore.remove('userTwitter');
+                $cookieStore.remove('useryoutube');
+                $cookieStore.remove('userGoogle');
+                
                 location.href='#/inicio';
             };
             
