@@ -1,4 +1,5 @@
 <?php
+
 include_once '../../../app_config.php';
 require_once("../../../models/event.php");
 $sql = "SELECT e.*, c.country_name, ct.city_name,cp.category_name,t.ticket_name
@@ -11,11 +12,14 @@ WHERE 1 = 1";
 if ($_GET):
     if (array_key_exists('event_url', $_GET)):
         $sql .= " and event_url = ?";
-        $events = Event::find_by_sql($sql,array($_GET['event_url']));
+        $events = Event::find_by_sql($sql, array($_GET['event_url']));
+    elseif (array_key_exists('user_id', $_GET)):
+        $sql .= " and fkuser = ?";
+        $events = Event::find_by_sql($sql, array($_GET['user_id']));
     endif;
 else:
     $sql .= " and fkstatus = ?";
-        $events = Event::find_by_sql($sql,array(2));
+    $events = Event::find_by_sql($sql, array(2));
 endif;
 $fields = array(
     'event_name' => 'event_name',
@@ -49,9 +53,9 @@ if ($events):
         $result .= '{';
         foreach ($fields as $campo => $objeto):
             if ($i > 0):
-                $result .= ',"'.$campo.'":"' . $e->$objeto . '"';
+                $result .= ',"' . $campo . '":"' . $e->$objeto . '"';
             else:
-                $result .= '"'.$campo.'":"' . $e->$objeto . '"';
+                $result .= '"' . $campo . '":"' . $e->$objeto . '"';
             endif;
             $i++;
         endforeach;
