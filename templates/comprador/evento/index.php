@@ -203,7 +203,7 @@
         <div class="form-group">
           <label class="col-sm-3 col-xs-3 lblnegro">CIUDAD:</label>
            <div class="col-sm-9 col-xs-9">
-              <div class="form-group field-formcreateevent-event_city required">
+              <div class="form-group field-formcreateevent-event_city required" ng-init="ciudad(1)">
 
 <select  ng-model="data.event_city" id="formcreateevent-event_city" class="form-control cmb-city" name="FormCreateEvent[event_city]">
 <option value="" ng-repeat="datac in datasc">Seleccione Ciudad</option>

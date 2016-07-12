@@ -191,25 +191,16 @@ angular.module('appVoyatodo')
             
             $scope.ciudad = function(id){
                 
-                var ruta = "backend/modules/comprador/evento/ciudad_evento.php";  
                 
+                $http.post("backend/modules/comprador/evento/ciudad_evento.php")
+                .success(function(datas) {
+                console.log(datas.result); 
+                $scope.datasc = datas.result;
+                return;
                 
-                $.ajax(
-                        {
-                            url: ruta,
-                            type: "POST",
-                            data: id,
-                            contentType: false,
-                            processData: false,
-                            dataType: 'json',
-                            success: function(datas)
-                            {
-                                console.log("ciudad:"+datas);
-                                $scope.datasc=datas.result;
-                            }
-                        });
-            }
+            });
             
             
-        });
+        }
+    });
         
