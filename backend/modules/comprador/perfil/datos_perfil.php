@@ -30,6 +30,7 @@ $result .= ',"user_name":"' . $objUser->username . '"';
 $result .= ',"user_lastname":"' . $objUser->last_name . '"';
 $result .= ',"user_phone1":"' . $objUser->user_phone1 . '"';
 $result .= ',"user_phone2":"' . $objUser->user_phone2 . '"';
+$result .= ',"userpicture":"' . $objUser->user_image . '"';
 $result .= '}';
 //banco
 
