@@ -293,7 +293,7 @@
 
 <select  ng-model="data.event_category_secundary" id="formcreateevent-event_category_secundary" class="form-control" name="FormCreateEvent[event_category_secundary]">
 <option value="">Seleccione categoría</option>
-<option value="">Deporte</option>
+<option value="1">Deporte</option>
 
 </select>
 
