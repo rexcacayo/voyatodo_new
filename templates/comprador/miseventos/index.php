@@ -83,18 +83,7 @@
   <div class="section destacados" ng-init="eventos()">
     <div class="container container-update"> 
       <div class="row">
-                  <div class="big-title text-center">
-            <h1>A&Uacute;N NO HAY <span>eventos</span></h1>
-            <p class="text-center">Ya puedes comenzar a crear y gestionar tus eventos.</p>
-          </div>
-          <img class="img-face-sad" src="tema/images/face-sad.png" alt="face-sad">
-            
-      </div>
-      <!-- End Team Members --> 
-    </div>
-    <!-- .container --> 
-  </div>
-<div ng-repeat="data in datas">
+                  <div ng-repeat="data in datas">
         <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="team-member modern">
                 <a href="#/inicio/evento/v/maraton-de-medellin"> 
@@ -120,6 +109,13 @@
                   </div>
                 </div>
         </div>
+            
+      </div>
+      <!-- End Team Members --> 
+    </div>
+    <!-- .container --> 
+  </div>
+
       <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>  	<footer>
     <div class="container">
       <div class="row footer-widgets">

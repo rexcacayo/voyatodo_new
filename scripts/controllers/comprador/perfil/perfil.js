@@ -86,11 +86,12 @@ angular.module('appVoyatodo')
                     
             };
             $scope.datos_bancarios=function(dataB){
-                console.log(dataB);
+                
                  var id = $scope.usuario_id;
                  $http.post("backend/modules/comprador/perfil/datos_bancarios.php?user_id="+id, dataB)
                  .success(function(dataB) {
-                 console.log(dataB);    
+                 console.log(dataB); 
+                 return;
                     if(dataB.result[1].bancario === "succes"){
                             SweetAlert.swal("Su Información fue actualizada con exito");
                             location.href='#/inicio_comprador';
